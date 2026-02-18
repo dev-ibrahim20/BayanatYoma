@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muhaya - احتفل بلحظاتك السعيدة</title>
+    <style>
+        /* Basic styles for testing */
+        body {
+            font-family: Arial, Tahoma, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f8fafc;
+        }
+        
+        .navbar {
+            background: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo h2 {
+            color: #1e3a8a;
+            font-size: 2rem;
+            margin: 0;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .nav-menu a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+        }
+        
+        .hero {
+            padding: 120px 20px 80px;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+        
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        .hero-text h1 {
+            font-size: 3rem;
+            color: #1e3a8a;
+            margin-bottom: 1rem;
+        }
+        
+        .hero-text p {
+            font-size: 1.2rem;
+            color: #64748b;
+            margin-bottom: 1rem;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .btn-primary, .btn-secondary {
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            cursor: pointer;
+            border: none;
+        }
+        
+        .btn-primary {
+            background: #1e3a8a;
+            color: white;
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: #1e3a8a;
+            border: 2px solid #1e3a8a;
+        }
+        
+        .hero-image {
+            height: 400px;
+            background: rgba(30, 58, 138, 0.1);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .hamburger {
+            display: none;
+        }
+        
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+            .hamburger {
+                display: flex;
+                flex-direction: column;
+                gap: 4px;
+            }
+            .hamburger span {
+                width: 25px;
+                height: 3px;
+                background: #333;
+                border-radius: 3px;
+            }
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .hero-text h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">
+                    <h2>Muhaya</h2>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#home">الرئيسية</a></li>
+                    <li><a href="#services">الخدمات</a></li>
+                    <li><a href="#production">الإنتاج</a></li>
+                    <li><a href="#departments">الأقسام</a></li>
+                    <li><a href="#gallery">معرض الأعمال</a></li>
+                    <li><a href="#contact">اتصل بنا</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>احتفل بلحظاتك السعيدة</h1>
+                    <p>الخبرة تتحول إلى التميز</p>
+                    <p>تجارب سلسة ومتكاملة</p>
+                    <div class="hero-buttons">
+                        <a href="#services" class="btn-primary">اكتشف خدماتنا</a>
+                        <a href="#contact" class="btn-secondary">تواصل معنا</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="floating-shapes">
+                        <div class="shape shape-1"></div>
+                        <div class="shape shape-2"></div>
+                        <div class="shape shape-3"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>خدماتنا</h2>
+                <p>السهولة والتنظيم المتميز</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>أنظمة الإضاءة</h3>
+                    <p>نقدم حلولاً إضاءة مبتكرة تخلق الأجواء المثالية لأي فعالية أو مساحة.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-volume-up"></i>
+                    </div>
+                    <h3>أنظمة الصوت</h3>
+                    <p>إعدادات صوتية احترافية توفر صوتاً واضحاً للمؤتمرات والحفلات والفعاليات الخاصة.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-camera"></i>
+                    </div>
+                    <h3>التوثيق</h3>
+                    <p>خدمات توثيق الفعاليات الكاملة بما في ذلك التصوير الفوتوغرافي والفيديو والتقارير.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-hotel"></i>
+                    </div>
+                    <h3>الضيافة</h3>
+                    <p>خدمات ضيافة استثنائية لضمان شعور ضيوفك بالترحيب والعناية الكاملة.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <h3>منظمو الفعاليات</h3>
+                    <p>تخطيط وإدارة فعاليات خبراء لجعل فعالياتك المؤسسية أو الاجتماعية سلسة.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-gift"></i>
+                    </div>
+                    <h3>الهدايا</h3>
+                    <p>حلول هدايا مختارة للعملاء والموظفين أو الحاضرين في الفعاليات تترك انطباعاً دائماً.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Production Section -->
+    <section id="production" class="production">
+        <div class="container">
+            <div class="section-header">
+                <h2>خطوط الإنتاج</h2>
+                <p>جودة وإبداع في كل منتج</p>
+            </div>
+            <div class="production-grid">
+                <div class="production-item">
+                    <h3>الهدايا الترويجية</h3>
+                    <p>القطع بالليزر والحفر، تصميم وإنتاج الكؤوس، الطباعة الحرارية، الطباعة على جميع الأقمشة، الصناديق الخشبية والأكريليك، والطباعة المباشرة عالية الجودة.</p>
+                </div>
+                <div class="production-item">
+                    <h3>المطبوعات</h3>
+                    <p>تصميم الكتب والكتيبات، تنفيذ جميع المطبوعات المكتبية، ملصقات مميزة بمواد متنوعة، وتقنيات متقدمة مثل البارز، التغليف بالرقائق، القص، والغائر.</p>
+                </div>
+                <div class="production-item">
+                    <h3>التغليف</h3>
+                    <p>آلات القص وتغليف متخصص لجميع أنواع الصناديق المميزة والفاخرة، مجموعات ترحيب الموظفين، وكذلك التغليف الورقي والكرتوني والجلدي.</p>
+                </div>
+                <div class="production-item">
+                    <h3>التصميم والابتكار</h3>
+                    <p>فريق إبداعي متخصص في تصميم وابتكار منتجات فريدة مصممة خصيصاً لهوية علامتك التجارية ورؤيتك.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3 class="stat-number" data-target="500">0</h3>
+                    <p>عميل وثق بنا بمشاريعهم</p>
+                </div>
+                <div class="stat-item">
+                    <h3 class="stat-number" data-target="10000">0</h3>
+                    <p>ساعة في تقديم خدمات الجودة</p>
+                </div>
+                <div class="stat-item">
+                    <h3 class="stat-number" data-target="1000">0</h3>
+                    <p>مشروع مكتمل بنجاح لعملاء متنوعين</p>
+                </div>
+                <div class="stat-item">
+                    <h3 class="stat-number" data-target="50">0</h3>
+                    <p>عضو فريق مكرس لتحقيق أفضل النتائج</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Departments Section -->
+    <section id="departments" class="departments">
+        <div class="container">
+            <div class="section-header">
+                <h2>أقسامنا</h2>
+                <p>في شركتنا، يلعب كل قسم دوراً حيوياً في تقديم الجودة والابتكار والتميز</p>
+            </div>
+            <div class="departments-grid">
+                <div class="department-card">
+                    <div class="department-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3>التصميم</h3>
+                    <p>يركز على المرئيات الإبداعية والعلامات التجارية والتصاميم المبتكرة التي تحقق الأفكار مع عكس هويتك.</p>
+                </div>
+                <div class="department-card">
+                    <div class="department-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>الإبداع</h3>
+                    <p>يطور خبراؤنا الإبداعيون حملات جذابة ومفاهيم وحلول فريدة مصممة خصيصاً لرؤيتك.</p>
+                </div>
+                <div class="department-card">
+                    <div class="department-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3>تقنية المعلومات</h3>
+                    <p>يوفر الدعم التقني الذكي والمنصات الرقمية وحلول التكنولوجيا الحديثة لتعزيز العمليات.</p>
+                </div>
+                <div class="department-card">
+                    <div class="department-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>الفعاليات والمعارض</h3>
+                    <p>متخصص في تنظيم المؤتمرات والمعارض والفعاليات الاحترافية مع تنفيذ سلس.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Different Section -->
+    <section class="different">
+        <div class="container">
+            <div class="section-header">
+                <h2>ما يميزنا؟</h2>
+                <p>نتميز عن المنافسين من خلال الجمع بين الإبداع والكفاءة والجودة العالية</p>
+            </div>
+            <div class="different-grid">
+                <div class="different-item">
+                    <div class="different-icon">
+                        <i class="fas fa-tasks"></i>
+                    </div>
+                    <h3>التنفيذ والخدمات اللوجستية</h3>
+                    <p>التخطيط الاستراتيجي والخدمات اللوجستية التي تضمن سير كل مشروع بسلاسة.</p>
+                </div>
+                <div class="different-item">
+                    <div class="different-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>الالتزام</h3>
+                    <p>نحترم المواعيد النهائية ونقدم النتائج في الوقت المحدد، في كل مرة.</p>
+                </div>
+                <div class="different-item">
+                    <div class="different-icon">
+                        <i class="fas fa-tachometer-alt"></i>
+                    </div>
+                    <h3>السرعة</h3>
+                    <p>تنفيذ سريع وفعال دون المساس بالجودة.</p>
+                </div>
+                <div class="different-item">
+                    <div class="different-icon">
+                        <i class="fas fa-adjust"></i>
+                    </div>
+                    <h3>المرونة والجودة</h3>
+                    <p>التكيف مع احتياجاتك مع الحفاظ على أعلى المعايير.</p>
+                </div>
+                <div class="different-item">
+                    <div class="different-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>الأفكار المبتكرة</h3>
+                    <p>مفاهيم إبداعية وحلول جديدة تجعلك تتميز.</p>
+                </div>
+                <div class="different-item">
+                    <div class="different-icon">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h3>الفريق الاحترافي</h3>
+                    <p>فريق من الخبراء المهرة ذوي الخبرات المتنوعة والتفاني.</p>
+                </div>
+                <div class="different-item">
+                    <div class="different-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>شراكات موثوقة</h3>
+                    <p>بناء علاقات طويلة الأمد مع العملاء بناءً على الثقة والنتائج.</p>
+                </div>
+                <div class="different-item">
+                    <div class="different-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3>الرؤية العالمية</h3>
+                    <p>نحن نحضر المعايير الدولية والنظرة العالمية إلى كل مشروع.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <div class="section-header">
+                <h2>معرض أعمالنا</h2>
+                <p>أحدث المشاريع</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        <img src="https://via.placeholder.com/400x300/1e3a8a/ffffff?text=جناح+البلدية" alt="جناح البلدية">
+                    </div>
+                    <h3>جناح البلدية</h3>
+                    <p>الجوف</p>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        <img src="https://via.placeholder.com/400x300/1e3a8a/ffffff?text=مهرجان+الزيتون" alt="مهرجان الزيتون">
+                    </div>
+                    <h3>مهرجان الزيتون</h3>
+                    <p>الأحساء</p>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        <img src="https://via.placeholder.com/400x300/1e3a8a/ffffff?text=الذكرى+السنوية+الخامسة" alt="الذكرى السنوية الخامسة">
+                    </div>
+                    <h3>الذكرى السنوية الخامسة</h3>
+                    <p>بدر الدماغ تصميم</p>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        <img src="https://via.placeholder.com/400x300/1e3a8a/ffffff?text=مشروع+الصندوق+الثقافي" alt="مشروع الصندوق الثقافي">
+                    </div>
+                    <h3>مشروع – الصندوق الثقافي</h3>
+                    <p>منتدى بيبان</p>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        <img src="https://via.placeholder.com/400x300/1e3a8a/ffffff?text=غرفة+تجارة+المدينة" alt="غرفة تجارة المدينة">
+                    </div>
+                    <h3>غرفة تجارة المدينة</h3>
+                    <p>احتفال 55 عاماً</p>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        <img src="https://via.placeholder.com/400x300/1e3a8a/ffffff?text=الندوة+الثقافية" alt="الندوة الثقافية">
+                    </div>
+                    <h3>الندوة الثقافية للفنون الإسلامية</h3>
+                    <p>وزارة الثقافة</p>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        <img src="https://via.placeholder.com/400x300/1e3a8a/ffffff?text=الكفاءة+المختبرية" alt="الكفاءة المختبرية">
+                    </div>
+                    <h3>الكفاءة المختبرية</h3>
+                    <p>المؤتمر الخليجي السادس</p>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        <img src="https://via.placeholder.com/400x300/1e3a8a/ffffff?text=الجامعات+السعودية" alt="الجامعات السعودية">
+                    </div>
+                    <h3>الجامعات السعودية</h3>
+                    <p>مهرجان المسرح الجامعي الثالث</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>تواصل معنا</h2>
+                <p>نحن هنا لمساعدتك في تحقيق رؤيتك</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>اتصل في أي وقت</h3>
+                            <a href="tel:+966537666223">+966 537 666 223</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>أرسل بريداً إلكترونياً</h3>
+                            <a href="mailto:info@muhaya-sa.com">info@muhaya-sa.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>زيارة المكتب</h3>
+                            <a href="https://maps.app.goo.gl/d3JZryN9baiC5TK47" target="_blank">شارع الياسمين - القادسية</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" required placeholder="الاسم الكامل">
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" required placeholder="البريد الإلكتروني">
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" id="phone" name="phone" required placeholder="رقم الهاتف">
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" rows="5" required placeholder="رسالتك"></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary">إرسال الرسالة</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>Muhaya</h2>
+                    <p>نحول أفكارك إلى واقع ملموس</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-section">
+                        <h3>روابط سريعة</h3>
+                        <ul>
+                            <li><a href="#home">الرئيسية</a></li>
+                            <li><a href="#services">الخدمات</a></li>
+                            <li><a href="#gallery">معرض الأعمال</a></li>
+                            <li><a href="#contact">اتصل بنا</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h3>الخدمات</h3>
+                        <ul>
+                            <li><a href="#services">تنظيم الفعاليات</a></li>
+                            <li><a href="#production">الإنتاج</a></li>
+                            <li><a href="#services">التصميم</a></li>
+                            <li><a href="#services">التغليف</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h3>تواصل معنا</h3>
+                        <ul>
+                            <li><a href="tel:+966537666223">+966 537 666 223</a></li>
+                            <li><a href="mailto:info@muhaya-sa.com">info@muhaya-sa.com</a></li>
+                            <li><a href="https://maps.app.goo.gl/d3JZryN9baiC5TK47" target="_blank">شارع الياسمين - القادسية</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Muhaya. جميع الحقوق محفوظة.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="back-to-top" aria-label="العودة للأعلى">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>

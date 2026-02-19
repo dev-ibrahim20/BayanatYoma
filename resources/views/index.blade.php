@@ -383,15 +383,20 @@
         }
         
         .service-card h3 {
-            font-size: 1.25rem;
+            font-size: 1.5rem;
             color: #000000;
             margin-bottom: 16px;
-            font-weight: 600;
+            font-weight: 800;
+            font-family: 'Arial Black', Arial, sans-serif;
+            letter-spacing: 0.5px;
         }
         
         .service-card p {
             color: #000000;
-            line-height: 1.6;
+            line-height: 1.8;
+            font-family: 'Arial', sans-serif;
+            font-weight: 500;
+            font-size: 1.1rem;
         }
         
         /* Production Section Styles */
@@ -425,12 +430,12 @@
         }
         
         .production-item h3 {
-            font-size: 1.25rem;
+            font-size: 1.5rem;
             color: #000000;
             margin-bottom: 16px;
-            font-weight: 600;
             font-family: 'Arial Black', Arial, sans-serif;
             letter-spacing: 1px;
+            font-weight: 1000;
         }
         
         .production-item p {
@@ -439,6 +444,109 @@
             font-family: 'Arial Black', Arial, sans-serif;
             font-weight: 900;
             letter-spacing: 0.5px;
+            line-height: 2rem;
+            font-size: 1rem;
+        }
+        
+        /* About Section Styles */
+        .about {
+            padding: 80px 20px;
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 50%, #ffffff 100%);
+            border-top: 1px solid rgba(80, 75, 51, 0.3);
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 48px;
+            max-width: 1200px;
+            margin: 0 auto;
+            align-items: start;
+        }
+        
+        .about-text h3 {
+            font-size: 1.8rem;
+            color: #000000;
+            margin-bottom: 20px;
+            font-weight: 800;
+            font-family: 'Arial Black', Arial, sans-serif;
+            letter-spacing: 0.5px;
+        }
+        
+        .about-text p {
+            color: #000000;
+            line-height: 1.8;
+            font-family: 'Arial', sans-serif;
+            font-weight: 500;
+            font-size: 1.1rem;
+            margin-bottom: 16px;
+        }
+        
+        .about-values {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+        
+        .value-item {
+            background: linear-gradient(135deg, #575555 0%, #989f89 50%, #494545 100%);
+            border: 1px solid rgba(80, 75, 51, 0.3);
+            border-radius: 12px;
+            padding: 24px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .value-item:hover {
+            transform: translateY(-4px);
+            background: linear-gradient(135deg, #505038 0%, #4b4b33 50%, #24240e 100%);
+            box-shadow: 0 12px 36px rgba(255, 255, 255, 0.4);
+        }
+        
+        .value-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 16px;
+            font-size: 1.5rem;
+            color: #000000;
+        }
+        
+        .value-item h4 {
+            font-size: 1.25rem;
+            color: #000000;
+            margin-bottom: 12px;
+            font-weight: 700;
+            font-family: 'Arial Black', Arial, sans-serif;
+        }
+        
+        .value-item p {
+            color: #000000;
+            line-height: 1.6;
+            font-family: 'Arial', sans-serif;
+            font-weight: 500;
+            font-size: 1rem;
+        }
+        
+        @media (max-width: 768px) {
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .about-values {
+                flex-direction: row;
+                flex-wrap: wrap;
+                gap: 16px;
+            }
+            
+            .value-item {
+                flex: 1 1 calc(50% - 16px);
+            }
         }
         
         /* Stats Section Styles */
@@ -483,24 +591,21 @@
             z-index: 1;
         }
         
-        .stat-item:hover {
+        /* .stat-item:hover {
             transform: translateY(-4px) scale(1.05);
             box-shadow: 0 12px 36px rgba(80, 75, 51, 0.4);
-        }
+        } */
         
         .stat-number {
             font-size: 2.5rem;
-            font-weight: 700;
-            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 50%, #ffffff 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            font-weight: 1000;
             margin-bottom: 8px;
         }
         
         .stat-item p {
-            color: #000000;
-            font-size: 1rem;
+            color: #ffffff;
+            font-size: 1.5rem;
+            font-weight: 200;
         }
         
         /* Departments Section Styles */
@@ -548,15 +653,20 @@
         }
         
         .department-card h3 {
-            font-size: 1.25rem;
+            font-size: 1.5rem;
             color: #000000;
             margin-bottom: 16px;
-            font-weight: 600;
+            font-weight: 800;
+            font-family: 'Arial Black', Arial, sans-serif;
+            letter-spacing: 0.5px;
         }
         
         .department-card p {
             color: #000000;
-            line-height: 1.6;
+            line-height: 1.8;
+            font-family: 'Arial', sans-serif;
+            font-weight: 500;
+            font-size: 1.1rem;
         }
         
         /* Different Section Styles */
@@ -605,15 +715,20 @@
         }
         
         .different-item h3 {
-            font-size: 1.125rem;
+            font-size: 1.5rem;
             color: #000000;
             margin-bottom: 12px;
-            font-weight: 600;
+            font-weight: 800;
+            font-family: 'Arial Black', Arial, sans-serif;
+            letter-spacing: 0.5px;
         }
         
         .different-item p {
             color: #000000;
-            line-height: 1.6;
+            line-height: 1.8;
+            font-family: 'Arial', sans-serif;
+            font-weight: 500;
+            font-size: 1.1rem;
         }
         
         /* Gallery Section Styles */
@@ -665,15 +780,20 @@
         }
         
         .gallery-item h3 {
-            font-size: 1.125rem;
+            font-size: 1.5rem;
             color: #000000;
             margin: 16px;
-            font-weight: 600;
+            font-weight: 800;
+            font-family: 'Arial Black', Arial, sans-serif;
+            letter-spacing: 0.5px;
         }
         
         .gallery-item p {
             color: #000000;
             margin: 0 16px 16px;
+            font-family: 'Arial', sans-serif;
+            font-weight: 500;
+            font-size: 1.1rem;
         }
         
         /* Contact Section Styles */
@@ -730,15 +850,16 @@
         }
         
         .contact-item h3 {
-            font-size: 1.125rem;
+            font-size: 1.5rem;
             color: #000000;
             margin-bottom: 8px;
-            font-weight: 600;
+            font-weight: 800;
+            font-family: 'Arial Black', Arial, sans-serif;
+            letter-spacing: 0.5px;
         }
         
         .contact-details a {
             color: #000000;
-            color: #ffffff;
             text-decoration: none;
             transition: color 0.3s ease;
         }
@@ -758,6 +879,16 @@
             margin-bottom: 20px;
         }
         
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #000000;
+            font-weight: 600;
+            font-family: 'Arial Black', Arial, sans-serif;
+            letter-spacing: 0.5px;
+            font-size: 1.1rem;
+        }
+        
         .form-group input,
         .form-group textarea {
             width: 100%;
@@ -767,6 +898,7 @@
             border-radius: 8px;
             color: #000000;
             font-size: 1rem;
+            font-family: 'Arial', sans-serif;
             transition: all 0.3s ease;
         }
         
@@ -965,34 +1097,7 @@
         </div>
     </section>
 
-    <!-- Production Section -->
-    <section id="production" class="production">
-        <div class="container">
-            <div class="section-header">
-                <h2>خطوط الإنتاج</h2>
-                <p>جودة وإبداع في كل منتج</p>
-            </div>
-            <div class="production-grid">
-                <div class="production-item">
-                    <h3>الهدايا الترويجية</h3>
-                    <p>القطع بالليزر والحفر، تصميم وإنتاج الكؤوس، الطباعة الحرارية، الطباعة على جميع الأقمشة، الصناديق الخشبية والأكريليك، والطباعة المباشرة عالية الجودة.</p>
-                </div>
-                <div class="production-item">
-                    <h3>المطبوعات</h3>
-                    <p>تصميم الكتب والكتيبات، تنفيذ جميع المطبوعات المكتبية، ملصقات مميزة بمواد متنوعة، وتقنيات متقدمة مثل البارز، التغليف بالرقائق، القص، والغائر.</p>
-                </div>
-                <div class="production-item">
-                    <h3>التغليف</h3>
-                    <p>آلات القص وتغليف متخصص لجميع أنواع الصناديق المميزة والفاخرة، مجموعات ترحيب الموظفين، وكذلك التغليف الورقي والكرتوني والجلدي.</p>
-                </div>
-                <div class="production-item">
-                    <h3>التصميم والابتكار</h3>
-                    <p>فريق إبداعي متخصص في تصميم وابتكار منتجات فريدة مصممة خصيصاً لهوية علامتك التجارية ورؤيتك.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
+    
     <!-- Stats Section -->
     <section class="stats">
         <div class="container">
@@ -1012,46 +1117,6 @@
                 <div class="stat-item">
                     <h3 class="stat-number" data-target="50">0</h3>
                     <p>عضو فريق مكرس لتحقيق أفضل النتائج</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Departments Section -->
-    <section id="departments" class="departments">
-        <div class="container">
-            <div class="section-header">
-                <h2>أقسامنا</h2>
-                <p>في شركتنا، يلعب كل قسم دوراً حيوياً في تقديم الجودة والابتكار والتميز</p>
-            </div>
-            <div class="departments-grid">
-                <div class="department-card">
-                    <div class="department-icon">
-                        <i class="fas fa-palette"></i>
-                    </div>
-                    <h3>التصميم</h3>
-                    <p>يركز على المرئيات الإبداعية والعلامات التجارية والتصاميم المبتكرة التي تحقق الأفكار مع عكس هويتك.</p>
-                </div>
-                <div class="department-card">
-                    <div class="department-icon">
-                        <i class="fas fa-brain"></i>
-                    </div>
-                    <h3>الإبداع</h3>
-                    <p>يطور خبراؤنا الإبداعيون حملات جذابة ومفاهيم وحلول فريدة مصممة خصيصاً لرؤيتك.</p>
-                </div>
-                <div class="department-card">
-                    <div class="department-icon">
-                        <i class="fas fa-laptop-code"></i>
-                    </div>
-                    <h3>تقنية المعلومات</h3>
-                    <p>يوفر الدعم التقني الذكي والمنصات الرقمية وحلول التكنولوجيا الحديثة لتعزيز العمليات.</p>
-                </div>
-                <div class="department-card">
-                    <div class="department-icon">
-                        <i class="fas fa-users"></i>
-                    </div>
-                    <h3>الفعاليات والمعارض</h3>
-                    <p>متخصص في تنظيم المؤتمرات والمعارض والفعاليات الاحترافية مع تنفيذ سلس.</p>
                 </div>
             </div>
         </div>
@@ -1188,6 +1253,46 @@
                     </div>
                     <h3>الجامعات السعودية</h3>
                     <p>مهرجان المسرح الجامعي الثالث</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <h2>من نحن</h2>
+                <p>نبذة عن شركتنا وقيمنا</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>بيانات يوما - شريككم في التميز</h3>
+                    <p>نحن شركة رائدة في مجال الخدمات الإبداعية والحلول التسويقية المتكاملة. نتميز بتقديم خدمات عالية الجودة تجمع بين الإبداع والاحترافية، مع فهم عميق لاحتياجات عملائنا وتطلعات السوق.</p>
+                    <p>نؤمن بأهمية التميز في كل تفصيل، ونسعى دائماً لتقديم حلول مبتكرة تتجاوز توقعات العملاء، مع الحفاظ على أعلى معايير الجودة والمهنية.</p>
+                </div>
+                <div class="about-values">
+                    <div class="value-item">
+                        <div class="value-icon">
+                            <i class="fas fa-award"></i>
+                        </div>
+                        <h4>الجودة</h4>
+                        <p>نلتزم بأعلى معايير الجودة في كل ما نقدمه</p>
+                    </div>
+                    <div class="value-item">
+                        <div class="value-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <h4>الإبداع</h4>
+                        <p>حلول مبتكرة وأفكار خارجة عن المألوف</p>
+                    </div>
+                    <div class="value-item">
+                        <div class="value-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <h4>الثقة</h4>
+                        <p>علاقات طويلة الأمد مبنية على المصداقية</p>
+                    </div>
                 </div>
             </div>
         </div>

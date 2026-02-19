@@ -19,13 +19,15 @@
         }
         
         .logo h2 {
-            background: linear-gradient(135deg, #8B4513 0%, #A0522D 50%, #8B4513 100%);
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 50%, #ffffff 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            font-size: 2rem;
+            font-size: 2.5rem;
             margin: 0;
-            font-weight: 700;
+            font-weight: 900;
+            font-family: 'Arial Black', Arial, sans-serif;
+            letter-spacing: 1px;
             animation: logoGlow 2s ease-in-out infinite alternate;
         }
         
@@ -44,8 +46,11 @@
         
         .nav-menu a {
             text-decoration: none;
-            color: #333333;
-            font-weight: 500;
+            color: #ffffff;
+            font-weight: 600;
+            font-size: 1.2rem;
+            font-family: 'Arial', sans-serif;
+            letter-spacing: 0.5px;
             transition: all 0.3s ease;
             position: relative;
             animation: navLinkPulse 4s ease-in-out infinite;
@@ -57,7 +62,9 @@
         }
         
         .nav-menu a:hover {
-            color: #8B4513;
+            color: #303030b6;
+            transform: scale(1.1) translateY(-3px);
+            text-shadow: 0 2px 4px rgba(139, 69, 19, 0.3);
             animation: navLinkHover 0.3s ease;
         }
         
@@ -129,10 +136,10 @@
                 <ul class="nav-menu">
                     <li><a href="#home">الرئيسية</a></li>
                     <li><a href="#services">الخدمات</a></li>
-                    <li><a href="#production">الإنتاج</a></li>
-                    <li><a href="#departments">الأقسام</a></li>
                     <li><a href="#gallery">معرض الأعمال</a></li>
-                    <li><a href="#contact">اتصل بنا</a></li>
+                    <li><a href="#customers">عملائنا</a></li>
+                    <li><a href="#about">من نحن</a></li>
+                    <li><a href="#contact">تواصل بنا</a></li>
                 </ul>
                 <div class="hamburger">
                     <span></span>

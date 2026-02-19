@@ -115,7 +115,7 @@
 </style>
 
 <!-- Customers Slider Section -->
-<section class="customers-section">
+<section class="customers-section" id="customers">
     <div class="customers-container">
         <div class="section-header">
             <h2>عملاؤنا</h2>

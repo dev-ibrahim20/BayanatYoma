@@ -1,9 +1,9 @@
 <style>
         /* Footer Styles */
         .footer {
-            background: linear-gradient(135deg, #505038 0%, #4b4b33 50%, #24240e 100%);
+            background: linear-gradient(135deg, #484846 0%, #3a3a00 50%, #484846 100%);
             padding: 60px 20px 20px;
-            border-top: 1px solid rgba(80, 75, 51, 0.3);
+            border-top: 1px solid #5a5a00;
         }
         
         .footer-content {
@@ -21,7 +21,7 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
             font-size: 2rem;
-            margin-bottom: 12px;
+            margin-bottom: 16px;
             font-weight: 700;
         }
         
@@ -63,8 +63,8 @@
             align-items: center;
             max-width: 1200px;
             margin: 0 auto;
-            padding-top: 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 32px;
+            border-top: 1px solid #5a5a00;
         }
         
         .footer-bottom p {
@@ -74,30 +74,27 @@
         
         .social-links {
             display: flex;
-            gap: 1.5rem;
+            gap: 16px;
         }
         
         .social-links a {
-            color: #ffffff;
-            font-size: 1.5rem;
-            width: 45px;
-            height: 45px;
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 50%, #ffffff 100%);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            transition: all 0.3s ease;
+            color: #000000;
             text-decoration: none;
-            border: 2px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
         }
         
         .social-links a:hover {
-            color: #f8f9fa;
-            transform: translateY(-5px) scale(1.1);
-            background: rgba(255, 255, 255, 0.2);
-            border-color: rgba(255, 255, 255, 0.4);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(255, 255, 255, 0.3);
+            border-color: #ffffff;
         }
         
         @media (max-width: 768px) {

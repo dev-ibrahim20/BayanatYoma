@@ -1,10 +1,10 @@
     <style>
         .navbar {
-            background: rgba(55, 78, 68, 0.95);
+            background: rgba(244, 236, 212, 0.95);
             backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
             padding: 1rem 0;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             width: 100%;
             z-index: 1000;
         }
@@ -19,7 +19,7 @@
         }
         
         .logo h2 {
-            background: linear-gradient(135deg, #ffffff 0%, #4f382d 50%, #c6c0bb 100%);
+            background: linear-gradient(135deg, #8B4513 0%, #A0522D 50%, #8B4513 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -44,7 +44,7 @@
         
         .nav-menu a {
             text-decoration: none;
-            color: #ffffff;
+            color: #333333;
             font-weight: 500;
             transition: all 0.3s ease;
             position: relative;

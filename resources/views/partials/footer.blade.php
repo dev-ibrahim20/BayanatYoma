@@ -12,6 +12,7 @@
             gap: 48px;
             max-width: 1200px;
             margin: 0 auto 40px;
+            align-items: start;
         }
         
         .footer-logo h2 {
@@ -34,6 +35,16 @@
             font-size: 1.125rem;
             margin-bottom: 20px;
             font-weight: 600;
+        }
+        
+        .footer-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+        }
+        
+        .footer-section {
+            text-align: right;
         }
         
         .footer-section a {
@@ -63,30 +74,59 @@
         
         .social-links {
             display: flex;
-            gap: 1rem;
+            gap: 1.5rem;
         }
         
         .social-links a {
             color: #ffffff;
-            font-size: 1.2rem;
+            font-size: 1.5rem;
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
             transition: all 0.3s ease;
+            text-decoration: none;
+            border: 2px solid rgba(255, 255, 255, 0.2);
         }
         
         .social-links a:hover {
             color: #f8f9fa;
-            transform: translateY(-2px);
+            transform: translateY(-5px) scale(1.1);
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.4);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
         
         @media (max-width: 768px) {
             .footer-content {
                 grid-template-columns: 1fr;
                 gap: 30px;
+                text-align: center;
+            }
+            
+            .footer-links {
+                grid-template-columns: 1fr;
+                gap: 25px;
+                text-align: center;
+            }
+            
+            .footer-section {
+                text-align: center;
             }
             
             .footer-bottom {
                 flex-direction: column;
                 gap: 20px;
                 text-align: center;
+            }
+        }
+        
+        @media (max-width: 1024px) {
+            .footer-links {
+                grid-template-columns: repeat(2, 1fr);
             }
         }
     </style>

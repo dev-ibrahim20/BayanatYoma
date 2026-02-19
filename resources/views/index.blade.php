@@ -825,9 +825,9 @@
                     <div class="device-container">
                         <div class="device">
                             <div class="device-screen">
-                                <video autoplay muted loop playsinline>
-                                    <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
-                                    <source src="https://www.w3schools.com/html/mov_bbb.ogg" type="video/ogg">
+                                <video autoplay muted loop playsinline poster="https://picsum.photos/seed/video-poster/800/600.jpg">
+                                    <source src="{{ asset('assets/videos/123.mp4') }}" type="video/mp4">
+                                    <source src="{{ asset('assets/videos/123.ogg') }}" type="video/ogg">
                                     Your browser does not support the video tag.
                                 </video>
                             </div>

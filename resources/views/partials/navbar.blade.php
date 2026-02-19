@@ -138,7 +138,6 @@
                     <li><a href="#services">الخدمات</a></li>
                     <li><a href="#gallery">معرض الأعمال</a></li>
                     <li><a href="#customers">عملائنا</a></li>
-                    <li><a href="#about">من نحن</a></li>
                     <li><a href="#contact">تواصل بنا</a></li>
                 </ul>
                 <div class="hamburger">

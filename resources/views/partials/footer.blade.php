@@ -1,9 +1,9 @@
 <style>
         /* Footer Styles */
         .footer {
-            background: linear-gradient(135deg, #8B4513 0%, #A0522D 50%, #8B4513 100%);
+            background: linear-gradient(135deg, #505038 0%, #4b4b33 50%, #24240e 100%);
             padding: 60px 20px 20px;
-            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            border-top: 1px solid rgba(80, 75, 51, 0.3);
         }
         
         .footer-content {

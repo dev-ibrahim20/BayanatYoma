@@ -2,7 +2,7 @@
     /* Customers Slider Section */
     .customers-section {
         padding: 40px 0;
-        background: rgb(244, 236, 212);
+        background: linear-gradient(135deg, #505038 0%, #4b4b33 50%, #24240e 100%);
         overflow: hidden;
         position: relative;
         width: 100%;
@@ -59,12 +59,12 @@
         margin: 0 20px;
         border-radius: 50%;
         overflow: hidden;
-        background: white;
-        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        background: rgba(255, 255, 255, 0.1);
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
         transition: all 0.3s ease;
         border: 3px solid transparent;
-        background: linear-gradient(white, white) padding-box,
-                    linear-gradient(135deg, #b75f20 0%, #A0522D 50%, #8B4513 100%) border-box;
+        background: linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)) padding-box,
+                    linear-gradient(135deg, #505038 0%, #4b4b33 50%, #24240e 100%) border-box;
     }
     
     .customer-slide img {
@@ -76,15 +76,15 @@
     
     .customer-slide:hover {
         transform: scale(1.1);
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
         border: 3px solid transparent;
-        background: linear-gradient(white, white) padding-box,
-                    linear-gradient(135deg, #b75f20 0%, #A0522D 50%, #8B4513 100%) border-box;
+        background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)) padding-box,
+                    linear-gradient(135deg, #505038 0%, #4b4b33 50%, #24240e 100%) border-box;
     }
     
     .customer-slide:hover img {
         transform: scale(1.05);
-        filter: brightness(1.1);
+        filter: brightness(1.2);
     }
     
     @keyframes slideAnimation {

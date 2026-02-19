@@ -11,8 +11,8 @@
             font-family: Arial, Tahoma, sans-serif;
             margin: 0;
             padding: 0;
-            background: rgb(244, 236, 212);
-            color: #333333;
+            background: linear-gradient(135deg, #374E44 0%, #374E44 40%, #000000 100%);
+            color: #ffffff;
             min-height: 100vh;
             line-height: 1.6;
         }
@@ -109,7 +109,7 @@
         
         .hero {
             padding: 40px 20px 80px;
-            background: linear-gradient(135deg, #3a3a00 0%, #4d4d00 50%, #5a5a00 100%);
+            background: linear-gradient(135deg, #374E44 0%, #374E44 40%, #000000 100%);
             min-height: 100vh;
             display: flex;
             align-items: center;
@@ -440,8 +440,8 @@
         }
         
         .service-card {
-            background: linear-gradient(135deg, #4d4d00 0%, #3a3a00 100%);
-            border: 1px solid #5a5a00;
+            background: rgba(255, 255, 255, 0.95);
+            border: 1px solid rgba(80, 75, 51, 0.3);
             border-radius: 12px;
             padding: 32px;
             text-align: center;
@@ -471,13 +471,13 @@
         
         .service-card h3 {
             font-size: 1.25rem;
-            color: #ffffff;
+            color: #000000;
             margin-bottom: 16px;
             font-weight: 600;
         }
         
         .service-card p {
-            color: #ffffff;
+            color: #000000;
             line-height: 1.6;
         }
         
@@ -512,21 +512,21 @@
         
         .production-item h3 {
             font-size: 1.25rem;
-            color: #ffffff;
+            color: #000000;
             margin-bottom: 16px;
             font-weight: 600;
         }
         
         .production-item p {
-            color: #ffffff;
+            color: #000000;
             line-height: 1.6;
         }
         
         /* Stats Section Styles */
         .stats {
             padding: 80px 20px;
-            background: linear-gradient(135deg, #5a5a00 0%, #3a3a00 50%, #5a5a00 100%);
-            border-top: 1px solid #4d4d00;
+            background: linear-gradient(135deg, #4d4d00 0%, #3a3a00 50%, #4d4d00 100%);
+            border-top: 1px solid #5a5a00;
         }
         
         .stats-grid {
@@ -563,7 +563,7 @@
         }
         
         .stat-item p {
-            color: #ffffff;
+            color: #000000;
             font-size: 1rem;
         }
         
@@ -583,8 +583,8 @@
         }
         
         .department-card {
-            background: linear-gradient(135deg, #4d4d00 0%, #3a3a00 100%);
-            border: 1px solid #5a5a00;
+            background: rgba(255, 255, 255, 0.95);
+            border: 1px solid rgba(80, 75, 51, 0.3);
             border-radius: 12px;
             padding: 32px;
             text-align: center;
@@ -613,13 +613,13 @@
         
         .department-card h3 {
             font-size: 1.25rem;
-            color: #ffffff;
+            color: #000000;
             margin-bottom: 16px;
             font-weight: 600;
         }
         
         .department-card p {
-            color: #ffffff;
+            color: #000000;
             line-height: 1.6;
         }
         
@@ -639,8 +639,8 @@
         }
         
         .different-item {
-            background: linear-gradient(135deg, #3a3a00 0%, #4d4d00 100%);
-            border: 1px solid #5a5a00;
+            background: rgba(255, 255, 255, 0.95);
+            border: 1px solid rgba(80, 75, 51, 0.3);
             border-radius: 12px;
             padding: 24px;
             text-align: center;
@@ -669,13 +669,13 @@
         
         .different-item h3 {
             font-size: 1.125rem;
-            color: #ffffff;
+            color: #000000;
             margin-bottom: 12px;
             font-weight: 600;
         }
         
         .different-item p {
-            color: #ffffff;
+            color: #000000;
             line-height: 1.6;
         }
         
@@ -695,8 +695,8 @@
         }
         
         .gallery-item {
-            background: linear-gradient(135deg, #3a3a00 0%, #4d4d00 100%);
-            border: 1px solid #5a5a00;
+            background: rgba(255, 255, 255, 0.95);
+            border: 1px solid rgba(80, 75, 51, 0.3);
             border-radius: 12px;
             overflow: hidden;
             transition: all 0.3s ease;
@@ -729,13 +729,13 @@
         
         .gallery-item h3 {
             font-size: 1.125rem;
-            color: #ffffff;
+            color: #000000;
             margin: 16px;
             font-weight: 600;
         }
         
         .gallery-item p {
-            color: #ffffff;
+            color: #000000;
             margin: 0 16px 16px;
         }
         
@@ -764,8 +764,8 @@
             display: flex;
             align-items: center;
             gap: 20px;
-            background: linear-gradient(135deg, #4d4d00 0%, #3a3a00 100%);
-            border: 1px solid #5a5a00;
+            background: #ffffff;
+            border: 1px solid rgba(80, 75, 51, 0.3);
             border-radius: 12px;
             padding: 24px;
             transition: all 0.3s ease;
@@ -791,14 +791,15 @@
             flex-shrink: 0;
         }
         
-        .contact-details h3 {
+        .contact-item h3 {
             font-size: 1.125rem;
-            color: #ffffff;
+            color: #000000;
             margin-bottom: 8px;
             font-weight: 600;
         }
         
         .contact-details a {
+            color: #000000;
             color: #ffffff;
             text-decoration: none;
             transition: color 0.3s ease;
@@ -809,8 +810,8 @@
         }
         
         .contact-form {
-            background: linear-gradient(135deg, #4d4d00 0%, #3a3a00 100%);
-            border: 1px solid #5a5a00;
+            background: rgba(255, 255, 255, 0.95);
+            border: 1px solid rgba(80, 75, 51, 0.3);
             border-radius: 12px;
             padding: 32px;
         }
@@ -823,10 +824,10 @@
         .form-group textarea {
             width: 100%;
             padding: 16px;
-            background: #3a3a00;
-            border: 1px solid #5a5a00;
+            background: rgba(255, 255, 255, 0.8);
+            border: 1px solid rgba(80, 75, 51, 0.3);
             border-radius: 8px;
-            color: #ffffff;
+            color: #000000;
             font-size: 1rem;
             transition: all 0.3s ease;
         }
@@ -1011,17 +1012,17 @@
         
         /* Ensure all sections stay dark yellow */
         section {
-            background: linear-gradient(135deg, #3a3a00 0%, #4d4d00 50%, #3a3a00 100%) !important;
+            background: linear-gradient(135deg, #505038 0%, #4b4b33 50%, #24240e 100%) !important;
         }
         
         /* Override any potential white backgrounds */
         .navbar, .hero, .services, .production, .stats, .departments, .different, .gallery, .contact, .footer {
-            background: linear-gradient(135deg, #3a3a00 0%, #4d4d00 50%, #3a3a00 100%) !important;
+            background: linear-gradient(135deg, #505038 0%, #4b4b33 50%, #24240e 100%) !important;
         }
         
         /* Ensure navbar and hero match exactly */
         .navbar, .hero {
-            background: linear-gradient(135deg, #3a3a00 0%, #4d4d00 50%, #3a3a00 100%) !important;
+            background: linear-gradient(135deg, #505038 0%, #4b4b33 50%, #24240e 100%) !important;
         }
     </style>
 </head>
@@ -1283,56 +1284,56 @@
             <div class="gallery-grid">
                 <div class="gallery-item">
                     <div class="gallery-image">
-                        <img src="https://via.placeholder.com/400x300/1e3a8a/ffffff?text=جناح+البلدية" alt="جناح البلدية">
+                        <img src="https://picsum.photos/seed/event1/400/300.jpg" alt="جناح البلدية">
                     </div>
                     <h3>جناح البلدية</h3>
                     <p>الجوف</p>
                 </div>
                 <div class="gallery-item">
                     <div class="gallery-image">
-                        <img src="https://via.placeholder.com/400x300/1e3a8a/ffffff?text=مهرجان+الزيتون" alt="مهرجان الزيتون">
+                        <img src="https://picsum.photos/seed/event2/400/300.jpg" alt="مهرجان الزيتون">
                     </div>
                     <h3>مهرجان الزيتون</h3>
                     <p>الأحساء</p>
                 </div>
                 <div class="gallery-item">
                     <div class="gallery-image">
-                        <img src="https://via.placeholder.com/400x300/1e3a8a/ffffff?text=الذكرى+السنوية+الخامسة" alt="الذكرى السنوية الخامسة">
+                        <img src="https://picsum.photos/seed/event3/400/300.jpg" alt="الذكرى السنوية الخامسة">
                     </div>
                     <h3>الذكرى السنوية الخامسة</h3>
                     <p>بدر الدماغ تصميم</p>
                 </div>
                 <div class="gallery-item">
                     <div class="gallery-image">
-                        <img src="https://via.placeholder.com/400x300/1e3a8a/ffffff?text=مشروع+الصندوق+الثقافي" alt="مشروع الصندوق الثقافي">
+                        <img src="https://picsum.photos/seed/event4/400/300.jpg" alt="مشروع الصندوق الثقافي">
                     </div>
                     <h3>مشروع – الصندوق الثقافي</h3>
                     <p>منتدى بيبان</p>
                 </div>
                 <div class="gallery-item">
                     <div class="gallery-image">
-                        <img src="https://via.placeholder.com/400x300/1e3a8a/ffffff?text=غرفة+تجارة+المدينة" alt="غرفة تجارة المدينة">
+                        <img src="https://picsum.photos/seed/event5/400/300.jpg" alt="غرفة تجارة المدينة">
                     </div>
                     <h3>غرفة تجارة المدينة</h3>
                     <p>احتفال 55 عاماً</p>
                 </div>
                 <div class="gallery-item">
                     <div class="gallery-image">
-                        <img src="https://via.placeholder.com/400x300/1e3a8a/ffffff?text=الندوة+الثقافية" alt="الندوة الثقافية">
+                        <img src="https://picsum.photos/seed/event6/400/300.jpg" alt="الندوة الثقافية">
                     </div>
                     <h3>الندوة الثقافية للفنون الإسلامية</h3>
                     <p>وزارة الثقافة</p>
                 </div>
                 <div class="gallery-item">
                     <div class="gallery-image">
-                        <img src="https://via.placeholder.com/400x300/1e3a8a/ffffff?text=الكفاءة+المختبرية" alt="الكفاءة المختبرية">
+                        <img src="https://picsum.photos/seed/event7/400/300.jpg" alt="الكفاءة المختبرية">
                     </div>
                     <h3>الكفاءة المختبرية</h3>
                     <p>المؤتمر الخليجي السادس</p>
                 </div>
                 <div class="gallery-item">
                     <div class="gallery-image">
-                        <img src="https://via.placeholder.com/400x300/1e3a8a/ffffff?text=الجامعات+السعودية" alt="الجامعات السعودية">
+                        <img src="https://picsum.photos/seed/event8/400/300.jpg" alt="الجامعات السعودية">
                     </div>
                     <h3>الجامعات السعودية</h3>
                     <p>مهرجان المسرح الجامعي الثالث</p>

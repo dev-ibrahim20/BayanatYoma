@@ -20,51 +20,310 @@
         /* Hero Section Styles */
         
         .hero {
-            padding: 40px 20px 80px;
-            background: linear-gradient(135deg, #374E44 0%, #374E44 40%, #000000 100%);
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
+            padding: 100px 20px;
+            background: linear-gradient(135deg, #505038 0%, #4b4b33 50%, #24240e 100%);
+            border-top: 1px solid #585858;
             position: relative;
             overflow: hidden;
         }
         
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            /* background: radial-gradient(circle at 25% 25%, rgba(255, 204, 0, 0.1) 0%, transparent 50%), */
-                        /* radial-gradient(circle at 75% 75%, rgba(255, 235, 59, 0.05) 0%, transparent 50%), */
-                        /* radial-gradient(circle at 50% 50%, rgba(255, 245, 157, 0.03) 0%, transparent 70%); */
-            z-index: 0;
-        }
-        
         .hero-content {
-            max-width: 1200px;
-            margin: 0 auto;
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 4rem;
+            gap: 60px;
             align-items: center;
-            position: relative;
-            z-index: 1;
+            max-width: 1400px;
+            margin: 0 auto;
         }
         
         .hero-text {
-            animation: slideInFromRight 1s ease-out;
+            text-align: right;
+            color: #ffffff;
+            grid-column: 1;
         }
         
-        @keyframes slideInFromRight {
+        .hero-image {
+            grid-column: 2;
+            position: relative;
+        }
+        
+        .nav-arrows {
+            position: absolute;
+            left: -80px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            z-index: 10;
+        }
+        
+        .nav-arrow {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 50%, #ffffff 100%);
+            border: 3px solid rgba(255, 255, 255, 0.4);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+            color: #505038;
+            font-size: 1.5rem;
+        }
+        
+        .nav-arrow:hover {
+            transform: scale(1.15);
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 50%, #f8f9fa 100%);
+            box-shadow: 0 8px 30px rgba(255, 255, 255, 0.5);
+            border-color: rgba(255, 255, 255, 0.6);
+        }
+        
+        .nav-arrow:active {
+            transform: scale(0.95);
+        }
+        
+        .hero-heading h1 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin-bottom: 20px;
+            font-family: 'Arial Black', Arial, sans-serif;
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 50%, #ffffff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: 2px;
+            line-height: 1.2;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 40px;
+            font-family: 'Arial', sans-serif;
+            color: #f8f9fa;
+            letter-spacing: 1px;
+        }
+        
+        .hero-values-container {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        
+        .nav-arrows {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .nav-arrow {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 50%, #ffffff 100%);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            color: #505038;
+            font-size: 1.2rem;
+        }
+        
+        .nav-arrow:hover {
+            transform: scale(1.1);
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 50%, #f8f9fa 100%);
+            box-shadow: 0 6px 20px rgba(255, 255, 255, 0.4);
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+        
+        .nav-arrow:active {
+            transform: scale(0.95);
+        }
+        
+        .hero-values {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            flex: 1;
+        }
+        
+        .value-point {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            padding: 30px;
+            /* background: rgba(255, 255, 255, 0.1); */
+            border-radius: 12px;
+            /* border: 1px solid rgba(255, 255, 255, 0.2); */
+            transition: all 0.8s ease;
+            min-height: 120px;
+            text-align: center;
+        }
+        
+        .value-point .value-text {
+            text-align: center;
+        }
+        
+        .value-point .value-text h3 {
+            font-size: 2rem;
+            font-weight: 900;
+            margin-bottom: 15px;
+            font-family: 'Arial Black', Arial, sans-serif;
+            color: #ffffff;
+            letter-spacing: 1px;
+        }
+        
+        .value-point .value-text p {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            color: #f8f9fa;
+            line-height: 1.6;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 50%, #ffffff 100%);
+            color: #505038;
+            border: 2px solid #ffffff;
+            padding: 16px 32px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-family: 'Arial Black', Arial, sans-serif;
+            font-size: 1.1rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(255, 255, 255, 0.3);
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 50%, #f8f9fa 100%);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: #ffffff;
+            border: 2px solid #ffffff;
+            padding: 16px 32px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-family: 'Arial Black', Arial, sans-serif;
+            font-size: 1.1rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+        
+        .btn-secondary:hover {
+            background: #ffffff;
+            color: #505038;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(255, 255, 255, 0.3);
+        }
+        
+        /* Fade in animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+        
+        .fade-in-delay-1 {
+            animation-delay: 0.2s;
+        }
+        
+        .fade-in-delay-2 {
+            animation-delay: 0.6s;
+        }
+        
+        .fade-in-delay-3 {
+            animation-delay: 1.0s;
+        }
+        
+        .fade-in-delay-4 {
+            animation-delay: 1.4s;
+        }
+        
+        .fade-in-delay-5 {
+            animation-delay: 1.8s;
+        }
+        
+        @keyframes fadeInUp {
             0% {
                 opacity: 0;
-                transform: translateX(100px);
+                transform: translateY(30px);
             }
             100% {
                 opacity: 1;
-                transform: translateX(0);
+                transform: translateY(0);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero {
+                padding: 60px 20px;
+            }
+            
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                text-align: center;
+            }
+            
+            .hero-text {
+                text-align: center;
+            }
+            
+            .hero-heading h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.25rem;
+            }
+            
+            .hero-values {
+                gap: 20px;
+            }
+            
+            .value-point {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+            
+            .hero-buttons {
+                justify-content: center;
+            }
+        }
+        
+        @media (max-width: 1024px) and (min-width: 769px) {
+            .hero-content {
+                gap: 40px;
+            }
+            
+            .hero-heading h1 {
+                font-size: 3rem;
+            }
+            
+            .hero-values {
+                gap: 25px;
             }
         }
         
@@ -813,15 +1072,40 @@
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
-                    <h1>احتفل بلحظاتك السعيدة</h1>
-                    <p>الخبرة تتحول إلى التميز</p>
-                    <p>تجارب سلسة ومتكاملة</p>
-                    <div class="hero-buttons">
+                    <div class="hero-values">
+                        <div class="value-point fade-in" id="value1">
+                            <div class="value-text">
+                                <h3>الجودة</h3>
+                                <p>حلول مبتكرة وأفكار خارجة عن المألوفحلول مبتكرة وأفكار خارجة عن المألوفحلول مبتكرة وأفكار خارجة عن المألوفحلول مبتكرة وأفكار خارجة عن المألوفحلول مبتكرة وأفكار خارجة عن المألوفحلول مبتكرة وأفكار خارجة عن المألوفحلول مبتكرة وأفكار خارجة عن المألوفحلول مبتكرة وأفكار خارجة عن المألوفحلول مبتكرة وأفكار خارجة عن المألوفحلول مبتكرة وأفكار خارجة عن المألوفحلول مبتكرة وأفكار خارجة عن المألوفحلول مبتكرة وأفكار خارجة عن المألوفحلول مبتكرة وأفكار خارجة عن المألوفحلول مبتكرة وأفكار خارجة عن المألوفحلول مبتكرة وأفكار خارجة عن المألوفنلتزم بأعلى معايير الجودة في كل ما نقدمه</p>
+                            </div>
+                        </div>
+                        <div class="value-point fade-in" id="value2" style="display: none;">
+                            <div class="value-text">
+                                <h3>الإبداع</h3>
+                                <p>حلول مبتكرة وأفكار خارجة عن المألوف</p>
+                            </div>
+                        </div>
+                        <div class="value-point fade-in" id="value3" style="display: none;">
+                            <div class="value-text">
+                                <h3>الثقة</h3>
+                                <p>علاقات طويلة الأمد مبنية على المصداقية</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hero-buttons fade-in-delay-5">
                         <a href="#services" class="btn-primary">اكتشف خدماتنا</a>
                         <a href="#contact" class="btn-secondary">تواصل معنا</a>
                     </div>
                 </div>
                 <div class="hero-image">
+                    <div class="nav-arrows">
+                        <button class="nav-arrow nav-prev" onclick="previousValue()">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                        <button class="nav-arrow nav-next" onclick="nextValue()">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                    </div>
                     <div class="device-container">
                         <div class="device">
                             <div class="device-screen">
@@ -989,6 +1273,7 @@
     @include('partials.gallery')
 
     @include('partials.contact')
+    @include('partials.customers')
 
     @include('partials.footer')
 
@@ -998,5 +1283,45 @@
     </button>
 
     <script src="script.js"></script>
+    <script>
+        // Sequential display of value points
+        document.addEventListener('DOMContentLoaded', function() {
+            const values = ['value1', 'value2', 'value3'];
+            let currentIndex = 0;
+            
+            function showValue(index) {
+                // Hide all values
+                values.forEach((value, i) => {
+                    const element = document.getElementById(value);
+                    element.style.display = 'none';
+                    element.style.opacity = '0';
+                    element.style.transform = 'translateY(30px)';
+                });
+                
+                // Show selected value
+                const selectedValue = document.getElementById(values[index]);
+                selectedValue.style.display = 'flex';
+                selectedValue.style.opacity = '1';
+                selectedValue.style.transform = 'translateY(0)';
+                
+                currentIndex = index;
+            }
+            
+            function nextValue() {
+                const nextIndex = (currentIndex + 1) % values.length;
+                showValue(nextIndex);
+            }
+            
+            function previousValue() {
+                const prevIndex = (currentIndex - 1 + values.length) % values.length;
+                showValue(prevIndex);
+            }
+            
+            // Start with first value
+            setTimeout(() => {
+                showValue(0);
+            }, 1000);
+        });
+    </script>
 </body>
 </html>

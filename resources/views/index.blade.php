@@ -1104,26 +1104,40 @@
                         <div class="value-point" id="value1">
                             <div class="value-text">
                                 <h3>الجودة</h3>
-                                <p> يجب ان نلتزك بكل شيء عن اي شئء نلتزم بأعلى معايير الجودة في كل ما نقدمه</p>
+                                <p> 
+                                    يجب ان نلتزك بكل شيء عن اي شئء نلتزم بأعلى معايير الجودة في كل ما نقدمه
+                                    يجب ان نلتزك بكل شيء عن اي شئء نلتزم بأعلى معايير الجودة في كل ما نقدمه
+                                    يجب ان نلتزك بكل شيء عن اي شئء نلتزم بأعلى معايير الجودة في كل ما نقدمه
+                                </p>
                             </div>
                         </div>
                         <div class="value-point" id="value2">
                             <div class="value-text">
                                 <h3>الإبداع</h3>
-                                <p>حلول مبتكرة وأفكار خارجة عن المألوف</p>
+                                <p>
+                                    حلول مبتكرة وأفكار خارجة عن المألوف
+                                    يجب ان نلتزك بكل شيء عن اي شئء نلتزم بأعلى معايير الجودة في كل ما نقدمه
+                                    يجب ان نلتزك بكل شيء عن اي شئء نلتزم بأعلى معايير الجودة في كل ما نقدمه
+                                    يجب ان نلتزك بكل شيء عن اي شئء نلتزم بأعلى معايير الجودة في كل ما نقدمه
+                                </p>
                             </div>
                         </div>
                         <div class="value-point" id="value3">
                             <div class="value-text">
                                 <h3>الثقة</h3>
-                                <p>علاقات طويلة الأمد مبنية على المصداقية</p>
+                                <p>
+                                    علاقات طويلة الأمد مبنية على المصداقية
+                                    يجب ان نلتزك بكل شيء عن اي شئء نلتزم بأعلى معايير الجودة في كل ما نقدمه
+                                    يجب ان نلتزك بكل شيء عن اي شئء نلتزم بأعلى معايير الجودة في كل ما نقدمه
+                                    يجب ان نلتزك بكل شيء عن اي شئء نلتزم بأعلى معايير الجودة في كل ما نقدمه
+                                </p>
                             </div>
                         </div>
                     </div>
-                    <div class="hero-buttons fade-in-delay-5">
+                    {{-- <div class="hero-buttons fade-in-delay-5">
                         <a href="#services" class="btn-primary">اكتشف خدماتنا</a>
                         <a href="#contact" class="btn-secondary">تواصل معنا</a>
-                    </div>
+                    </div> --}}
                 </div>
                 <div class="hero-image">
                     <div class="nav-arrows">
@@ -1151,59 +1165,7 @@
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section id="services" class="services">
-        <div class="container">
-            <div class="section-header">
-                <h2>خدماتنا</h2>
-                <p>السهولة والتنظيم المتميز</p>
-            </div>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-lightbulb"></i>
-                    </div>
-                    <h3>أنظمة الإضاءة</h3>
-                    <p>نقدم حلولاً إضاءة مبتكرة تخلق الأجواء المثالية لأي فعالية أو مساحة.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-volume-up"></i>
-                    </div>
-                    <h3>أنظمة الصوت</h3>
-                    <p>إعدادات صوتية احترافية توفر صوتاً واضحاً للمؤتمرات والحفلات والفعاليات الخاصة.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-camera"></i>
-                    </div>
-                    <h3>التوثيق</h3>
-                    <p>خدمات توثيق الفعاليات الكاملة بما في ذلك التصوير الفوتوغرافي والفيديو والتقارير.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-hotel"></i>
-                    </div>
-                    <h3>الضيافة</h3>
-                    <p>خدمات ضيافة استثنائية لضمان شعور ضيوفك بالترحيب والعناية الكاملة.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-calendar-alt"></i>
-                    </div>
-                    <h3>منظمو الفعاليات</h3>
-                    <p>تخطيط وإدارة فعاليات خبراء لجعل فعالياتك المؤسسية أو الاجتماعية سلسة.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-gift"></i>
-                    </div>
-                    <h3>الهدايا</h3>
-                    <p>حلول هدايا مختارة للعملاء والموظفين أو الحاضرين في الفعاليات تترك انطباعاً دائماً.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+    @include('partials.services')
 
     
     <!-- Stats Section -->

@@ -165,7 +165,7 @@
             min-height: 120px;
             text-align: center;
             opacity: 0;
-            transform: translateY(30px) scale(0.9);
+            transform: translateY(100px) scale(0.9);
             filter: blur(2px);
             position: absolute;
             width: 100%;
@@ -183,8 +183,8 @@
         
         .value-point.exit {
             opacity: 0;
-            transform: translateY(-30px) scale(0.9);
-            filter: blur(2px);
+            transform: translateX(100px) scale(0.8);
+            filter: blur(3px);
         }
         
         .hero-values {

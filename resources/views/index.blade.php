@@ -160,12 +160,40 @@
             justify-content: center;
             gap: 20px;
             padding: 30px;
-            /* background: rgba(255, 255, 255, 0.1); */
             border-radius: 12px;
-            /* border: 1px solid rgba(255, 255, 255, 0.2); */
-            transition: all 0.8s ease;
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
             min-height: 120px;
             text-align: center;
+            opacity: 0;
+            transform: translateY(30px) scale(0.9);
+            filter: blur(2px);
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+        }
+        
+        .value-point.active {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+            filter: blur(0);
+            position: relative;
+        }
+        
+        .value-point.exit {
+            opacity: 0;
+            transform: translateY(-30px) scale(0.9);
+            filter: blur(2px);
+        }
+        
+        .hero-values {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            flex: 1;
+            position: relative;
+            min-height: 180px;
         }
         
         .value-point .value-text {
@@ -1073,19 +1101,19 @@
             <div class="hero-content">
                 <div class="hero-text">
                     <div class="hero-values">
-                        <div class="value-point fade-in" id="value1">
+                        <div class="value-point" id="value1">
                             <div class="value-text">
                                 <h3>الجودة</h3>
-                                <p>حلول مبتكرة وأفكار خارجة عن المألوفحلول مبتكرة وأفكار خارجة عن المألوفحلول مبتكرة وأفكار خارجة عن المألوفحلول مبتكرة وأفكار خارجة عن المألوفحلول مبتكرة وأفكار خارجة عن المألوفحلول مبتكرة وأفكار خارجة عن المألوفحلول مبتكرة وأفكار خارجة عن المألوفحلول مبتكرة وأفكار خارجة عن المألوفحلول مبتكرة وأفكار خارجة عن المألوفحلول مبتكرة وأفكار خارجة عن المألوفحلول مبتكرة وأفكار خارجة عن المألوفحلول مبتكرة وأفكار خارجة عن المألوفحلول مبتكرة وأفكار خارجة عن المألوفحلول مبتكرة وأفكار خارجة عن المألوفحلول مبتكرة وأفكار خارجة عن المألوفنلتزم بأعلى معايير الجودة في كل ما نقدمه</p>
+                                <p> يجب ان نلتزك بكل شيء عن اي شئء نلتزم بأعلى معايير الجودة في كل ما نقدمه</p>
                             </div>
                         </div>
-                        <div class="value-point fade-in" id="value2" style="display: none;">
+                        <div class="value-point" id="value2">
                             <div class="value-text">
                                 <h3>الإبداع</h3>
                                 <p>حلول مبتكرة وأفكار خارجة عن المألوف</p>
                             </div>
                         </div>
-                        <div class="value-point fade-in" id="value3" style="display: none;">
+                        <div class="value-point" id="value3">
                             <div class="value-text">
                                 <h3>الثقة</h3>
                                 <p>علاقات طويلة الأمد مبنية على المصداقية</p>
@@ -1284,43 +1312,103 @@
 
     <script src="script.js"></script>
     <script>
-        // Sequential display of value points
+        // Professional dynamic value points display
         document.addEventListener('DOMContentLoaded', function() {
             const values = ['value1', 'value2', 'value3'];
             let currentIndex = 0;
+            let autoRotateInterval;
+            let isTransitioning = false;
             
-            function showValue(index) {
-                // Hide all values
-                values.forEach((value, i) => {
-                    const element = document.getElementById(value);
-                    element.style.display = 'none';
-                    element.style.opacity = '0';
-                    element.style.transform = 'translateY(30px)';
-                });
+            function showValue(index, direction = 'next') {
+                if (isTransitioning) return;
+                isTransitioning = true;
                 
-                // Show selected value
-                const selectedValue = document.getElementById(values[index]);
-                selectedValue.style.display = 'flex';
-                selectedValue.style.opacity = '1';
-                selectedValue.style.transform = 'translateY(0)';
+                const currentElement = document.getElementById(values[currentIndex]);
+                const nextElement = document.getElementById(values[index]);
+                
+                // Exit animation for current element
+                currentElement.classList.add('exit');
+                currentElement.classList.remove('active');
+                
+                // Prepare next element
+                nextElement.classList.remove('exit');
+                
+                // Show next element with entrance animation
+                setTimeout(() => {
+                    nextElement.classList.add('active');
+                    
+                    setTimeout(() => {
+                        currentElement.classList.remove('exit');
+                        isTransitioning = false;
+                    }, 100);
+                }, 300);
                 
                 currentIndex = index;
+                
+                // Update navigation arrows visual feedback
+                updateNavArrows();
             }
             
             function nextValue() {
                 const nextIndex = (currentIndex + 1) % values.length;
-                showValue(nextIndex);
+                showValue(nextIndex, 'next');
+                resetAutoRotate();
             }
             
             function previousValue() {
                 const prevIndex = (currentIndex - 1 + values.length) % values.length;
-                showValue(prevIndex);
+                showValue(prevIndex, 'prev');
+                resetAutoRotate();
             }
             
-            // Start with first value
+            function startAutoRotate() {
+                autoRotateInterval = setInterval(() => {
+                    nextValue();
+                }, 4000);
+            }
+            
+            function stopAutoRotate() {
+                clearInterval(autoRotateInterval);
+            }
+            
+            function resetAutoRotate() {
+                stopAutoRotate();
+                startAutoRotate();
+            }
+            
+            function updateNavArrows() {
+                const prevBtn = document.querySelector('.nav-prev');
+                const nextBtn = document.querySelector('.nav-next');
+                
+                // Add pulse effect to arrows
+                [prevBtn, nextBtn].forEach(btn => {
+                    btn.style.transform = 'scale(1.1)';
+                    setTimeout(() => {
+                        btn.style.transform = 'scale(1)';
+                    }, 200);
+                });
+            }
+            
+            // Make functions global for onclick handlers
+            window.nextValue = nextValue;
+            window.previousValue = previousValue;
+            
+            // Initialize
             setTimeout(() => {
                 showValue(0);
+                startAutoRotate();
             }, 1000);
+            
+            // Pause auto-rotation on hover
+            const heroValues = document.querySelector('.hero-values');
+            heroValues.addEventListener('mouseenter', stopAutoRotate);
+            heroValues.addEventListener('mouseleave', startAutoRotate);
+            
+            // Add keyboard navigation
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowLeft') nextValue();
+                if (e.key === 'ArrowRight') previousValue();
+            });
         });
     </script>
 </body>

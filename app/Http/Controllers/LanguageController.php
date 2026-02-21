@@ -13,6 +13,12 @@ class LanguageController extends Controller
             Session::put('locale', $locale);
         }
         
+        // Get the previous URL to redirect back to the same page
+        $previousUrl = url()->previous();
+        if ($previousUrl) {
+            return redirect($previousUrl);
+        }
+        
         return redirect()->back();
     }
 }

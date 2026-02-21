@@ -1,5 +1,7 @@
 @extends('layouts.master')
 
+@section('title', __('messages.logo'))
+
 @section('content')
     @include('partials.hero')
     @include('partials.services')

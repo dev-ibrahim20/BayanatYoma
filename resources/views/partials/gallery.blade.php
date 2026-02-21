@@ -108,6 +108,7 @@
     }
 </style>
 
+@section('title', __('messages.gallery_title'))
 <!-- Gallery Section -->
 <section id="gallery" class="gallery">
     <div class="container">

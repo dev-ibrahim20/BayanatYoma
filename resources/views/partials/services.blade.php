@@ -1,3 +1,4 @@
+@section('title', __('messages.services_title'))
 <style>
 /* Services Section Styles */
 .services {

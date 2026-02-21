@@ -150,6 +150,7 @@
     }
 </style>
 
+@section('title', __('messages.contact_title'))
 <!-- Contact Section -->
 <section id="contact" class="contact">
     <div class="container">

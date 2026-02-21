@@ -1,3 +1,4 @@
+@section('title', __('messages.home'))
 <style>
 /* Mobile First - Base Styles */
 .hero {

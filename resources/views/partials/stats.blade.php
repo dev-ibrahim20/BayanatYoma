@@ -78,6 +78,7 @@
 </style>
 
 
+@section('title', __('messages.stats_title'))
 <!-- Stats Section -->
 <section class="stats">
     <div class="container">

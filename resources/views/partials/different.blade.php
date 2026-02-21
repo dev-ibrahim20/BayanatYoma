@@ -104,6 +104,7 @@
 }
 </style>
 
+@section('title', __('messages.different_title'))
 <!-- Different Section -->
 <section class="different">
     <div class="container">

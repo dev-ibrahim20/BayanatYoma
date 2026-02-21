@@ -1,3 +1,5 @@
+
+@section('title', __('messages.customers'))
 <style>
     /* Customers Slider Section */
     .customers-section {
@@ -116,7 +118,7 @@
     }
 </style>
 
-<!-- Customers Slider Section -->
+<!-- Customers Section -->
 <section class="customers-section" id="customers">
     <div class="customers-container">
         <div class="section-header">

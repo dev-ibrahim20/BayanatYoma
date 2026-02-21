@@ -226,29 +226,150 @@
         }
         
         @media (max-width: 768px) {
-            .nav-menu {
-                display: none;
+            .navbar-container {
+                padding: 0 15px;
             }
+            
+            .nav-content {
+                flex-wrap: wrap;
+                padding: 10px 0;
+            }
+            
+            .logo {
+                flex: 1;
+                order: 2;
+                text-align: center;
+                margin: 0;
+            }
+            
+            .logo h2 {
+                font-size: 1.5rem;
+            }
+            
+            .language-switcher {
+                order: 1;
+                margin-right: auto;
+                margin-left: 0;
+            }
+            
+            .language-select {
+                width: 120px;
+                height: 35px;
+                font-size: 0.8rem;
+                padding-left: 30px;
+                padding-right: 25px;
+            }
+            
+            .language-switcher::before {
+                left: 10px;
+                font-size: 0.8rem;
+            }
+            
             .hamburger {
+                order: 3;
                 display: flex;
                 flex-direction: column;
                 gap: 4px;
+                margin-left: 10px;
             }
+            
             .hamburger span {
-                width: 25px;
-                height: 3px;
-                background: #333;
+                width: 20px;
+                height: 2px;
+                background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 50%, #ffffff 100%);
                 border-radius: 2px;
                 transition: all 0.3s ease;
             }
-            .language-switcher {
-                order: -1;
+            
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: linear-gradient(135deg, #505038 0%, #4b4b33 50%, #24240e 100%);
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+                border-top: 1px solid rgba(255, 255, 255, 0.1);
+                z-index: 1000;
+            }
+            
+            .nav-menu.active {
+                display: flex;
+            }
+            
+            .nav-menu li {
+                margin: 10px 0;
+                text-align: center;
+            }
+            
+            .nav-menu a {
+                font-size: 1rem;
+                padding: 12px 20px;
+                border-radius: 8px;
+                transition: all 0.3s ease;
+            }
+            
+            .nav-menu a:hover {
+                background: rgba(255, 255, 255, 0.1);
+                transform: translateY(-2px);
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .navbar-container {
+                padding: 0 10px;
+            }
+            
+            .logo h2 {
+                font-size: 1.3rem;
+            }
+            
+            .language-select {
+                width: 100px;
+                height: 32px;
+                font-size: 0.75rem;
+                padding-left: 25px;
+                padding-right: 20px;
+            }
+            
+            .language-switcher::before {
+                left: 8px;
+                font-size: 0.7rem;
+            }
+            
+            .hamburger span {
+                width: 18px;
+                height: 2px;
+            }
+            
+            .nav-menu a {
+                font-size: 0.9rem;
+                padding: 10px 15px;
+            }
+        }
+        
+        @media (max-width: 360px) {
+            .logo h2 {
+                font-size: 1.1rem;
+            }
+            
+            .language-select {
+                width: 90px;
+                height: 30px;
+                font-size: 0.7rem;
+            }
+            
+            .nav-menu a {
+                font-size: 0.85rem;
+                padding: 8px 12px;
             }
         }
     </style>
     <!-- Navigation -->
     <nav class="navbar">
-        <div class="container">
+        <div class="container navbar-container">
             <div class="nav-content">
                 <div class="logo">
                     <h2>{{ __('messages.logo') }}</h2>
@@ -263,7 +384,7 @@
                 <div class="language-switcher">
                     <select class="language-select" onchange="window.location.href=this.value">
                         <option value="{{ route('language.switch', 'ar') }}" {{ app()->getLocale() == 'ar' ? 'selected' : '' }}>
-                            العربية
+                            Arabic
                         </option>
                         <option value="{{ route('language.switch', 'en') }}" {{ app()->getLocale() == 'en' ? 'selected' : '' }}>
                             English

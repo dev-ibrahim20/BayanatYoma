@@ -123,15 +123,15 @@
                 <div class="different-icon">
                     <i class="fas fa-handshake"></i>
                 </div>
-                <h3>الالتزام</h3>
-                <p>نحترم المواعيد النهائية ونقدم النتائج في الوقت المحدد، في كل مرة.</p>
+                <h3>{{ __('messages.commitment') }}</h3>
+                <p>{{ __('messages.commitment_text') }}</p>
             </div>
             <div class="different-item">
                 <div class="different-icon">
                     <i class="fas fa-tachometer-alt"></i>
                 </div>
-                <h3>السرعة</h3>
-                <p>تنفيذ سريع وفعال دون المساس بالجودة.</p>
+                <h3>{{ __('messages.speed') }}</h3>
+                <p>{{ __('messages.speed_text') }}</p>
             </div>
             <div class="different-item">
                 <div class="different-icon">
@@ -144,8 +144,8 @@
                 <div class="different-icon">
                     <i class="fas fa-lightbulb"></i>
                 </div>
-                <h3>الأفكار المبتكرة</h3>
-                <p>مفاهيم إبداعية وحلول جديدة تجعلك تتميز.</p>
+                <h3>{{ __('messages.creative_ideas') }}</h3>
+                <p>{{ __('messages.creative_ideas_text') }}</p>
             </div>
             <div class="different-item">
                 <div class="different-icon">
@@ -158,8 +158,8 @@
                 <div class="different-icon">
                     <i class="fas fa-shield-alt"></i>
                 </div>
-                <h3>شراكات موثوقة</h3>
-                <p>بناء علاقات طويلة الأمد مع العملاء بناءً على الثقة والنتائج.</p>
+                <h3>{{ __('messages.reliable_partnerships') }}</h3>
+                <p>{{ __('messages.reliable_partnerships_text') }}</p>
             </div>
             <div class="different-item">
                 <div class="different-icon">

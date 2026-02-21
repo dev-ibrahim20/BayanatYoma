@@ -118,59 +118,59 @@
         <div class="gallery-grid">
             <div class="gallery-item">
                 <div class="gallery-image">
-                    <img src="https://picsum.photos/seed/event1/400/300.jpg" alt="جناح البلدية">
+                    <img src="https://picsum.photos/seed/event1/400/300.jpg" alt="{{ __('messages.gallery_event1_alt') }}">
                 </div>
-                <h3>جناح البلدية</h3>
-                <p>الجوف</p>
+                <h3>{{ __('messages.gallery_event1_title') }}</h3>
+                <p>{{ __('messages.gallery_event1_text') }}</p>
             </div>
             <div class="gallery-item">
                 <div class="gallery-image">
-                    <img src="https://picsum.photos/seed/event2/400/300.jpg" alt="مهرجان الزيتون">
+                    <img src="https://picsum.photos/seed/event2/400/300.jpg" alt="{{ __('messages.gallery_event2_alt') }}">
                 </div>
-                <h3>مهرجان الزيتون</h3>
-                <p>الأحساء</p>
+                <h3>{{ __('messages.gallery_event2_title') }}</h3>
+                <p>{{ __('messages.gallery_event2_text') }}</p>
             </div>
             <div class="gallery-item">
                 <div class="gallery-image">
-                    <img src="https://picsum.photos/seed/event3/400/300.jpg" alt="الذكرى السنوية الخامسة">
+                    <img src="https://picsum.photos/seed/event3/400/300.jpg" alt="{{ __('messages.gallery_event3_alt') }}">
                 </div>
-                <h3>الذكرى السنوية الخامسة</h3>
-                <p>بدر الدماغ تصميم</p>
+                <h3>{{ __('messages.gallery_event3_title') }}</h3>
+                <p>{{ __('messages.gallery_event3_text') }}</p>
             </div>
             <div class="gallery-item">
                 <div class="gallery-image">
-                    <img src="https://picsum.photos/seed/event4/400/300.jpg" alt="مشروع الصندوق الثقافي">
+                    <img src="https://picsum.photos/seed/event4/400/300.jpg" alt="{{ __('messages.gallery_event4_alt') }}">
                 </div>
-                <h3>مشروع – الصندوق الثقافي</h3>
-                <p>منتدى بيبان</p>
+                <h3>{{ __('messages.gallery_event4_title') }}</h3>
+                <p>{{ __('messages.gallery_event4_text') }}</p>
             </div>
             <div class="gallery-item">
                 <div class="gallery-image">
-                    <img src="https://picsum.photos/seed/event5/400/300.jpg" alt="غرفة تجارة المدينة">
+                    <img src="https://picsum.photos/seed/event5/400/300.jpg" alt="{{ __('messages.gallery_event5_alt') }}">
                 </div>
-                <h3>غرفة تجارة المدينة</h3>
-                <p>احتفال 55 عاماً</p>
+                <h3>{{ __('messages.gallery_event5_title') }}</h3>
+                <p>{{ __('messages.gallery_event5_text') }}</p>
             </div>
             <div class="gallery-item">
                 <div class="gallery-image">
-                    <img src="https://picsum.photos/seed/event6/400/300.jpg" alt="الندوة الثقافية">
+                    <img src="https://picsum.photos/seed/event6/400/300.jpg" alt="{{ __('messages.gallery_event6_alt') }}">
                 </div>
-                <h3>الندوة الثقافية للفنون الإسلامية</h3>
-                <p>وزارة الثقافة</p>
+                <h3>{{ __('messages.gallery_event6_title') }}</h3>
+                <p>{{ __('messages.gallery_event6_text') }}</p>
             </div>
             <div class="gallery-item">
                 <div class="gallery-image">
-                    <img src="https://picsum.photos/seed/event7/400/300.jpg" alt="الكفاءة المختبرية">
+                    <img src="https://picsum.photos/seed/event7/400/300.jpg" alt="{{ __('messages.gallery_event7_alt') }}">
                 </div>
-                <h3>الكفاءة المختبرية</h3>
-                <p>المؤتمر الخليجي السادس</p>
+                <h3>{{ __('messages.gallery_event7_title') }}</h3>
+                <p>{{ __('messages.gallery_event7_text') }}</p>
             </div>
             <div class="gallery-item">
                 <div class="gallery-image">
-                    <img src="https://picsum.photos/seed/event8/400/300.jpg" alt="الجامعات السعودية">
+                    <img src="https://picsum.photos/seed/event8/400/300.jpg" alt="{{ __('messages.gallery_event8_alt') }}">
                 </div>
-                <h3>الجامعات السعودية</h3>
-                <p>مهرجان المسرح الجامعي الثالث</p>
+                <h3>{{ __('messages.gallery_event8_title') }}</h3>
+                <p>{{ __('messages.gallery_event8_text') }}</p>
             </div>
         </div>
     </div>

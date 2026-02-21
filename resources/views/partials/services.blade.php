@@ -12,18 +12,20 @@
 }
 
 .section-header h2 {
-    font-size: 2.5rem;
-    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 50%, #ffffff 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    font-size: 3.5rem;
+    color: #ffffff;
     margin-bottom: 1rem;
-    font-weight: 700;
+    font-weight: 900;
+    font-family: 'Arial Black', Arial, sans-serif;
+    letter-spacing: 2px;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .section-header p {
-    font-size: 1.2rem;
+    font-size: 1.8rem;
     color: #ffffff;
+    font-weight: 600;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .services-grid {

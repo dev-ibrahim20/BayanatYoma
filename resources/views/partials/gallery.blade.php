@@ -3,8 +3,29 @@
     .gallery {
         padding: 80px 20px;
         background: linear-gradient(135deg, #505038 0%, #4b4b33 50%, #24240e 100%);
-;
         border-top: 1px solid #484846;
+    }
+    
+    .section-header {
+        text-align: center;
+        margin-bottom: 60px;
+    }
+    
+    .section-header h2 {
+        font-size: 3.5rem;
+        color: #ffffff;
+        margin-bottom: 1rem;
+        font-weight: 900;
+        font-family: 'Arial Black', Arial, sans-serif;
+        letter-spacing: 2px;
+        text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    }
+    
+    .section-header p {
+        font-size: 1.8rem;
+        color: #ffffff;
+        font-weight: 600;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
     }
     
     .gallery-grid {

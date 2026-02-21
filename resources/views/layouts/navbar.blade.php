@@ -137,8 +137,8 @@
                     <li><a href="#home">الرئيسية</a></li>
                     <li><a href="#services">الخدمات</a></li>
                     <li><a href="#gallery">معرض الأعمال</a></li>
-                    <li><a href="#customers">عملائنا</a></li>
                     <li><a href="#contact">تواصل بنا</a></li>
+                    <li><a href="#customers">عملائنا</a></li>
                 </ul>
                 <div class="hamburger">
                     <span></span>

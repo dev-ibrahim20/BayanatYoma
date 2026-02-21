@@ -36,7 +36,7 @@
             100% { filter: drop-shadow(0 0 20px rgba(118, 75, 162, 0.8)); }
         }
         
-        .nav-menu { display: none !important;
+        .nav-menu { 
             display: flex;
             list-style: none;
             gap: 2rem;
@@ -400,10 +400,10 @@
                 <div class="language-switcher">
                     <select class="language-select" onchange="window.location.href=this.value">
                         <option value="{{ route('language.switch', 'ar') }}" {{ app()->getLocale() == 'ar' ? 'selected' : '' }}>
-                            Arabic
+                            {{ app()->getLocale() == 'ar' ? 'العربية' : 'Arabic' }}
                         </option>
                         <option value="{{ route('language.switch', 'en') }}" {{ app()->getLocale() == 'en' ? 'selected' : '' }}>
-                            English
+                            {{ app()->getLocale() == 'en' ? 'English' : 'English' }}
                         </option>
                     </select>
                 </div>

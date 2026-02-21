@@ -15,6 +15,64 @@
             color: #ffffff;
             min-height: 100vh;
             line-height: 1.6;
+            overflow-x: hidden; /* Prevent horizontal scrolling */
+            width: 100vw; /* Full viewport width */
+            max-width: 100vw; /* Prevent overflow */
+        }
+        
+        /* Center the entire page */
+        html, body {
+            width: 100%;
+            max-width: 100%;
+            position: relative;
+            overflow-x: hidden;
+        }
+        
+        /* Container for centering content */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px; /* Reduced padding for mobile */
+            width: 100%;
+            box-sizing: border-box;
+        }
+        
+        /* Mobile responsive adjustments */
+        @media (max-width: 768px) {
+            body {
+                padding: 0;
+                margin: 0;
+                width: 100vw;
+                overflow-x: hidden;
+            }
+            
+            .container {
+                padding: 0 10px;
+                width: calc(100% - 20px);
+            }
+            
+            /* Ensure no element overflows */
+            * {
+                box-sizing: border-box;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 8px;
+                width: calc(100% - 16px);
+            }
+        }
+        
+        /* Footer positioning */
+        footer {
+            position: relative;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            margin-top: auto;
+            overflow-x: hidden;
         }
         
         /* Override any potential white backgrounds */

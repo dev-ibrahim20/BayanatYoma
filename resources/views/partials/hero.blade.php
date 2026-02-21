@@ -253,10 +253,10 @@
     box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
-/* Language-specific positioning - Always on left side */
+/* Language-specific positioning - Always on left side of values */
 html[dir="ltr"] .nav-arrows {
     position: absolute;
-    left: -80px;
+    left: -100px;
     right: auto;
     top: 50%;
     transform: translateY(-50%);
@@ -379,7 +379,7 @@ html[dir="ltr"] .nav-arrow.nav-next i {
     
     .nav-arrows {
         position: absolute;
-        left: -60px;
+        left: -80px;
         top: 50%;
         transform: translateY(-50%);
         flex-direction: column;
@@ -459,6 +459,35 @@ html[dir="ltr"] .nav-arrow.nav-next i {
         width: 60px;
         height: 6px;
         bottom: 12px;
+    }
+    
+    /* English desktop positioning - arrows left of values */
+    html[dir="ltr"] .hero-text {
+        text-align: left;
+        grid-column: 1;
+    }
+    
+    html[dir="ltr"] .value-point {
+        flex-direction: row;
+        justify-content: flex-start;
+        text-align: left;
+        padding: 30px;
+    }
+    
+    html[dir="ltr"] .value-point .value-text {
+        text-align: left;
+    }
+    
+    html[dir="ltr"] .nav-arrows {
+        position: absolute;
+        left: -100px;
+        right: auto;
+        top: 50%;
+        transform: translateY(-50%);
+        flex-direction: column;
+        gap: 20px;
+        width: auto;
+        margin-bottom: 0;
     }
 }
 

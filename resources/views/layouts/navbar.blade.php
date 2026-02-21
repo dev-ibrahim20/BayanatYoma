@@ -1,4 +1,4 @@
-    <style>
+<style>
         .navbar {
             background: rgba(244, 236, 212, 0.95);
             backdrop-filter: blur(20px);
@@ -108,39 +108,121 @@
             transition: all 0.3s ease;
         }
         
+        /* Professional Language Switcher */
         .language-switcher {
             display: flex;
             gap: 10px;
             align-items: center;
+            position: relative;
         }
         
         .language-select {
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 0.9rem;
+            padding: 12px 20px;
+            padding-right: 40px;
+            border-radius: 25px;
+            font-size: 0.95rem;
             font-weight: 600;
-            transition: all 0.3s ease;
-            border: 2px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 2px solid rgba(255, 255, 255, 0.4);
             color: #ffffff;
-            background: rgba(255, 255, 255, 0.1);
+            background: linear-gradient(135deg, #505038 0%, #4b4b33 50%, #24240e 100%);
             cursor: pointer;
             outline: none;
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            backdrop-filter: blur(10px);
+            box-shadow: 
+                0 4px 15px rgba(0, 0, 0, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            position: relative;
+            min-width: 120px;
         }
         
         .language-select:hover {
-            background: rgba(255, 255, 255, 0.2);
-            transform: translateY(-2px);
+            background: linear-gradient(135deg, rgba(80, 80, 56, 0.9) 0%, rgba(75, 75, 51, 0.9) 50%, rgba(36, 36, 14, 0.9) 100%);
+            border-color: rgba(255, 255, 255, 0.6);
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 
+                0 8px 25px rgba(0, 0, 0, 0.4),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2),
+                0 0 20px rgba(80, 80, 56, 0.3);
         }
         
         .language-select:focus {
             border-color: #ffffff;
-            box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.3);
+            box-shadow: 
+                0 0 0 3px rgba(255, 255, 255, 0.2),
+                0 8px 25px rgba(0, 0, 0, 0.4),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
         }
         
         .language-select option {
-            background: #505038;
+            background: linear-gradient(135deg, #505038 0%, #4b4b33 50%, #24240e 100%);
+            color: #000000;
+            padding: 15px 20px;
+            border: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            border-radius: 0;
+            transition: all 0.3s ease;
+            position: relative;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+        }
+        
+        .language-select option:hover {
+            background: linear-gradient(135deg, #6a6a48 0%, #656538 50%, #3e3e1e 100%);
             color: #ffffff;
-            padding: 8px;
+            text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+            transform: translateX(5px);
+        }
+        
+        .language-select option:checked {
+            background: linear-gradient(135deg, #7a7a58 0%, #757538 50%, #4e4e2e 100%);
+            color: #ffffff;
+            font-weight: 700;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+        }
+        
+        .language-select option:first-child {
+            border-radius: 8px 8px 0 0;
+        }
+        
+        .language-select option:last-child {
+            border-radius: 0 0 8px 8px;
+        }
+        
+        /* Custom dropdown arrow */
+        .language-switcher::after {
+            content: '▼';
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #ffffff;
+            font-size: 0.7rem;
+            pointer-events: none;
+            transition: transform 0.3s ease;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .language-switcher:hover::after {
+            transform: translateY(-50%) rotate(180deg);
+        }
+        
+        /* Language icon */
+        .language-switcher::before {
+            content: '🌐';
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1rem;
+            pointer-events: none;
+        }
+        
+        .language-select {
+            padding-left: 35px;
         }
         
         @media (max-width: 768px) {
@@ -179,8 +261,14 @@
                     <li><a href="#customers">{{ __('messages.customers') }}</a></li>
                 </ul>
                 <div class="language-switcher">
-                    <a href="{{ route('language.switch', 'ar') }}" class="lang-btn {{ app()->getLocale() == 'ar' ? 'active' : '' }}">العربية</a>
-                    <a href="{{ route('language.switch', 'en') }}" class="lang-btn {{ app()->getLocale() == 'en' ? 'active' : '' }}">English</a>
+                    <select class="language-select" onchange="window.location.href=this.value">
+                        <option value="{{ route('language.switch', 'ar') }}" {{ app()->getLocale() == 'ar' ? 'selected' : '' }}>
+                            العربية
+                        </option>
+                        <option value="{{ route('language.switch', 'en') }}" {{ app()->getLocale() == 'en' ? 'selected' : '' }}>
+                            English
+                        </option>
+                    </select>
                 </div>
                 <div class="hamburger">
                     <span></span>

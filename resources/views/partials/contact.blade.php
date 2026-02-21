@@ -154,8 +154,8 @@
 <section id="contact" class="contact">
     <div class="container">
         <div class="section-header">
-            <h2>تواصل معنا</h2>
-            <p>نحن هنا لمساعدتك في تحقيق رؤيتك</p>
+            <h2>{{ __('messages.contact_title') }}</h2>
+            <p>{{ __('messages.contact_subtitle') }}</p>
         </div>
         <div class="contact-content">
             <div class="contact-info">
@@ -173,7 +173,8 @@
                         <i class="fas fa-envelope"></i>
                     </div>
                     <div class="contact-details">
-                        <h3>البريد الإلكتروني</h3>
+                        <h3>{{ __('messages.email') }}</h3>
+                        <p>{{ __('messages.email_text') }}</p>
                         <a href="mailto:info@muhaya-sa.com">info@muhaya-sa.com</a>
                     </div>
                 </div>
@@ -182,7 +183,8 @@
                         <i class="fas fa-map-marker-alt"></i>
                     </div>
                     <div class="contact-details">
-                        <h3>العنوان</h3>
+                        <h3>{{ __('messages.address') }}</h3>
+                        <p>{{ __('messages.address_text') }}</p>
                         <a href="https://maps.app.goo.gl/d3JZryN9baiC5TK47" target="_blank">شارع الياسمين - القادسية</a>
                     </div>
                 </div>

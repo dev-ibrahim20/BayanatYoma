@@ -108,6 +108,41 @@
             transition: all 0.3s ease;
         }
         
+        .language-switcher {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+        
+        .language-select {
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            color: #ffffff;
+            background: rgba(255, 255, 255, 0.1);
+            cursor: pointer;
+            outline: none;
+        }
+        
+        .language-select:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+        
+        .language-select:focus {
+            border-color: #ffffff;
+            box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.3);
+        }
+        
+        .language-select option {
+            background: #505038;
+            color: #ffffff;
+            padding: 8px;
+        }
+        
         @media (max-width: 768px) {
             .nav-menu {
                 display: none;
@@ -124,6 +159,9 @@
                 border-radius: 2px;
                 transition: all 0.3s ease;
             }
+            .language-switcher {
+                order: -1;
+            }
         }
     </style>
     <!-- Navigation -->
@@ -131,15 +169,19 @@
         <div class="container">
             <div class="nav-content">
                 <div class="logo">
-                    <h2>Byanat Yoma</h2>
+                    <h2>{{ __('messages.logo') }}</h2>
                 </div>
                 <ul class="nav-menu">
-                    <li><a href="#home">الرئيسية</a></li>
-                    <li><a href="#services">الخدمات</a></li>
-                    <li><a href="#gallery">معرض الأعمال</a></li>
-                    <li><a href="#contact">تواصل بنا</a></li>
-                    <li><a href="#customers">عملائنا</a></li>
+                    <li><a href="#home">{{ __('messages.home') }}</a></li>
+                    <li><a href="#services">{{ __('messages.services') }}</a></li>
+                    <li><a href="#gallery">{{ __('messages.gallery') }}</a></li>
+                    <li><a href="#contact">{{ __('messages.contact') }}</a></li>
+                    <li><a href="#customers">{{ __('messages.customers') }}</a></li>
                 </ul>
+                <div class="language-switcher">
+                    <a href="{{ route('language.switch', 'ar') }}" class="lang-btn {{ app()->getLocale() == 'ar' ? 'active' : '' }}">العربية</a>
+                    <a href="{{ route('language.switch', 'en') }}" class="lang-btn {{ app()->getLocale() == 'en' ? 'active' : '' }}">English</a>
+                </div>
                 <div class="hamburger">
                     <span></span>
                     <span></span>

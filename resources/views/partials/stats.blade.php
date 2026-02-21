@@ -84,19 +84,19 @@
         <div class="stats-grid">
             <div class="stat-item">
                 <h3 class="stat-number" data-target="500">0</h3>
-                <p>عميل وثق بنا بمشاريعهم</p>
+                <p>{{ __('messages.clients') }}</p>
             </div>
             <div class="stat-item">
-                <h3 class="stat-number" data-target="10000">0</h3>
-                <p>ساعة في تقديم خدمات الجودة</p>
+                <h3 class="stat-number" data-target="1200">0</h3>
+                <p>{{ __('messages.projects') }}</p>
             </div>
             <div class="stat-item">
-                <h3 class="stat-number" data-target="1000">0</h3>
-                <p>مشروع مكتمل بنجاح لعملاء متنوعين</p>
+                <h3 class="stat-number" data-target="15">0</h3>
+                <p>{{ __('messages.experience') }}</p>
             </div>
             <div class="stat-item">
-                <h3 class="stat-number" data-target="50">0</h3>
-                <p>عضو فريق مكرس لتحقيق أفضل النتائج</p>
+                <h3 class="stat-number" data-target="98">0</h3>
+                <p>{{ __('messages.satisfaction') }}%</p>
             </div>
         </div>
     </div>

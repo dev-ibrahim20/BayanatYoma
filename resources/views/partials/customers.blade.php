@@ -120,8 +120,8 @@
 <section class="customers-section" id="customers">
     <div class="customers-container">
         <div class="section-header">
-            <h2>عملاؤنا</h2>
-            <p>نفتخر بثقة عملائنا الكرام</p>
+            <h2>{{ __('messages.customers_title') }}</h2>
+            <p>{{ __('messages.customers_subtitle') }}</p>
         </div>
         
         <div class="customers-slider">

@@ -108,16 +108,16 @@
 <section class="different">
     <div class="container">
         <div class="section-header">
-            <h2>ما يميزنا؟</h2>
-            <p>نتميز عن المنافسين من خلال الجمع بين الإبداع والكفاءة والجودة العالية</p>
+            <h2>{{ __('messages.different_title') }}</h2>
+            <p>{{ __('messages.different_subtitle') }}</p>
         </div>
         <div class="different-grid">
             <div class="different-item">
                 <div class="different-icon">
                     <i class="fas fa-tasks"></i>
                 </div>
-                <h3>التنفيذ والخدمات اللوجستية</h3>
-                <p>التخطيط الاستراتيجي والخدمات اللوجستية التي تضمن سير كل مشروع بسلاسة.</p>
+                <h3>{{ __('messages.execution') }}</h3>
+                <p>{{ __('messages.execution_text') }}</p>
             </div>
             <div class="different-item">
                 <div class="different-icon">
@@ -137,8 +137,8 @@
                 <div class="different-icon">
                     <i class="fas fa-adjust"></i>
                 </div>
-                <h3>المرونة والجودة</h3>
-                <p>التكيف مع احتياجاتك مع الحفاظ على أعلى المعايير.</p>
+                <h3>{{ __('messages.innovation') }}</h3>
+                <p>{{ __('messages.innovation_text') }}</p>
             </div>
             <div class="different-item">
                 <div class="different-icon">
@@ -151,8 +151,8 @@
                 <div class="different-icon">
                     <i class="fas fa-user-tie"></i>
                 </div>
-                <h3>الفريق الاحترافي</h3>
-                <p>فريق من الخبراء المهرة ذوي الخبرات المتنوعة والتفاني.</p>
+                <h3>{{ __('messages.team') }}</h3>
+                <p>{{ __('messages.team_text') }}</p>
             </div>
             <div class="different-item">
                 <div class="different-icon">
@@ -165,8 +165,8 @@
                 <div class="different-icon">
                     <i class="fas fa-globe"></i>
                 </div>
-                <h3>الرؤية العالمية</h3>
-                <p>نحن نحضر المعايير الدولية والنظرة العالمية إلى كل مشروع.</p>
+                <h3>{{ __('messages.quality') }}</h3>
+                <p>{{ __('messages.quality_text') }}</p>
             </div>
         </div>
     </div>

@@ -253,6 +253,34 @@
     box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
+/* Language-specific positioning - Always on left side */
+html[dir="ltr"] .nav-arrows {
+    position: absolute;
+    left: -80px;
+    right: auto;
+    top: 50%;
+    transform: translateY(-50%);
+    flex-direction: column;
+    gap: 20px;
+    width: auto;
+    margin-bottom: 0;
+}
+
+html[dir="ltr"] .nav-arrow {
+    width: 55px;
+    height: 55px;
+    font-size: 1.3rem;
+    border-width: 3px;
+}
+
+html[dir="ltr"] .nav-arrow.nav-prev i {
+    transform: rotate(0deg);
+}
+
+html[dir="ltr"] .nav-arrow.nav-next i {
+    transform: rotate(0deg);
+}
+
 /* Tablet Styles */
 @media (min-width: 768px) {
     .hero {
@@ -274,6 +302,17 @@
         position: static;
         transform: none;
         margin-bottom: 30px;
+    }
+    
+    /* English tablet positioning */
+    html[dir="ltr"] .nav-arrows {
+        display: flex;
+        flex-direction: row;
+        position: static;
+        transform: none;
+        margin-bottom: 30px;
+        right: auto;
+        left: auto;
     }
     
     .hero-values {
@@ -518,34 +557,20 @@
                 <div class="hero-values">
                     <div class="value-point" id="value1">
                         <div class="value-text">
-                            <h3>الجودة</h3>
-                            <p> 
-                                يجب ان نلتزك بكل شيء عن اي شئء نلتزم بأعلى معايير الجودة في كل ما نقدمه
-                                يجب ان نلتزك بكل شيء عن اي شئء نلتزم بأعلى معايير الجودة في كل ما نقدمه
-                                يجب ان نلتزك بكل شيء عن اي شئء نلتزم بأعلى معايير الجودة في كل ما نقدمه
-                            </p>
+                            <h3>{{ __('messages.quality') }}</h3>
+                            <p>{{ __('messages.quality_text') }}</p>
                         </div>
                     </div>
                     <div class="value-point" id="value2">
                         <div class="value-text">
-                            <h3>الإبداع</h3>
-                            <p>
-                                حلول مبتكرة وأفكار خارجة عن المألوف
-                                يجب ان نلتزك بكل شيء عن اي شئء نلتزم بأعلى معايير الجودة في كل ما نقدمه
-                                يجب ان نلتزك بكل شيء عن اي شئء نلتزم بأعلى معايير الجودة في كل ما نقدمه
-                                يجب ان نلتزك بكل شيء عن اي شئء نلتزم بأعلى معايير الجودة في كل ما نقدمه
-                            </p>
+                            <h3>{{ __('messages.creativity') }}</h3>
+                            <p>{{ __('messages.creativity_text') }}</p>
                         </div>
                     </div>
                     <div class="value-point" id="value3">
                         <div class="value-text">
-                            <h3>الثقة</h3>
-                            <p>
-                                علاقات طويلة الأمد مبنية على المصداقية
-                                يجب ان نلتزك بكل شيء عن اي شئء نلتزم بأعلى معايير الجودة في كل ما نقدمه
-                                يجب ان نلتزك بكل شيء عن اي شئء نلتزم بأعلى معايير الجودة في كل ما نقدمه
-                                يجب ان نلتزك بكل شيء عن اي شئء نلتزم بأعلى معايير الجودة في كل ما نقدمه
-                            </p>
+                            <h3>{{ __('messages.trust') }}</h3>
+                            <p>{{ __('messages.trust_text') }}</p>
                         </div>
                     </div>
                 </div>

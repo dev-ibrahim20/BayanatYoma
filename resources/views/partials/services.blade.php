@@ -108,51 +108,51 @@
 <section id="services" class="services">
     <div class="container">
         <div class="section-header">
-            <h2>خدماتنا</h2>
-            <p>السهولة والتنظيم المتميز</p>
+            <h2>{{ __('messages.services_title') }}</h2>
+            <p>{{ __('messages.services_subtitle') }}</p>
         </div>
         <div class="services-grid">
             <div class="service-card">
                 <div class="service-icon">
                     <i class="fas fa-lightbulb"></i>
                 </div>
-                <h3>أنظمة الإضاءة</h3>
-                <p>نقدم حلولاً إضاءة مبتكرة تخلق الأجواء المثالية لأي فعالية أو مساحة.</p>
+                <h3>{{ __('messages.lighting') }}</h3>
+                <p>{{ __('messages.lighting_text') }}</p>
             </div>
             <div class="service-card">
                 <div class="service-icon">
                     <i class="fas fa-volume-up"></i>
                 </div>
-                <h3>أنظمة الصوت</h3>
-                <p>إعدادات صوتية احترافية توفر صوتاً واضحاً للمؤتمرات والحفلات والفعاليات الخاصة.</p>
+                <h3>{{ __('messages.sound') }}</h3>
+                <p>{{ __('messages.sound_text') }}</p>
             </div>
             <div class="service-card">
                 <div class="service-icon">
                     <i class="fas fa-camera"></i>
                 </div>
-                <h3>التوثيق</h3>
-                <p>خدمات توثيق الفعاليات الكاملة بما في ذلك التصوير الفوتوغرافي والفيديو والتقارير.</p>
+                <h3>{{ __('messages.consulting') }}</h3>
+                <p>{{ __('messages.consulting_text') }}</p>
             </div>
             <div class="service-card">
                 <div class="service-icon">
                     <i class="fas fa-hotel"></i>
                 </div>
-                <h3>الضيافة</h3>
-                <p>خدمات ضيافة استثنائية لضمان شعور ضيوفك بالترحيب والعناية الكاملة.</p>
+                <h3>{{ __('messages.decoration') }}</h3>
+                <p>{{ __('messages.decoration_text') }}</p>
             </div>
             <div class="service-card">
                 <div class="service-icon">
                     <i class="fas fa-calendar-alt"></i>
                 </div>
-                <h3>منظمو الفعاليات</h3>
-                <p>تخطيط وإدارة فعاليات خبراء لجعل فعالياتك المؤسسية أو الاجتماعية سلسة.</p>
+                <h3>{{ __('messages.coordination') }}</h3>
+                <p>{{ __('messages.coordination_text') }}</p>
             </div>
             <div class="service-card">
                 <div class="service-icon">
                     <i class="fas fa-gift"></i>
                 </div>
-                <h3>الهدايا</h3>
-                <p>حلول هدايا مختارة للعملاء والموظفين أو الحاضرين في الفعاليات تترك انطباعاً دائماً.</p>
+                <h3>{{ __('messages.gifts') }}</h3>
+                <p>{{ __('messages.gifts_text') }}</p>
             </div>
         </div>
     </div>

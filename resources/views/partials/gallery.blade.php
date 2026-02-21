@@ -112,8 +112,8 @@
 <section id="gallery" class="gallery">
     <div class="container">
         <div class="section-header">
-            <h2>معرض أعمالنا</h2>
-            <p>أحدث المشاريع</p>
+            <h2>{{ __('messages.gallery_title') }}</h2>
+            <p>{{ __('messages.gallery_subtitle') }}</p>
         </div>
         <div class="gallery-grid">
             <div class="gallery-item">

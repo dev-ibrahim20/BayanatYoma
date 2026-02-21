@@ -133,45 +133,41 @@
     <div class="container">
         <div class="footer-content">
             <div class="footer-logo">
-                <h2>Muhaya</h2>
-                <p>نحول أفكارك إلى واقع ملموس</p>
+                <h2>{{ __('messages.logo') }}</h2>
+                <p>{{ __('messages.footer_about') }}</p>
             </div>
             <div class="footer-links">
                 <div class="footer-section">
-                    <h3>روابط سريعة</h3>
+                    <h3>{{ __('messages.quick_links') }}</h3>
                     <ul>
-                        <li><a href="#home">الرئيسية</a></li>
-                        <li><a href="#services">الخدمات</a></li>
-                        <li><a href="#production">الإنتاج</a></li>
-                        <li><a href="#departments">الأقسام</a></li>
-                        <li><a href="#gallery">معرض الأعمال</a></li>
-                        <li><a href="#contact">اتصل بنا</a></li>
+                        <li><a href="#home">{{ __('messages.home') }}</a></li>
+                        <li><a href="#services">{{ __('messages.services') }}</a></li>
+                        <li><a href="#gallery">{{ __('messages.gallery') }}</a></li>
+                        <li><a href="#contact">{{ __('messages.contact') }}</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h3>الخدمات</h3>
+                    <h3>{{ __('messages.services') }}</h3>
                     <ul>
-                        <li><a href="#services">تنظيم الفعاليات</a></li>
-                        <li><a href="#production">الإنتاج</a></li>
-                        <li><a href="#services">التغليف</a></li>
-                        <li><a href="#services">التوثيق</a></li>
-                        <li><a href="#services">الضيافة</a></li>
-                        <li><a href="#services">منظمو الفعاليات</a></li>
-                        <li><a href="#services">الهدايا</a></li>
+                        <li><a href="#services">{{ __('messages.coordination') }}</a></li>
+                        <li><a href="#services">{{ __('messages.lighting') }}</a></li>
+                        <li><a href="#services">{{ __('messages.sound') }}</a></li>
+                        <li><a href="#services">{{ __('messages.decoration') }}</a></li>
+                        <li><a href="#services">{{ __('messages.logistics') }}</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h3>تواصل معنا</h3>
+                    <h3>{{ __('messages.contact_info') }}</h3>
                     <ul>
-                        <li><a href="tel:+966537666223">+966 537 666 223</a></li>
-                        <li><a href="mailto:info@muhaya-sa.com">info@muhaya-sa.com</a></li>
-                        <li><a href="https://maps.app.goo.gl/d3JZryN9baiC5TK47" target="_blank">شارع الياسمين - القادسية</a></li>
+                        <li><a href="tel:+966537666223">{{ __('messages.phone_text') }}</a></li>
+                        <li><a href="mailto:info@muhaya-sa.com">{{ __('messages.email_text') }}</a></li>
+                        <li><a href="https://maps.app.goo.gl/d3JZryN9baiC5TK47" target="_blank">{{ __('messages.location_text') }}</a></li>
                     </ul>
                 </div>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2025 Muhaya. جميع الحقوق محفوظة.</p>
+            <p>&copy; 2025 {{ __('messages.logo') }}. {{ __('messages.all_rights') }}.</p>
             <div class="social-links">
                 <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
                 <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>

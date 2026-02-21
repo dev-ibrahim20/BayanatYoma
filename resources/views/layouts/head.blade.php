@@ -18,6 +18,21 @@
             overflow-x: hidden; /* Prevent horizontal scrolling */
             width: 100vw; /* Full viewport width */
             max-width: 100vw; /* Prevent overflow */
+            scroll-behavior: smooth; /* Normal scrolling */
+            scroll-snap-type: none; /* Disable scroll snap */
+        }
+        
+        /* Disable scroll snap on all elements */
+        * {
+            scroll-snap-type: none !important;
+            scroll-snap-align: none !important;
+            scroll-snap-stop: none !important;
+        }
+        
+        /* Disable scroll snap on sections */
+        section {
+            scroll-snap-type: none !important;
+            scroll-snap-align: none !important;
         }
         
         /* Center the entire page */

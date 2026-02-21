@@ -1,7 +1,7 @@
 <style>
-/* Hero Section Styles */
+/* Mobile First - Base Styles */
 .hero {
-    padding: 100px 20px;
+    padding: 60px 20px;
     background: linear-gradient(135deg, #505038 0%, #4b4b33 50%, #24240e 100%);
     border-top: 1px solid #585858;
     position: relative;
@@ -9,57 +9,57 @@
 }
 
 .hero-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
     align-items: center;
     max-width: 1400px;
     margin: 0 auto;
 }
 
 .hero-text {
-    text-align: right;
+    text-align: center;
     color: #ffffff;
-    grid-column: 1;
+    width: 100%;
 }
 
 .hero-image {
-    grid-column: 2;
+    width: 100%;
     position: relative;
+    display: flex;
+    justify-content: center;
 }
 
 .nav-arrows {
-    position: absolute;
-    left: -80px;
-    top: 50%;
-    transform: translateY(-50%);
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    z-index: 10;
+    display: none;
+    flex-direction: row;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    width: 100%;
 }
 
 .nav-arrow {
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 50%, #ffffff 100%);
-    border: 3px solid rgba(255, 255, 255, 0.4);
+    border: 2px solid rgba(255, 255, 255, 0.3);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     color: #505038;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
 }
 
 .nav-arrow:hover {
-    transform: scale(1.15);
+    transform: scale(1.1);
     background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 50%, #f8f9fa 100%);
-    box-shadow: 0 8px 30px rgba(255, 255, 255, 0.5);
-    border-color: rgba(255, 255, 255, 0.6);
+    box-shadow: 0 6px 20px rgba(255, 255, 255, 0.4);
+    border-color: rgba(255, 255, 255, 0.5);
 }
 
 .nav-arrow:active {
@@ -69,18 +69,22 @@
 .hero-values {
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 20px;
     flex: 1;
     position: relative;
-    min-height: 180px;
+    min-height: 200px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
 }
 
 .value-point {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 20px;
-    padding: 30px;
+    gap: 15px;
+    padding: 25px 20px;
     border-radius: 12px;
     transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
     min-height: 120px;
@@ -110,19 +114,20 @@
 
 .value-point .value-text {
     text-align: center;
+    width: 100%;
 }
 
 .value-point .value-text h3 {
-    font-size: 2rem;
+    font-size: 1.8rem;
     font-weight: 900;
-    margin-bottom: 15px;
+    margin-bottom: 12px;
     font-family: 'Arial Black', Arial, sans-serif;
     color: #ffffff;
     letter-spacing: 1px;
 }
 
 .value-point .value-text p {
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: 600;
     margin: 0;
     font-family: 'Arial', sans-serif;
@@ -132,42 +137,46 @@
 
 .device-container {
     perspective: 1000px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 .device {
-    width: 500px;
-    height: 350px;
+    width: 100%;
+    max-width: 350px;
+    height: 250px;
     background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 50%, #ffffff 100%);
-    border: 8px solid #484846;
+    border: 6px solid #484846;
     border-radius: 20px;
-    padding: 16px;
+    padding: 12px;
     box-shadow: 
-        0 25px 50px rgba(0, 0, 0, 0.5),
+        0 15px 30px rgba(0, 0, 0, 0.4),
         0 0 0 1px rgba(255, 204, 0, 0.2),
         inset 0 2px 4px rgba(255, 204, 0, 0.1);
-    transform: rotateY(-15deg);
+    transform: rotateY(-10deg);
     transition: all 0.4s ease;
     position: relative;
     animation: deviceFloat 6s ease-in-out infinite;
 }
 
 @keyframes deviceFloat {
-    0%, 100% { transform: rotateY(-15deg) translateY(0); }
-    50% { transform: rotateY(-15deg) translateY(-10px); }
+    0%, 100% { transform: rotateY(-10deg) translateY(0); }
+    50% { transform: rotateY(-10deg) translateY(-5px); }
 }
 
 .device:hover {
-    transform: rotateY(0deg) scale(1.05) translateY(-5px);
+    transform: rotateY(0deg) scale(1.02) translateY(-3px);
     box-shadow: 
-        0 35px 70px rgba(102, 126, 234, 0.3),
+        0 20px 40px rgba(102, 126, 234, 0.3),
         0 0 0 2px rgba(240, 147, 251, 0.5);
     animation: deviceHover 0.5s ease;
 }
 
 @keyframes deviceHover {
-    0% { transform: rotateY(-15deg) scale(1); }
-    50% { transform: rotateY(10deg) scale(1.1); }
-    100% { transform: rotateY(0deg) scale(1.05); }
+    0% { transform: rotateY(-10deg) scale(1); }
+    50% { transform: rotateY(5deg) scale(1.05); }
+    100% { transform: rotateY(0deg) scale(1.02); }
 }
 
 .device-screen {
@@ -194,12 +203,12 @@
 }
 
 .device-button {
-    width: 60px;
-    height: 6px;
+    width: 40px;
+    height: 4px;
     background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 50%, #ffffff 100%);
     border-radius: 3px;
     position: absolute;
-    bottom: 12px;
+    bottom: 8px;
     left: 50%;
     transform: translateX(-50%);
     animation: buttonPulse 2s ease-in-out infinite;
@@ -213,74 +222,290 @@
 .device::before {
     content: '';
     position: absolute;
-    top: 12px;
+    top: 8px;
     left: 50%;
     transform: translateX(-50%);
-    width: 16px;
-    height: 16px;
+    width: 12px;
+    height: 12px;
     background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 50%, #ffffff 100%);
     border-radius: 50%;
     z-index: 5;
-    box-shadow: 0 0 25px rgba(255, 255, 255, 0.6);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
     animation: cameraGlow 3s ease-in-out infinite alternate;
 }
 
 @keyframes cameraGlow {
-    0% { box-shadow: 0 0 25px rgba(255, 255, 255, 0.6); }
-    100% { box-shadow: 0 0 40px rgba(248, 249, 250, 0.9); }
+    0% { box-shadow: 0 0 15px rgba(255, 255, 255, 0.6); }
+    100% { box-shadow: 0 0 25px rgba(248, 249, 250, 0.9); }
 }
 
 .device::after {
     content: '';
     position: absolute;
-    top: 8px;
+    top: 6px;
     left: 50%;
     transform: translateX(-50%);
-    width: 120px;
-    height: 25px;
+    width: 80px;
+    height: 18px;
     background: #40401c;
-    border-radius: 0 0 15px 15px;
+    border-radius: 0 0 10px 10px;
     z-index: 4;
-    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
-@media (max-width: 768px) {
+/* Tablet Styles */
+@media (min-width: 768px) {
     .hero {
-        padding: 60px 20px;
+        padding: 80px 30px;
     }
     
     .hero-content {
-        grid-template-columns: 1fr;
-        gap: 40px;
-        text-align: center;
+        flex-direction: column;
+        gap: 50px;
     }
     
     .hero-text {
         text-align: center;
     }
     
-    .device {
-        width: 350px;
-        height: 250px;
-    }
-    
     .nav-arrows {
+        display: flex;
+        flex-direction: row;
         position: static;
         transform: none;
-        flex-direction: row;
-        justify-content: center;
-        margin-bottom: 20px;
+        margin-bottom: 30px;
+    }
+    
+    .hero-values {
+        min-height: 180px;
+        justify-content: flex-start;
+        align-items: stretch;
+    }
+    
+    .value-point .value-text h3 {
+        font-size: 2rem;
+    }
+    
+    .value-point .value-text p {
+        font-size: 1.1rem;
+    }
+    
+    .device {
+        max-width: 450px;
+        height: 320px;
+        border-width: 7px;
+        padding: 14px;
+    }
+    
+    .device::before {
+        width: 14px;
+        height: 14px;
+        top: 10px;
+    }
+    
+    .device::after {
+        width: 100px;
+        height: 22px;
+        top: 7px;
+    }
+    
+    .device-button {
+        width: 50px;
+        height: 5px;
+        bottom: 10px;
     }
 }
 
-@media (max-width: 1024px) and (min-width: 769px) {
+/* Small Desktop Styles */
+@media (min-width: 1024px) {
+    .hero {
+        padding: 90px 40px;
+    }
+    
     .hero-content {
-        gap: 40px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        align-items: center;
+    }
+    
+    .hero-text {
+        text-align: right;
+        grid-column: 1;
+    }
+    
+    .hero-image {
+        grid-column: 2;
+    }
+    
+    .nav-arrows {
+        position: absolute;
+        left: -60px;
+        top: 50%;
+        transform: translateY(-50%);
+        flex-direction: column;
+        gap: 20px;
+        width: auto;
+        margin-bottom: 0;
+    }
+    
+    .nav-arrow {
+        width: 55px;
+        height: 55px;
+        font-size: 1.3rem;
+        border-width: 3px;
+    }
+    
+    .hero-values {
+        min-height: 160px;
+        justify-content: flex-start;
+        align-items: stretch;
+    }
+    
+    .value-point {
+        flex-direction: row;
+        justify-content: flex-end;
+        text-align: right;
+        padding: 30px;
+    }
+    
+    .value-point .value-text {
+        text-align: right;
+    }
+    
+    .value-point .value-text h3 {
+        font-size: 2.2rem;
+    }
+    
+    .value-point .value-text p {
+        font-size: 1.2rem;
     }
     
     .device {
-        width: 400px;
-        height: 300px;
+        max-width: 500px;
+        height: 350px;
+        border-width: 8px;
+        padding: 16px;
+        transform: rotateY(-15deg);
+    }
+    
+    @keyframes deviceFloat {
+        0%, 100% { transform: rotateY(-15deg) translateY(0); }
+        50% { transform: rotateY(-15deg) translateY(-10px); }
+    }
+    
+    .device:hover {
+        transform: rotateY(0deg) scale(1.05) translateY(-5px);
+    }
+    
+    @keyframes deviceHover {
+        0% { transform: rotateY(-15deg) scale(1); }
+        50% { transform: rotateY(10deg) scale(1.1); }
+        100% { transform: rotateY(0deg) scale(1.05); }
+    }
+    
+    .device::before {
+        width: 16px;
+        height: 16px;
+        top: 12px;
+    }
+    
+    .device::after {
+        width: 120px;
+        height: 25px;
+        top: 8px;
+    }
+    
+    .device-button {
+        width: 60px;
+        height: 6px;
+        bottom: 12px;
+    }
+}
+
+/* Large Desktop Styles */
+@media (min-width: 1440px) {
+    .hero {
+        padding: 100px 50px;
+    }
+    
+    .hero-content {
+        gap: 80px;
+    }
+    
+    .nav-arrows {
+        left: -80px;
+        gap: 25px;
+    }
+    
+    .nav-arrow {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+    }
+    
+    .value-point .value-text h3 {
+        font-size: 2.5rem;
+    }
+    
+    .value-point .value-text p {
+        font-size: 1.3rem;
+    }
+    
+    .device {
+        max-width: 550px;
+        height: 380px;
+    }
+}
+
+/* Extra Large Desktop Styles */
+@media (min-width: 1920px) {
+    .hero {
+        padding: 120px 60px;
+    }
+    
+    .hero-content {
+        max-width: 1600px;
+        gap: 100px;
+    }
+    
+    .nav-arrows {
+        left: -100px;
+    }
+    
+    .nav-arrow {
+        width: 70px;
+        height: 70px;
+        font-size: 1.7rem;
+    }
+    
+    .value-point .value-text h3 {
+        font-size: 3rem;
+    }
+    
+    .value-point .value-text p {
+        font-size: 1.5rem;
+    }
+    
+    .device {
+        max-width: 600px;
+        height: 420px;
+    }
+}
+
+/* Ultra-wide Screens */
+@media (min-width: 2560px) {
+    .hero {
+        padding: 140px 80px;
+    }
+    
+    .hero-content {
+        max-width: 1800px;
+    }
+    
+    .device {
+        max-width: 650px;
+        height: 450px;
     }
 }
 </style>

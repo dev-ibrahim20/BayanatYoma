@@ -1,69 +1,3 @@
-<!-- Hero Section -->
-<section id="home" class="hero">
-    <div class="container">
-        <div class="hero-content">
-            <div class="hero-text">
-                <div class="hero-values">
-                    <div class="value-point" id="value1">
-                        <div class="value-text">
-                            <h3>الجودة</h3>
-                            <p> 
-                                يجب ان نلتزك بكل شيء عن اي شئء نلتزم بأعلى معايير الجودة في كل ما نقدمه
-                                يجب ان نلتزك بكل شيء عن اي شئء نلتزم بأعلى معايير الجودة في كل ما نقدمه
-                                يجب ان نلتزك بكل شيء عن اي شئء نلتزم بأعلى معايير الجودة في كل ما نقدمه
-                            </p>
-                        </div>
-                    </div>
-                    <div class="value-point" id="value2">
-                        <div class="value-text">
-                            <h3>الإبداع</h3>
-                            <p>
-                                حلول مبتكرة وأفكار خارجة عن المألوف
-                                يجب ان نلتزك بكل شيء عن اي شئء نلتزم بأعلى معايير الجودة في كل ما نقدمه
-                                يجب ان نلتزك بكل شيء عن اي شئء نلتزم بأعلى معايير الجودة في كل ما نقدمه
-                                يجب ان نلتزك بكل شيء عن اي شئء نلتزم بأعلى معايير الجودة في كل ما نقدمه
-                            </p>
-                        </div>
-                    </div>
-                    <div class="value-point" id="value3">
-                        <div class="value-text">
-                            <h3>الثقة</h3>
-                            <p>
-                                علاقات طويلة الأمد مبنية على المصداقية
-                                يجب ان نلتزك بكل شيء عن اي شئء نلتزم بأعلى معايير الجودة في كل ما نقدمه
-                                يجب ان نلتزك بكل شيء عن اي شئء نلتزم بأعلى معايير الجودة في كل ما نقدمه
-                                يجب ان نلتزك بكل شيء عن اي شئء نلتزم بأعلى معايير الجودة في كل ما نقدمه
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="hero-image">
-                <div class="nav-arrows">
-                    <button class="nav-arrow nav-prev" onclick="previousValue()">
-                        <i class="fas fa-chevron-right"></i>
-                    </button>
-                    <button class="nav-arrow nav-next" onclick="nextValue()">
-                        <i class="fas fa-chevron-left"></i>
-                    </button>
-                </div>
-                <div class="device-container">
-                    <div class="device">
-                        <div class="device-screen">
-                            <video autoplay muted loop playsinline poster="https://picsum.photos/seed/video-poster/800/600.jpg">
-                                <source src="{{ asset('assets/videos/123.mp4') }}" type="video/mp4">
-                                <source src="{{ asset('assets/videos/123.ogg') }}" type="video/ogg">
-                                Your browser does not support the video tag.
-                            </video>
-                        </div>
-                        <div class="device-button"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
 <style>
 /* Hero Section Styles */
 .hero {
@@ -350,6 +284,73 @@
     }
 }
 </style>
+
+<!-- Hero Section -->
+<section id="home" class="hero">
+    <div class="container">
+        <div class="hero-content">
+            <div class="hero-text">
+                <div class="hero-values">
+                    <div class="value-point" id="value1">
+                        <div class="value-text">
+                            <h3>الجودة</h3>
+                            <p> 
+                                يجب ان نلتزك بكل شيء عن اي شئء نلتزم بأعلى معايير الجودة في كل ما نقدمه
+                                يجب ان نلتزك بكل شيء عن اي شئء نلتزم بأعلى معايير الجودة في كل ما نقدمه
+                                يجب ان نلتزك بكل شيء عن اي شئء نلتزم بأعلى معايير الجودة في كل ما نقدمه
+                            </p>
+                        </div>
+                    </div>
+                    <div class="value-point" id="value2">
+                        <div class="value-text">
+                            <h3>الإبداع</h3>
+                            <p>
+                                حلول مبتكرة وأفكار خارجة عن المألوف
+                                يجب ان نلتزك بكل شيء عن اي شئء نلتزم بأعلى معايير الجودة في كل ما نقدمه
+                                يجب ان نلتزك بكل شيء عن اي شئء نلتزم بأعلى معايير الجودة في كل ما نقدمه
+                                يجب ان نلتزك بكل شيء عن اي شئء نلتزم بأعلى معايير الجودة في كل ما نقدمه
+                            </p>
+                        </div>
+                    </div>
+                    <div class="value-point" id="value3">
+                        <div class="value-text">
+                            <h3>الثقة</h3>
+                            <p>
+                                علاقات طويلة الأمد مبنية على المصداقية
+                                يجب ان نلتزك بكل شيء عن اي شئء نلتزم بأعلى معايير الجودة في كل ما نقدمه
+                                يجب ان نلتزك بكل شيء عن اي شئء نلتزم بأعلى معايير الجودة في كل ما نقدمه
+                                يجب ان نلتزك بكل شيء عن اي شئء نلتزم بأعلى معايير الجودة في كل ما نقدمه
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="nav-arrows">
+                    <button class="nav-arrow nav-prev" onclick="previousValue()">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                    <button class="nav-arrow nav-next" onclick="nextValue()">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                </div>
+                <div class="device-container">
+                    <div class="device">
+                        <div class="device-screen">
+                            <video autoplay muted loop playsinline poster="https://picsum.photos/seed/video-poster/800/600.jpg">
+                                <source src="{{ asset('assets/videos/123.mp4') }}" type="video/mp4">
+                                <source src="{{ asset('assets/videos/123.ogg') }}" type="video/ogg">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        <div class="device-button"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 
 <script>
 // Professional dynamic value points display

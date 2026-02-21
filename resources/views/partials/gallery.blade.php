@@ -2,7 +2,8 @@
     /* Gallery Section Styles */
     .gallery {
         padding: 80px 20px;
-        background: linear-gradient(135deg, #5a5a00 0%, #3a3a00 50%, #5a5a00 100%);
+        background: linear-gradient(135deg, #505038 0%, #4b4b33 50%, #24240e 100%);
+;
         border-top: 1px solid #484846;
     }
     

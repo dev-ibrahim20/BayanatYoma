@@ -1,8 +1,3 @@
-<!-- Back to Top Button -->
-<button id="backToTop" class="back-to-top" aria-label="العودة للأعلى" style="opacity: 0; visibility: hidden;">
-    <i class="fas fa-arrow-up"></i>
-</button>
-
 <style>
 /* Back to Top Button Styles */
 .back-to-top {
@@ -47,6 +42,12 @@
     transform: translateY(-2px);
 }
 </style>
+
+<!-- Back to Top Button -->
+<button id="backToTop" class="back-to-top" aria-label="العودة للأعلى" style="opacity: 0; visibility: hidden;">
+    <i class="fas fa-arrow-up"></i>
+</button>
+
 
 <script>
 // Back to top button visibility control

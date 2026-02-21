@@ -1,70 +1,3 @@
-<!-- Different Section -->
-<section class="different">
-    <div class="container">
-        <div class="section-header">
-            <h2>ما يميزنا؟</h2>
-            <p>نتميز عن المنافسين من خلال الجمع بين الإبداع والكفاءة والجودة العالية</p>
-        </div>
-        <div class="different-grid">
-            <div class="different-item">
-                <div class="different-icon">
-                    <i class="fas fa-tasks"></i>
-                </div>
-                <h3>التنفيذ والخدمات اللوجستية</h3>
-                <p>التخطيط الاستراتيجي والخدمات اللوجستية التي تضمن سير كل مشروع بسلاسة.</p>
-            </div>
-            <div class="different-item">
-                <div class="different-icon">
-                    <i class="fas fa-handshake"></i>
-                </div>
-                <h3>الالتزام</h3>
-                <p>نحترم المواعيد النهائية ونقدم النتائج في الوقت المحدد، في كل مرة.</p>
-            </div>
-            <div class="different-item">
-                <div class="different-icon">
-                    <i class="fas fa-tachometer-alt"></i>
-                </div>
-                <h3>السرعة</h3>
-                <p>تنفيذ سريع وفعال دون المساس بالجودة.</p>
-            </div>
-            <div class="different-item">
-                <div class="different-icon">
-                    <i class="fas fa-adjust"></i>
-                </div>
-                <h3>المرونة والجودة</h3>
-                <p>التكيف مع احتياجاتك مع الحفاظ على أعلى المعايير.</p>
-            </div>
-            <div class="different-item">
-                <div class="different-icon">
-                    <i class="fas fa-lightbulb"></i>
-                </div>
-                <h3>الأفكار المبتكرة</h3>
-                <p>مفاهيم إبداعية وحلول جديدة تجعلك تتميز.</p>
-            </div>
-            <div class="different-item">
-                <div class="different-icon">
-                    <i class="fas fa-user-tie"></i>
-                </div>
-                <h3>الفريق الاحترافي</h3>
-                <p>فريق من الخبراء المهرة ذوي الخبرات المتنوعة والتفاني.</p>
-            </div>
-            <div class="different-item">
-                <div class="different-icon">
-                    <i class="fas fa-shield-alt"></i>
-                </div>
-                <h3>شراكات موثوقة</h3>
-                <p>بناء علاقات طويلة الأمد مع العملاء بناءً على الثقة والنتائج.</p>
-            </div>
-            <div class="different-item">
-                <div class="different-icon">
-                    <i class="fas fa-globe"></i>
-                </div>
-                <h3>الرؤية العالمية</h3>
-                <p>نحن نحضر المعايير الدولية والنظرة العالمية إلى كل مشروع.</p>
-            </div>
-        </div>
-    </div>
-</section>
 
 <style>
 /* Different Section Styles */
@@ -168,3 +101,71 @@
     }
 }
 </style>
+
+<!-- Different Section -->
+<section class="different">
+    <div class="container">
+        <div class="section-header">
+            <h2>ما يميزنا؟</h2>
+            <p>نتميز عن المنافسين من خلال الجمع بين الإبداع والكفاءة والجودة العالية</p>
+        </div>
+        <div class="different-grid">
+            <div class="different-item">
+                <div class="different-icon">
+                    <i class="fas fa-tasks"></i>
+                </div>
+                <h3>التنفيذ والخدمات اللوجستية</h3>
+                <p>التخطيط الاستراتيجي والخدمات اللوجستية التي تضمن سير كل مشروع بسلاسة.</p>
+            </div>
+            <div class="different-item">
+                <div class="different-icon">
+                    <i class="fas fa-handshake"></i>
+                </div>
+                <h3>الالتزام</h3>
+                <p>نحترم المواعيد النهائية ونقدم النتائج في الوقت المحدد، في كل مرة.</p>
+            </div>
+            <div class="different-item">
+                <div class="different-icon">
+                    <i class="fas fa-tachometer-alt"></i>
+                </div>
+                <h3>السرعة</h3>
+                <p>تنفيذ سريع وفعال دون المساس بالجودة.</p>
+            </div>
+            <div class="different-item">
+                <div class="different-icon">
+                    <i class="fas fa-adjust"></i>
+                </div>
+                <h3>المرونة والجودة</h3>
+                <p>التكيف مع احتياجاتك مع الحفاظ على أعلى المعايير.</p>
+            </div>
+            <div class="different-item">
+                <div class="different-icon">
+                    <i class="fas fa-lightbulb"></i>
+                </div>
+                <h3>الأفكار المبتكرة</h3>
+                <p>مفاهيم إبداعية وحلول جديدة تجعلك تتميز.</p>
+            </div>
+            <div class="different-item">
+                <div class="different-icon">
+                    <i class="fas fa-user-tie"></i>
+                </div>
+                <h3>الفريق الاحترافي</h3>
+                <p>فريق من الخبراء المهرة ذوي الخبرات المتنوعة والتفاني.</p>
+            </div>
+            <div class="different-item">
+                <div class="different-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h3>شراكات موثوقة</h3>
+                <p>بناء علاقات طويلة الأمد مع العملاء بناءً على الثقة والنتائج.</p>
+            </div>
+            <div class="different-item">
+                <div class="different-icon">
+                    <i class="fas fa-globe"></i>
+                </div>
+                <h3>الرؤية العالمية</h3>
+                <p>نحن نحضر المعايير الدولية والنظرة العالمية إلى كل مشروع.</p>
+            </div>
+        </div>
+    </div>
+</section>

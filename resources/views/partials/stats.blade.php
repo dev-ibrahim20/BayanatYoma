@@ -1,26 +1,3 @@
-<!-- Stats Section -->
-<section class="stats">
-    <div class="container">
-        <div class="stats-grid">
-            <div class="stat-item">
-                <h3 class="stat-number" data-target="500">0</h3>
-                <p>عميل وثق بنا بمشاريعهم</p>
-            </div>
-            <div class="stat-item">
-                <h3 class="stat-number" data-target="10000">0</h3>
-                <p>ساعة في تقديم خدمات الجودة</p>
-            </div>
-            <div class="stat-item">
-                <h3 class="stat-number" data-target="1000">0</h3>
-                <p>مشروع مكتمل بنجاح لعملاء متنوعين</p>
-            </div>
-            <div class="stat-item">
-                <h3 class="stat-number" data-target="50">0</h3>
-                <p>عضو فريق مكرس لتحقيق أفضل النتائج</p>
-            </div>
-        </div>
-    </div>
-</section>
 
 <style>
 /* Stats Section Styles */
@@ -97,6 +74,32 @@
     }
 }
 </style>
+
+
+<!-- Stats Section -->
+<section class="stats">
+    <div class="container">
+        <div class="stats-grid">
+            <div class="stat-item">
+                <h3 class="stat-number" data-target="500">0</h3>
+                <p>عميل وثق بنا بمشاريعهم</p>
+            </div>
+            <div class="stat-item">
+                <h3 class="stat-number" data-target="10000">0</h3>
+                <p>ساعة في تقديم خدمات الجودة</p>
+            </div>
+            <div class="stat-item">
+                <h3 class="stat-number" data-target="1000">0</h3>
+                <p>مشروع مكتمل بنجاح لعملاء متنوعين</p>
+            </div>
+            <div class="stat-item">
+                <h3 class="stat-number" data-target="50">0</h3>
+                <p>عضو فريق مكرس لتحقيق أفضل النتائج</p>
+            </div>
+        </div>
+    </div>
+</section>
+
 
 <script>
 // Animated Counter for Stats

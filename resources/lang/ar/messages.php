@@ -41,6 +41,10 @@ return [
     'projects' => 'مشروع منجز بنجاح',
     'experience' => 'سنة من الخبرة',
     'satisfaction' => 'نسبة رضا العملاء',
+    'stats_500' => '٥٠٠',
+    'stats_1200' => '١٢٠٠',
+    'stats_15' => '١٥',
+    'stats_98' => '٩٨',
     
     // Different Section
     'different_title' => 'ما يميزنا؟',

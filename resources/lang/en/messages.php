@@ -41,6 +41,10 @@ return [
     'projects' => 'Successfully completed projects',
     'experience' => 'Years of experience',
     'satisfaction' => 'Client satisfaction rate',
+    'stats_500' => '500',
+    'stats_1200' => '1200',
+    'stats_15' => '15',
+    'stats_98' => '98',
     
     // Different Section
     'different_title' => 'What Makes Us Different?',

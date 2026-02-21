@@ -25,7 +25,7 @@
 .stats-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 32px;
+    gap: 60px;
     max-width: 1000px;
     margin: 0 auto;
     text-align: center;
@@ -84,19 +84,19 @@
     <div class="container">
         <div class="stats-grid">
             <div class="stat-item">
-                <h3 class="stat-number" data-target="500">0</h3>
+                <h3 class="stat-number" data-target="500">{{ __('messages.stats_500') }}</h3>
                 <p>{{ __('messages.clients') }}</p>
             </div>
             <div class="stat-item">
-                <h3 class="stat-number" data-target="1200">0</h3>
+                <h3 class="stat-number" data-target="1200">{{ __('messages.stats_1200') }}</h3>
                 <p>{{ __('messages.projects') }}</p>
             </div>
             <div class="stat-item">
-                <h3 class="stat-number" data-target="15">0</h3>
+                <h3 class="stat-number" data-target="15">{{ __('messages.stats_15') }}</h3>
                 <p>{{ __('messages.experience') }}</p>
             </div>
             <div class="stat-item">
-                <h3 class="stat-number" data-target="98">0</h3>
+                <h3 class="stat-number" data-target="98">{{ __('messages.stats_98') }}</h3>
                 <p>{{ __('messages.satisfaction') }}%</p>
             </div>
         </div>
@@ -109,19 +109,28 @@
 document.addEventListener('DOMContentLoaded', function() {
     const counters = document.querySelectorAll('.stat-number');
     const speed = 200;
+    const isArabic = '{{ app()->getLocale() }}' === 'ar';
+    
+    // Function to convert English numerals to Arabic
+    function toArabicNumerals(num) {
+        const arabicNumerals = ['٠', '١', '٢', '٣', '٤', '٥', '٦', '٧', '٨', '٩'];
+        return num.toString().split('').map(digit => arabicNumerals[parseInt(digit)] || digit).join('');
+    }
     
     const animateCounter = (counter) => {
         const target = +counter.getAttribute('data-target');
         const increment = target / speed;
         
         const updateCount = () => {
-            const count = +counter.innerText;
+            const currentText = counter.innerText.replace(/[^\d٠-٩]/g, '');
+            const count = parseInt(currentText.replace(/[٠-٩]/g, d => '٠١٢٣٤٥٦٧٨٩'.indexOf(d))) || 0;
             
             if (count < target) {
-                counter.innerText = Math.ceil(count + increment);
+                const newCount = Math.ceil(count + increment);
+                counter.innerText = isArabic ? toArabicNumerals(newCount) : newCount.toString();
                 setTimeout(updateCount, 1);
             } else {
-                counter.innerText = target.toLocaleString();
+                counter.innerText = isArabic ? toArabicNumerals(target) : target.toString();
             }
         };
         

@@ -45,132 +45,136 @@
             }
         }
 
-        // Professional mobile menu toggle
+        // Professional mobile menu toggle - FIXED VERSION
         function toggleMobileMenu() {
             // Create professional menu if it doesn't exist
             let mobileMenu = document.getElementById('mobile-menu');
             if (!mobileMenu) {
                 mobileMenu = document.createElement('div');
                 mobileMenu.id = 'mobile-menu';
+                mobileMenu.style.cssText = `
+                    background: linear-gradient(135deg, #505038 0%, #4b4b33 50%, #24240e 100%);
+                    color: white;
+                    padding: 30px 20px;
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 280px;
+                    height: 100vh;
+                    z-index: 9999;
+                    box-shadow: 2px 0 20px rgba(0, 0, 0, 0.5);
+                    border-right: 2px solid rgba(255, 255, 255, 0.2);
+                    backdrop-filter: blur(10px);
+                    font-family: 'Arial', sans-serif;
+                    overflow-y: auto;
+                    transform: translateX(-100%);
+                    transition: transform 0.3s ease;
+                `;
+                
                 mobileMenu.innerHTML = `
-                    <div style="
-                        background: linear-gradient(135deg, #505038 0%, #4b4b33 50%, #24240e 100%);
-                        color: white;
-                        padding: 30px 20px;
-                        position: fixed;
-                        top: 80px;
-                        left: 0;
-                        right: 0;
-                        z-index: 9999;
-                        min-height: 400px;
-                        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-                        border-top: 2px solid rgba(255, 255, 255, 0.2);
-                        backdrop-filter: blur(10px);
-                        font-family: 'Arial', sans-serif;
-                    ">
-                        <div style="text-align: center; margin-bottom: 30px;">
-                            <h3 style="
-                                font-size: 1.5rem;
-                                font-weight: 700;
-                                margin: 0;
-                                color: #ffffff;
-                                text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-                                letter-spacing: 1px;
-                            ">{{ __('messages.logo') }}</h3>
-                        </div>
-                        <div style="display: flex; flex-direction: column; gap: 15px;">
-                            <a href="#home" style="
-                                display: block;
-                                color: #ffffff;
-                                padding: 15px 25px;
-                                text-decoration: none;
-                                background: rgba(255, 255, 255, 0.1);
-                                border-radius: 12px;
-                                font-weight: 600;
-                                font-size: 1.1rem;
-                                text-align: center;
-                                transition: all 0.3s ease;
-                                border: 1px solid rgba(255, 255, 255, 0.2);
-                            " onmouseover="this.style.background='rgba(255, 255, 255, 0.2)'" onmouseout="this.style.background='rgba(255, 255, 255, 0.1)'">
-                                {{ __('messages.home') }}
-                            </a>
-                            <a href="#services" style="
-                                display: block;
-                                color: #ffffff;
-                                padding: 15px 25px;
-                                text-decoration: none;
-                                background: rgba(255, 255, 255, 0.1);
-                                border-radius: 12px;
-                                font-weight: 600;
-                                font-size: 1.1rem;
-                                text-align: center;
-                                transition: all 0.3s ease;
-                                border: 1px solid rgba(255, 255, 255, 0.2);
-                            " onmouseover="this.style.background='rgba(255, 255, 255, 0.2)'" onmouseout="this.style.background='rgba(255, 255, 255, 0.1)'">
-                                {{ __('messages.services') }}
-                            </a>
-                            <a href="#gallery" style="
-                                display: block;
-                                color: #ffffff;
-                                padding: 15px 25px;
-                                text-decoration: none;
-                                background: rgba(255, 255, 255, 0.1);
-                                border-radius: 12px;
-                                font-weight: 600;
-                                font-size: 1.1rem;
-                                text-align: center;
-                                transition: all 0.3s ease;
-                                border: 1px solid rgba(255, 255, 255, 0.2);
-                            " onmouseover="this.style.background='rgba(255, 255, 255, 0.2)'" onmouseout="this.style.background='rgba(255, 255, 255, 0.1)'">
-                                {{ __('messages.gallery') }}
-                            </a>
-                            <a href="#contact" style="
-                                display: block;
-                                color: #ffffff;
-                                padding: 15px 25px;
-                                text-decoration: none;
-                                background: rgba(255, 255, 255, 0.1);
-                                border-radius: 12px;
-                                font-weight: 600;
-                                font-size: 1.1rem;
-                                text-align: center;
-                                transition: all 0.3s ease;
-                                border: 1px solid rgba(255, 255, 255, 0.2);
-                            " onmouseover="this.style.background='rgba(255, 255, 255, 0.2)'" onmouseout="this.style.background='rgba(255, 255, 255, 0.1)'">
-                                {{ __('messages.contact') }}
-                            </a>
-                            <a href="#customers" style="
-                                display: block;
-                                color: #ffffff;
-                                padding: 15px 25px;
-                                text-decoration: none;
-                                background: rgba(255, 255, 255, 0.1);
-                                border-radius: 12px;
-                                font-weight: 600;
-                                font-size: 1.1rem;
-                                text-align: center;
-                                transition: all 0.3s ease;
-                                border: 1px solid rgba(255, 255, 255, 0.2);
-                            " onmouseover="this.style.background='rgba(255, 255, 255, 0.2)'" onmouseout="this.style.background='rgba(255, 255, 255, 0.1)'">
-                                {{ __('messages.customers') }}
-                            </a>
-                        </div>
+                    <div style="text-align: center; margin-bottom: 40px; padding-top: 20px;">
+                        <h3 style="
+                            font-size: 1.5rem;
+                            font-weight: 700;
+                            margin: 0;
+                            color: #ffffff;
+                            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+                            letter-spacing: 1px;
+                        ">{{ __('messages.logo') }}</h3>
+                    </div>
+                    <div style="display: flex; flex-direction: column; gap: 15px;">
+                        <a href="#home" style="
+                            display: block;
+                            color: #ffffff;
+                            padding: 15px 25px;
+                            text-decoration: none;
+                            background: rgba(255, 255, 255, 0.1);
+                            border-radius: 12px;
+                            font-weight: 600;
+                            font-size: 1.1rem;
+                            text-align: center;
+                            transition: all 0.3s ease;
+                            border: 1px solid rgba(255, 255, 255, 0.2);
+                        " onmouseover="this.style.background='rgba(255, 255, 255, 0.2)'" onmouseout="this.style.background='rgba(255, 255, 255, 0.1)'">
+                            {{ __('messages.home') }}
+                        </a>
+                        <a href="#services" style="
+                            display: block;
+                            color: #ffffff;
+                            padding: 15px 25px;
+                            text-decoration: none;
+                            background: rgba(255, 255, 255, 0.1);
+                            border-radius: 12px;
+                            font-weight: 600;
+                            font-size: 1.1rem;
+                            text-align: center;
+                            transition: all 0.3s ease;
+                            border: 1px solid rgba(255, 255, 255, 0.2);
+                        " onmouseover="this.style.background='rgba(255, 255, 255, 0.2)'" onmouseout="this.style.background='rgba(255, 255, 255, 0.1)'">
+                            {{ __('messages.services') }}
+                        </a>
+                        <a href="#gallery" style="
+                            display: block;
+                            color: #ffffff;
+                            padding: 15px 25px;
+                            text-decoration: none;
+                            background: rgba(255, 255, 255, 0.1);
+                            border-radius: 12px;
+                            font-weight: 600;
+                            font-size: 1.1rem;
+                            text-align: center;
+                            transition: all 0.3s ease;
+                            border: 1px solid rgba(255, 255, 255, 0.2);
+                        " onmouseover="this.style.background='rgba(255, 255, 255, 0.2)'" onmouseout="this.style.background='rgba(255, 255, 255, 0.1)'">
+                            {{ __('messages.gallery') }}
+                        </a>
+                        <a href="#contact" style="
+                            display: block;
+                            color: #ffffff;
+                            padding: 15px 25px;
+                            text-decoration: none;
+                            background: rgba(255, 255, 255, 0.1);
+                            border-radius: 12px;
+                            font-weight: 600;
+                            font-size: 1.1rem;
+                            text-align: center;
+                            transition: all 0.3s ease;
+                            border: 1px solid rgba(255, 255, 255, 0.2);
+                        " onmouseover="this.style.background='rgba(255, 255, 255, 0.2)'" onmouseout="this.style.background='rgba(255, 255, 255, 0.1)'">
+                            {{ __('messages.contact') }}
+                        </a>
+                        <a href="#customers" style="
+                            display: block;
+                            color: #ffffff;
+                            padding: 15px 25px;
+                            text-decoration: none;
+                            background: rgba(255, 255, 255, 0.1);
+                            border-radius: 12px;
+                            font-weight: 600;
+                            font-size: 1.1rem;
+                            text-align: center;
+                            transition: all 0.3s ease;
+                            border: 1px solid rgba(255, 255, 255, 0.2);
+                        " onmouseover="this.style.background='rgba(255, 255, 255, 0.2)'" onmouseout="this.style.background='rgba(255, 255, 255, 0.1)'">
+                            {{ __('messages.customers') }}
+                        </a>
                     </div>
                 `;
                 document.body.appendChild(mobileMenu);
+            } 
+            
+            // Toggle menu visibility
+            if (mobileMenu.style.transform === 'translateX(-100%)' || mobileMenu.style.transform === '') {
+                mobileMenu.style.transform = 'translateX(0)';
             } else {
-                if (mobileMenu.style.display === 'none') {
-                    mobileMenu.style.display = 'block';
-                } else {
-                    mobileMenu.style.display = 'none';
-                }
+                mobileMenu.style.transform = 'translateX(-100%)';
             }
         }
         
         function closeMobileMenu() {
             const mobileMenu = document.getElementById('mobile-menu');
             if (mobileMenu) {
-                mobileMenu.style.display = 'none';
+                mobileMenu.style.transform = 'translateX(-100%)';
             }
         }
         

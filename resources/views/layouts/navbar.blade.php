@@ -36,7 +36,7 @@
             100% { filter: drop-shadow(0 0 20px rgba(118, 75, 162, 0.8)); }
         }
         
-        .nav-menu {
+        .nav-menu { display: none !important;
             display: flex;
             list-style: none;
             gap: 2rem;
@@ -98,6 +98,15 @@
         
         .hamburger {
             display: none;
+            cursor: pointer;
+            z-index: 1001;
+            padding: 5px;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+        
+        .hamburger:hover {
+            background: rgba(255, 255, 255, 0.1);
         }
         
         .hamburger span {
@@ -281,7 +290,7 @@
                 transition: all 0.3s ease;
             }
             
-            .nav-menu {
+            .nav-menu { display: none !important;
                 display: none;
                 position: absolute;
                 top: 100%;
@@ -293,10 +302,17 @@
                 box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
                 border-top: 1px solid rgba(255, 255, 255, 0.1);
                 z-index: 1000;
+                min-height: 300px;
             }
             
-            .nav-menu.active {
-                display: flex;
+                from {
+                    opacity: 0;
+                    transform: translateY(-20px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
             }
             
             .nav-menu li {

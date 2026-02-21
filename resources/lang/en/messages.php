@@ -6,7 +6,7 @@ return [
     'gallery' => 'Gallery',
     'contact' => 'Contact',
     'customers' => 'Customers',
-    'logo' => 'Byanat Yoma',
+    'logo' => 'ِArqco',
     
     // Hero Section
     'quality' => 'Quality',

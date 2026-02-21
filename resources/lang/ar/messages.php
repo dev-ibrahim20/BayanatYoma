@@ -6,7 +6,7 @@ return [
     'gallery' => 'معرض الأعمال',
     'contact' => 'تواصل بنا',
     'customers' => 'عملائنا',
-    'logo' => 'Byanat Yoma',
+    'logo' => 'اركو',
     
     // Hero Section
     'quality' => 'الجودة',

@@ -2,7 +2,7 @@
 <style>
 /* iPhone 17 Pro Max Hero Styles */
 .hero {
-    padding: 40px 20px;
+    padding: 20px;
     background: linear-gradient(135deg, #C0C0C0 0%, #808080 35%, #696969 65%, #2F4F4F 100%);
     min-height: 100vh;
     display: flex;
@@ -19,12 +19,13 @@
 .hero-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 60px;
+    gap: 40px;
     align-items: center;
-    max-width: 1200px;
+    max-width: 1400px;
     width: 100%;
     min-height: 100vh;
     margin: 0 auto;
+    padding: 0 20px;
 }
 
 /* Phone Mockup with Video - Left Side */
@@ -188,9 +189,9 @@
 
 /* Hero Text - Right Side */
 .hero-text {
-    text-align: right;
+    text-align: center;
     color: #ffffff;
-    padding: 20px;
+    padding: 40px 20px;
 }
 
 .hero-values {
@@ -198,7 +199,7 @@
     min-height: 300px;
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: center;
 }
 
 .value-point {
@@ -207,7 +208,7 @@
     opacity: 0;
     transform: translateX(50px);
     transition: all 1s ease;
-    text-align: right;
+    text-align: center;
 }
 
 .value-point.active {
@@ -224,7 +225,7 @@
     font-size: 3rem;
     font-weight: 800;
     margin-bottom: 20px;
-    background: linear-gradient(135deg, #818d70 0%, #55555d 100%);
+    background: #ffffff;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -233,7 +234,7 @@
 
 .value-point .value-text p {
     font-size: 1.3rem;
-    color: #8e8e93;
+    color: #ffffff;
     line-height: 1.6;
     margin-bottom: 30px;
 }
@@ -241,8 +242,9 @@
 .hero-buttons {
     display: flex;
     gap: 20px;
-    justify-content: flex-end;
+    justify-content: center;
     margin-top: 40px;
+    flex-wrap: wrap;
 }
 
 .btn-primary, .btn-secondary {
@@ -261,62 +263,184 @@
 }
 
 .btn-primary {
-    background: linear-gradient(135deg, #007aff 0%, #5856d6 100%);
+    background: rgba(255, 255, 255, 0.2);
     color: #ffffff;
     box-shadow: 0 8px 25px rgba(0, 122, 255, 0.4);
 }
 
 .btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 12px 35px rgba(0, 122, 255, 0.5);
 }
 
 .btn-secondary {
     background: rgba(255, 255, 255, 0.1);
-    color: #007aff;
-    border: 2px solid rgba(0, 122, 255, 0.3);
+    color: #ffffff;
+    border: 2px solid rgba(255, 255, 255, 0.3);
     backdrop-filter: blur(10px);
 }
 
 .btn-secondary:hover {
     background: rgba(255, 255, 255, 0.2);
-    border-color: rgba(0, 122, 255, 0.5);
+    border-color: rgba(255, 255, 255, 0.5);
+    color: #ffffff;
+}
+
+/* Social Media Sidebar */
+.social-sidebar {
+    position: fixed;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.social-icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 18px;
+    position: relative;
+    overflow: hidden;
+}
+
+.social-icon.facebook {
+    background: linear-gradient(135deg, #1877f2 0%, #0e5fcc 100%);
+    color: #ffffff;
+}
+
+.social-icon.twitter {
+    background: linear-gradient(135deg, #1da1f2 0%, #0c85d0 100%);
+    color: #ffffff;
+}
+
+.social-icon.instagram {
+    background: linear-gradient(135deg, #e4405f 0%, #c13584 50%, #833ab4 100%);
+    color: #ffffff;
+}
+
+.social-icon.linkedin {
+    background: linear-gradient(135deg, #0077b5 0%, #005885 100%);
+    color: #ffffff;
+}
+
+.social-icon.youtube {
+    background: linear-gradient(135deg, #ff0000 0%, #cc0000 100%);
+    color: #ffffff;
+}
+
+.social-icon.whatsapp {
+    background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+    color: #ffffff;
+}
+
+.social-icon::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.1) 100%);
+    transition: left 0.3s ease;
+}
+
+.social-icon:hover {
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.social-icon:hover::before {
+    left: 100%;
+}
+
+/* Social Tooltip */
+.social-icon {
+    position: relative;
+}
+
+.social-icon::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    right: 50px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.9);
+    color: #ffffff;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 12px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.social-icon:hover::after {
+    opacity: 1;
+    right: 55px;
 }
 
 /* Responsive Design */
+@media (max-width: 1200px) {
+    .hero-content {
+        max-width: 1200px;
+        gap: 30px;
+    }
+    
+    .phone-mockup, .video-container {
+        width: 320px;
+        height: 640px;
+    }
+    
+    .value-point .value-text h3 {
+        font-size: 2.8rem;
+    }
+}
+
 @media (max-width: 1024px) {
+    .hero {
+        padding: 15px;
+    }
+    
     .hero-content {
         grid-template-columns: 1fr;
-        gap: 20px;
+        gap: 30px;
         text-align: center;
-        padding: 20px;
+        padding: 0 15px;
     }
     
     .hero-text {
-        text-align: center;
         order: 2;
-        padding: 20px;
+        padding: 30px 20px;
     }
     
     .hero-phone {
         order: 1;
-        gap: 15px;
+        gap: 20px;
         height: auto;
         min-height: 60vh;
     }
     
-    .phone-mockup {
-        width: 280px;
-        height: 560px;
-    }
-    
-    .video-container {
+    .phone-mockup, .video-container {
         width: 280px;
         height: 560px;
     }
     
     .value-point .value-text h3 {
         font-size: 2.5rem;
+    }
+    
+    .value-point .value-text p {
+        font-size: 1.2rem;
     }
     
     .hero-buttons {
@@ -330,29 +454,23 @@
     }
     
     .hero-content {
-        gap: 15px;
-        padding: 10px;
+        gap: 20px;
+        padding: 0 10px;
     }
     
     .hero-phone {
         flex-direction: column;
-        gap: 10px;
+        gap: 15px;
         height: auto;
         min-height: 50vh;
     }
     
     .hero-text {
-        padding: 15px;
-        height: auto;
-        min-height: 40vh;
+        padding: 25px 15px;
+        min-height: auto;
     }
     
-    .phone-mockup {
-        width: 240px;
-        height: 480px;
-    }
-    
-    .video-container {
+    .phone-mockup, .video-container {
         width: 240px;
         height: 480px;
     }
@@ -363,36 +481,45 @@
     }
     
     .value-point .value-text h3 {
-        font-size: 2rem;
+        font-size: 2.2rem;
     }
     
     .value-point .value-text p {
         font-size: 1.1rem;
     }
+    
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+    
+    .btn-primary, .btn-secondary {
+        width: 100%;
+        max-width: 280px;
+    }
 }
 
 @media (max-width: 480px) {
-    .hero-content {
-        gap: 10px;
+    .hero {
         padding: 5px;
     }
     
+    .hero-content {
+        gap: 15px;
+        padding: 0 5px;
+    }
+    
     .hero-phone {
-        gap: 8px;
+        gap: 10px;
         min-height: 45vh;
     }
     
     .hero-text {
-        padding: 10px;
-        min-height: 45vh;
+        padding: 20px 10px;
     }
     
-    .phone-mockup {
-        width: 200px;
-        height: 400px;
-    }
-    
-    .video-container {
+    .phone-mockup, .video-container {
         width: 200px;
         height: 400px;
         border-radius: 30px;
@@ -418,20 +545,125 @@
     
     .value-point .value-text h3 {
         font-size: 1.8rem;
+        margin-bottom: 15px;
+    }
+    
+    .value-point .value-text p {
+        font-size: 1rem;
+        margin-bottom: 20px;
     }
     
     .hero-buttons {
-        flex-direction: column;
-        align-items: center;
-        gap: 15px;
+        gap: 10px;
     }
     
     .btn-primary, .btn-secondary {
-        width: 100%;
-        max-width: 250px;
+        padding: 12px 25px;
+        font-size: 14px;
+        min-width: 120px;
+    }
+}
+
+@media (max-width: 360px) {
+    .hero-content {
+        gap: 10px;
+    }
+    
+    .phone-mockup, .video-container {
+        width: 180px;
+        height: 360px;
+    }
+    
+    .dynamic-island {
+        width: 60px;
+        height: 20px;
+    }
+    
+    .value-point .value-text h3 {
+        font-size: 1.6rem;
+    }
+    
+    .value-point .value-text p {
+        font-size: 0.9rem;
+    }
+    
+    .btn-primary, .btn-secondary {
+        padding: 10px 20px;
+        font-size: 13px;
+        min-width: 100px;
+    }
+}
+
+/* Social Media Sidebar Responsive */
+@media (max-width: 1024px) {
+    .social-sidebar {
+        left: 10px;
+        gap: 12px;
+    }
+    
+    .social-icon {
+        width: 35px;
+        height: 35px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    .social-sidebar {
+        left: 5px;
+        gap: 10px;
+    }
+    
+    .social-icon {
+        width: 30px;
+        height: 30px;
+        font-size: 14px;
+    }
+    
+    .social-icon::after {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .social-sidebar {
+        bottom: 20px;
+        left: 50%;
+        top: auto;
+        transform: translateX(-50%);
+        flex-direction: row;
+        gap: 8px;
+    }
+    
+    .social-icon {
+        width: 35px;
+        height: 35px;
+        font-size: 16px;
     }
 }
 </style>
+
+<!-- Social Media Sidebar -->
+<div class="social-sidebar">
+    <a href="https://facebook.com" target="_blank" class="social-icon facebook" data-tooltip="Facebook">
+        <i class="fab fa-facebook-f"></i>
+    </a>
+    <a href="https://twitter.com" target="_blank" class="social-icon twitter" data-tooltip="Twitter">
+        <i class="fab fa-twitter"></i>
+    </a>
+    <a href="https://instagram.com" target="_blank" class="social-icon instagram" data-tooltip="Instagram">
+        <i class="fab fa-instagram"></i>
+    </a>
+    <a href="https://linkedin.com" target="_blank" class="social-icon linkedin" data-tooltip="LinkedIn">
+        <i class="fab fa-linkedin-in"></i>
+    </a>
+    <a href="https://youtube.com" target="_blank" class="social-icon youtube" data-tooltip="YouTube">
+        <i class="fab fa-youtube"></i>
+    </a>
+    <a href="https://wa.me/1234567890" target="_blank" class="social-icon whatsapp" data-tooltip="WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+</div>
 
 <!-- Hero Section -->
 <section id="home" class="hero">
@@ -468,7 +700,7 @@
                 <div class="value-point" id="value1">
                     <div class="value-text">
                         <h3>{{ __('messages.quality') }}</h3>
-                        <p>{{ __('messages.quality_text') }}</p>
+                        <p>بسم الله الرحمن الرحيم كل حاجة تمام وبسم الله ما شاء الله ولا حول ولا قوة الا بالله العلي العظيم</p>
                     </div>
                 </div>
                 <div class="value-point" id="value2">

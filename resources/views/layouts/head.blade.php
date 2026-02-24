@@ -91,13 +91,13 @@
         }
         
         /* Override any potential white backgrounds */
-        .navbar, .hero, .services, .production, .stats, .departments, .different, .contact {
-            background: linear-gradient(135deg, #505038 0%, #4b4b33 50%, #24240e 100%) !important;
+        .navbar, .hero, .services, .production, .stats, .departments, .different, .contact, .gallery, .customers, .customers-section, .footer {
+            background: linear-gradient(135deg, #94948e 0%, #4b4b33 50%, #5d5d5a64 100%) !important;
         }
         
         /* Ensure navbar and hero match exactly */
         .navbar, .hero {
-            background: linear-gradient(135deg, #505038 0%, #4b4b33 50%, #24240e 100%) !important;
+            background: linear-gradient(135deg, #C0C0C0 0%, #808080 35%, #696969 65%, #2F4F4F 100%);
         }
         
         /* Hero text animations */

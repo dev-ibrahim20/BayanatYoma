@@ -126,11 +126,11 @@
         }
         
         .language-select {
-            padding: 12px 20px;
-            padding-right: 40px;
-            border-radius: 25px;
-            font-size: 0.95rem;
-            font-weight: 600;
+            padding: 8px 12px;
+            padding-right: 25px;
+            border-radius: 20px;
+            font-size: 1rem;
+            font-weight: 700;
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             border: 2px solid rgba(255, 255, 255, 0.4);
             color: #ffffff;
@@ -145,7 +145,8 @@
                 0 4px 15px rgba(0, 0, 0, 0.3),
                 inset 0 1px 0 rgba(255, 255, 255, 0.1);
             position: relative;
-            min-width: 120px;
+            min-width: 70px;
+            text-align: center;
         }
         
         .language-select:hover {
@@ -262,16 +263,18 @@
             }
             
             .language-select {
-                width: 120px;
+                width: 60px;
                 height: 35px;
-                font-size: 0.8rem;
-                padding-left: 30px;
-                padding-right: 25px;
+                font-size: 0.9rem;
+                font-weight: 700;
+                padding-left: 10px;
+                padding-right: 20px;
+                min-width: 60px;
             }
             
             .language-switcher::before {
-                left: 10px;
-                font-size: 0.8rem;
+                left: 8px;
+                font-size: 0.7rem;
             }
             
             .hamburger {
@@ -343,16 +346,18 @@
             }
             
             .language-select {
-                width: 100px;
+                width: 55px;
                 height: 32px;
-                font-size: 0.75rem;
-                padding-left: 25px;
-                padding-right: 20px;
+                font-size: 2rem;
+                font-weight: 700;
+                padding-left: 8px;
+                padding-right: 18px;
+                min-width: 55px;
             }
             
             .language-switcher::before {
-                left: 8px;
-                font-size: 0.7rem;
+                left: 6px;
+                font-size: 0.6rem;
             }
             
             .hamburger span {
@@ -372,9 +377,18 @@
             }
             
             .language-select {
-                width: 90px;
-                height: 30px;
-                font-size: 0.7rem;
+                width: 45px;
+                height: 35px;
+                font-size: 0.8rem;
+                font-weight: 700;
+                padding-left: 6px;
+                padding-right: 16px;
+                min-width: 50px;
+            }
+            
+            .language-switcher::before {
+                left: 5px;
+                font-size: 0.55rem;
             }
             
             .nav-menu a {
@@ -400,10 +414,10 @@
                 <div class="language-switcher">
                     <select class="language-select" onchange="window.location.href=this.value">
                         <option value="{{ route('language.switch', 'ar') }}" {{ app()->getLocale() == 'ar' ? 'selected' : '' }}>
-                            {{ app()->getLocale() == 'ar' ? 'العربية' : 'Arabic' }}
+                            {{ app()->getLocale() == 'ar' ? 'ع' : 'A' }}
                         </option>
                         <option value="{{ route('language.switch', 'en') }}" {{ app()->getLocale() == 'en' ? 'selected' : '' }}>
-                            {{ app()->getLocale() == 'en' ? 'English' : 'English' }}
+                            {{ app()->getLocale() == 'en' ? 'E' : 'E' }}
                         </option>
                     </select>
                 </div>

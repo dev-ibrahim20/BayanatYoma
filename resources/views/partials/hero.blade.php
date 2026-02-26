@@ -456,28 +456,32 @@
     .hero-content {
         gap: 20px;
         padding: 0 10px;
+        grid-template-columns: 1fr 2fr;
+        align-items: center;
     }
     
     .hero-phone {
-        flex-direction: column;
+        flex-direction: row;
         gap: 15px;
         height: auto;
-        min-height: 50vh;
+        min-height: 40vh;
+        justify-content: center;
     }
     
     .hero-text {
         padding: 25px 15px;
         min-height: auto;
+        order: 2;
     }
     
     .phone-mockup, .video-container {
-        width: 240px;
-        height: 480px;
+        width: 140px;
+        height: 280px;
     }
     
     .dynamic-island {
-        width: 80px;
-        height: 25px;
+        width: 50px;
+        height: 18px;
     }
     
     .value-point .value-text h3 {
@@ -485,7 +489,7 @@
     }
     
     .value-point .value-text p {
-        font-size: 1.1rem;
+        font-size: 1.2rem;
     }
     
     .hero-buttons {
@@ -496,7 +500,7 @@
     
     .btn-primary, .btn-secondary {
         width: 100%;
-        max-width: 280px;
+        max-width: 200px;
     }
 }
 
@@ -508,48 +512,53 @@
     .hero-content {
         gap: 15px;
         padding: 0 5px;
+        grid-template-columns: 1fr 2fr;
+        align-items: center;
     }
     
     .hero-phone {
         gap: 10px;
-        min-height: 45vh;
+        min-height: 35vh;
+        flex-direction: row;
+        justify-content: center;
     }
     
     .hero-text {
         padding: 20px 10px;
+        order: 2;
     }
     
     .phone-mockup, .video-container {
-        width: 200px;
-        height: 400px;
-        border-radius: 30px;
-        border: 6px solid #000000;
+        width: 120px;
+        height: 240px;
+        border-radius: 25px;
+        border: 4px solid #000000;
     }
     
     .dynamic-island {
-        width: 70px;
-        height: 22px;
+        width: 40px;
+        height: 15px;
     }
     
     .volume-up, .volume-down {
-        height: 30px;
+        height: 20px;
     }
     
     .volume-down {
-        height: 25px;
+        height: 15px;
     }
     
     .power-button {
-        height: 50px;
+        height: 35px;
     }
     
     .value-point .value-text h3 {
-        font-size: 1.8rem;
+        font-size: 2rem;
         margin-bottom: 15px;
     }
     
     .value-point .value-text p {
-        font-size: 1rem;
+        font-size: 1.1rem;
         margin-bottom: 20px;
     }
     
@@ -567,24 +576,33 @@
 @media (max-width: 360px) {
     .hero-content {
         gap: 10px;
+        grid-template-columns: 1fr 2fr;
+        align-items: center;
+    }
+    
+    .hero-phone {
+        gap: 8px;
+        min-height: 30vh;
+        flex-direction: row;
+        justify-content: center;
     }
     
     .phone-mockup, .video-container {
-        width: 180px;
-        height: 360px;
+        width: 100px;
+        height: 200px;
     }
     
     .dynamic-island {
-        width: 60px;
-        height: 20px;
+        width: 35px;
+        height: 12px;
     }
     
     .value-point .value-text h3 {
-        font-size: 1.6rem;
+        font-size: 1.8rem;
     }
     
     .value-point .value-text p {
-        font-size: 0.9rem;
+        font-size: 1rem;
     }
     
     .btn-primary, .btn-secondary {

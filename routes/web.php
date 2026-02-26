@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Admin\ServiceController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -15,9 +17,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/', [HomeController::class, 'index'])->name('home');
 
 
 
@@ -34,6 +34,16 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+    // Services routes
+    Route::resource('services', ServiceController::class);
+    Route::resource('our-work', \App\Http\Controllers\Admin\OurWorkController::class);
+
+    
+
+
+
+
 });
 
 require __DIR__.'/auth.php';

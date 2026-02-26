@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('image');
             $table->json('features_ar');
             $table->json('features_en');
+            $table->string('slug');
             $table->boolean('status')->default(true);
             $table->timestamps();
         });

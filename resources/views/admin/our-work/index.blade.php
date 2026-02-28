@@ -90,7 +90,7 @@
                                         <td>{{ $loop->iteration }}</td>
                                         <td>
                                             <div class="image-preview-container">
-                                                <img src="{{ asset('storage/' . $work->image) }}" 
+                                                <img src="{{ asset($work->image) }}" 
                                                         alt="{{ $work->title }}" 
                                                         class="portfolio-thumbnail"
                                                         style="width: 80px; height: 80px; object-fit: cover; border-radius: 8px; cursor: pointer; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: all 0.3s ease;"
@@ -100,7 +100,7 @@
                                             </div>
                                         </td>
                                         <td>
-                                            <strong>{{ $work->title }}</strong>
+                                            <strong>{{ $work->title_ar }}</strong>
                                         </td>
                                         <td>{{ $work->client_name ?? '-' }}</td>
                                         <td>{{ $work->project_date ?? '-' }}</td>

@@ -171,8 +171,12 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">إلغاء</button>
-                <button type="button" class="btn btn-danger" onclick="confirmDelete()">حذف</button>
-            </div>
+                <form action="{{ $socialMedia ? route('social-media.destroy', $socialMedia->id) : '#' }}" method="post" id="deleteSocialMediaForm">
+                    @csrf
+                    @method('DELETE')
+                    <input type="hidden" name="social_media_id" id="social_media_id" value="">
+                    <button type="submit" class="btn btn-danger">حذف</button>
+                </form>            </div>
         </div>
     </div>
 </div>
@@ -191,7 +195,7 @@ function confirmDelete() {
     if (!currentSocialMediaId) return;
     
     $.ajax({
-        url: `{{ route('social-media.destroy', ':id') }}`.replace(':id', currentSocialMediaId),
+        url: `/social-media/${currentSocialMediaId}`,
         method: 'POST',
         data: {
             '_token': '{{ csrf_token() }}',
@@ -222,7 +226,7 @@ function confirmDelete() {
                             <td colspan="9" class="text-center py-4">
                                 <div class="alert alert-info">
                                     <i class="fas fa-info-circle"></i>
-                                    لا توجد وسائل تواصل حالياً
+                                    لا توجد لينكات تواصل حالياً
                                 </div>
                             </td>
                         </tr>
@@ -232,6 +236,11 @@ function confirmDelete() {
             
             // Reset currentSocialMediaId
             currentSocialMediaId = null;
+            
+            // Refresh the page after successful deletion
+            setTimeout(function() {
+                location.reload();
+            }, 1000);
         },
         error: function(xhr) {
             console.log('Delete error:', xhr);

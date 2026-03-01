@@ -19,7 +19,7 @@ class UpdateOurWorkAction
         $filteredData = $this->filterData($data);
         
         // Handle image upload if new image is provided
-        $this->handleUpload($filteredData, $ourWork);
+        $this->handleMainImage($filteredData);
         
         $this->handleDate($filteredData);
         $this->handelIsActive($filteredData);
@@ -39,25 +39,15 @@ class UpdateOurWorkAction
 
 
 
-    private function handleUpload($data, $ourWork)
+    private function handleMainImage(array &$data): self
     {
-        // Only handle image upload if a new image is provided
         if (isset($data['image']) && $data['image'] !== null) {
             $image = $data['image'];
             $imageName = time() . '_' . uniqid() . '.' . $image->getClientOriginalExtension();
             $image->move(public_path('assets/images/our_work'), $imageName);
-            
-            // Delete old image if it exists
-            if ($ourWork->image && file_exists(public_path('assets/images/our_work/' . $ourWork->image))) {
-                unlink(public_path('assets/images/our_work/' . $ourWork->image));
-            }
-            
-            // Set new image name
-            $data['image'] = $imageName;
-        } else {
-            // Remove image from data array to keep the old one
-            unset($data['image']);
+            $data['image'] = 'assets/images/our_work/' . $imageName;
         }
+        return $this;
     }
 
 

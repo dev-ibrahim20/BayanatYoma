@@ -80,7 +80,7 @@
                         <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" />
                     </svg><span class="side-menu__label">من نحن</span><i class="angle fe fe-chevron-down"></i></a>
                 <ul class="slide-menu">
-                    <li><a class="slide-item" href="{{ url('/' . $page = 'admin-about-us') }}">من نحن</a></li>
+                    <li><a class="slide-item" href="{{ url('/' . $page = 'about-us') }}">من نحن</a></li>
                 </ul>
             </li>
 

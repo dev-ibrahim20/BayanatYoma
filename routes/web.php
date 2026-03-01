@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\AboutUsController;
 use App\Http\Controllers\Admin\ClientController;
 use App\Http\Controllers\Admin\OurWorkController;
 use App\Http\Controllers\Admin\ServiceController;
@@ -45,6 +46,7 @@ Route::middleware('auth')->group(function () {
     Route::resource('client', ClientController::class);
     Route::resource('site-settings', SiteSettingController::class);
     Route::resource('social-media', SocialMediaController::class);
+    Route::resource('about-us', AboutUsController::class);
     
 
 

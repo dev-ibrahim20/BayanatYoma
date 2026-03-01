@@ -185,6 +185,7 @@ Dashboard - Edit Service
                                 <div class="form-group">
                                     <label class="form-label d-block mb-2">الحالة</label>
                                     <label class="custom-switch">
+                                        <input type="hidden" name="status" value="0">
                                         <input type="checkbox" name="status" value="1" {{ old('status', $service->status) ? 'checked' : '' }} id="statusToggle">
                                         <span class="custom-slider"></span>
                                     </label>

@@ -222,7 +222,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">إلغاء</button>
-                    <button type="submit" class="btn btn-danger">تأكيد الحذف</button>
+                    <button type="button" class="btn btn-danger" onclick="confirmDeletePortfolio()">حذف</button>
                 </div>
             </form>
         </div>
@@ -310,7 +310,7 @@ function confirmDelete() {
     if (!currentPortfolioId) return;
     
     $.ajax({
-        url: `{{ route('our-work.destroy', ':id') }}`.replace(':id', currentPortfolioId),
+        url: `/our-work/${currentPortfolioId}`,
         method: 'POST',
         data: {
             '_token': '{{ csrf_token() }}',

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\AboutUsController;
+use App\Http\Controllers\Admin\AnalyticsController;
 use App\Http\Controllers\Admin\ClientController;
 use App\Http\Controllers\Admin\OurWorkController;
 use App\Http\Controllers\Admin\ServiceController;
@@ -47,6 +48,7 @@ Route::middleware('auth')->group(function () {
     Route::resource('site-settings', SiteSettingController::class);
     Route::resource('social-media', SocialMediaController::class);
     Route::resource('about-us', AboutUsController::class);
+    Route::resource('analytics', AnalyticsController::class);
     
 
 

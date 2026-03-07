@@ -2,7 +2,7 @@
     /* Contact Section Styles */
     .contact {
         padding: 80px 20px;
-        background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 50%, #ffffff 100%);
+        background: linear-gradient(135deg, #1A2F4A, #C6A87D);
         border-top: 1px solid rgba(80, 75, 51, 0.3);
     }
     

@@ -1,12 +1,19 @@
 <style>
         .navbar {
-            background: rgba(244, 236, 212, 0.95);
+        background: linear-gradient(135deg, #1A2F4A, #C6A87D);
             backdrop-filter: blur(20px);
             border-bottom: 1px solid rgba(0, 0, 0, 0.1);
             padding: 1rem 0;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             width: 100%;
             z-index: 1000;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .navbar.scrolled {
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            padding: 0.7rem 0;
         }
         
         .nav-content {
@@ -421,11 +428,18 @@
                         </option>
                     </select>
                 </div>
-                <div class="hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
             </div>
         </div>
     </nav>
+
+<script>
+// Navbar scroll effect
+window.addEventListener('scroll', function() {
+    const navbar = document.querySelector('.navbar');
+    if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+    } else {
+        navbar.classList.remove('scrolled');
+    }
+});
+</script>

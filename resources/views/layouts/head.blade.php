@@ -11,7 +11,7 @@
             font-family: Arial, Tahoma, sans-serif;
             margin: 0;
             padding: 0;
-            background: linear-gradient(135deg, #374E44 0%, #374E44 40%, #000000 100%);
+        background: linear-gradient(135deg, #1A2F4A, #C6A87D);
             color: #ffffff;
             min-height: 100vh;
             line-height: 1.6;
@@ -92,12 +92,7 @@
         
         /* Override any potential white backgrounds */
         .navbar, .hero, .services, .production, .stats, .departments, .different, .contact, .gallery, .customers, .customers-section, .footer {
-            background: linear-gradient(135deg, #94948e 0%, #4b4b33 50%, #5d5d5a64 100%) !important;
-        }
-        
-        /* Ensure navbar and hero match exactly */
-        .navbar, .hero {
-            background: linear-gradient(135deg, #C0C0C0 0%, #808080 35%, #696969 65%, #2F4F4F 100%);
+             background: linear-gradient(to right, #132433, #1A2F4A);
         }
         
         /* Hero text animations */

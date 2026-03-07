@@ -30,7 +30,7 @@ body {
     position: fixed;
     top: 0;
     width: 100%;
-    background: rgba(255, 255, 255, 0.95);
+  background: linear-gradient(135deg, #1A2F4A, #C6A87D);
     backdrop-filter: blur(10px);
     z-index: 1000;
     transition: all 0.3s ease;

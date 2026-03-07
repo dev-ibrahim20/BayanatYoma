@@ -4,7 +4,7 @@
     /* Customers Slider Section */
     .customers-section {
         padding: 40px 0;
-        background: linear-gradient(135deg, #505038 0%, #4b4b33 50%, #24240e 100%);
+  background: linear-gradient(135deg, #1A2F4A, #C6A87D);
         overflow: hidden;
         position: relative;
         width: 100%;

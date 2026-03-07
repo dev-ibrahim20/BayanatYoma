@@ -1,8 +1,7 @@
 <style>
         /* Footer Styles */
         .footer {
-                       background: linear-gradient(135deg, #505038 0%, #4b4b33 50%, #24240e 100%);
-
+            background: linear-gradient(135deg, #1A2F4A, #C6A87D);
             padding: 60px 20px 20px;
             border-top: 1px solid #5a5a00;
         }

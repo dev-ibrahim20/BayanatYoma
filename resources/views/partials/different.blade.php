@@ -3,7 +3,7 @@
 /* Different Section Styles */
 .different {
     padding: 80px 20px;
-    background: linear-gradient(135deg, #484846 0%, #3a3a00 50%, #484846 100%);
+  background: linear-gradient(135deg, #1A2F4A, #C6A87D);
     border-top: 1px solid #5a5a00;
 }
 

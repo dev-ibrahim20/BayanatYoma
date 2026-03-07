@@ -3,17 +3,16 @@
 /* iPhone 17 Pro Max Hero Styles */
 .hero {
     padding: 20px;
-    background: linear-gradient(135deg, #C0C0C0 0%, #808080 35%, #696969 65%, #2F4F4F 100%);
+    background: linear-gradient(135deg, #1A2F4A, #C6A87D);
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
     overflow: hidden;
-    overflow-x: hidden;
-    scroll-snap-type: none !important;
+    /* scroll-snap-type: none !important;
     scroll-snap-align: none !important;
-    scroll-snap-stop: none !important;
+    scroll-snap-stop: none !important; */
 }
 
 .hero-content {
@@ -60,7 +59,7 @@
     height: 700px;
     border-radius: 40px;
     overflow: hidden;
-    background: linear-gradient(135deg, #1c1c1e 0%, #2c2c2e 50%, #3a3a3c 100%);
+  background: linear-gradient(135deg, #1A2F4A, #C6A87D);
     border: 8px solid #000000;
     box-shadow: 
         0 0 0 2px #4a4a4c,

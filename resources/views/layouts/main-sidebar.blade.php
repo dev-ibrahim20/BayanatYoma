@@ -125,6 +125,7 @@
                 <ul class="slide-menu">
                     <li><a class="slide-item" href="{{ url('/' . $page = 'social-media') }}">السوشيال ميديا</a></li>
                     <li><a class="slide-item" href="{{ url('/' . $page = 'site-settings') }}">الثوابت</a></li>
+                    <li><a class="slide-item" href="{{ url('/' . $page = 'analytics') }}">تحليل الموقع</a></li>
                 </ul>
             </li>
         </ul>

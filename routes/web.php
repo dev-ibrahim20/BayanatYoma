@@ -25,6 +25,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
+Route::get('/sitemap.xml', function (Request $request) {
+    return response()->view('sitemap')->header('Content-Type', 'text/xml');
+});
 
 
 // Language switch routes
@@ -49,11 +52,6 @@ Route::middleware('auth')->group(function () {
     Route::resource('social-media', SocialMediaController::class);
     Route::resource('about-us', AboutUsController::class);
     Route::resource('analytics', AnalyticsController::class);
-    
-
-
-
-
 });
 
 require __DIR__.'/auth.php';

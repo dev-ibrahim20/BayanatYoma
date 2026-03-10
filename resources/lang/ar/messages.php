@@ -7,6 +7,10 @@ return [
     'contact' => 'تواصل بنا',
     'customers' => 'عملائنا',
     'logo' => 'اركو',
+    'language' => 'اللغة',
+    'select_language' => 'اختر اللغة',
+    'arabic' => 'العربية',
+    'english' => 'English',
     
     // Hero Section
     'quality' => 'الجودة',

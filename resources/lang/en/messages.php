@@ -7,6 +7,10 @@ return [
     'contact' => 'Contact',
     'customers' => 'Customers',
     'logo' => 'ِArqco',
+    'language' => 'Language',
+    'select_language' => 'Select Language',
+    'arabic' => 'العربية',
+    'english' => 'English',
     
     // Hero Section
     'quality' => 'Quality',

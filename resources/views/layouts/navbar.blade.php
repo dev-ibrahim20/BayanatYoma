@@ -1,11 +1,219 @@
 <style>
-        .navbar {
+    /* Screen reader only text */
+    .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+    }
+    
+    .navbar {
         background: linear-gradient(135deg, #1A2F4A, #C6A87D);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-            padding: 1rem 0;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            width: 100%;
+        backdrop-filter: blur(20px);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        padding: 1rem 0;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        z-index: 1000;
+        position: relative;
+        transition: all 0.3s ease;
+    }
+    
+    .navbar.scrolled {
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        padding: 0.7rem 0;
+    }
+    
+    .nav-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .logo h2 {
+        background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 50%, #ffffff 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        font-size: 2.5rem;
+        margin: 0;
+        font-weight: 900;
+        font-family: 'Arial Black', Arial, sans-serif;
+        letter-spacing: 1px;
+        animation: logoGlow 2s ease-in-out infinite alternate;
+    }
+    
+    @keyframes logoGlow {
+        0% { filter: drop-shadow(0 0 10px rgba(102, 126, 234, 0.5)); }
+        100% { filter: drop-shadow(0 0 20px rgba(118, 75, 162, 0.8)); }
+    }
+    
+    .nav-menu { 
+        display: flex;
+        list-style: none;
+        gap: 2rem;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .nav-menu a {
+        text-decoration: none;
+        color: #ffffff;
+        font-weight: 600;
+        font-size: 1.2rem;
+        font-family: 'Arial', sans-serif;
+        letter-spacing: 0.5px;
+        transition: all 0.3s ease;
+        position: relative;
+        animation: navLinkPulse 4s ease-in-out infinite;
+    }
+    
+    @keyframes navLinkPulse {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-2px); }
+    }
+    
+    .nav-menu a:hover {
+        color: #303030b6;
+        transform: scale(1.1) translateY(-3px);
+        text-shadow: 0 2px 4px rgba(139, 69, 19, 0.3);
+        animation: navLinkHover 0.3s ease;
+    }
+    
+    @keyframes navLinkHover {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.1); }
+        100% { transform: scale(1); }
+    }
+    
+    .nav-menu a::after {
+        content: '';
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: linear-gradient(135deg, #8B4513 0%, #A0522D 50%, #8B4513 100%);
+        transition: width 0.2s ease;
+    }
+    
+    .nav-menu a:hover::after {
+        width: 100%;
+        animation: navUnderline 0.5s ease;
+    }
+    
+    @keyframes navUnderline {
+        0% { width: 0; }
+        50% { width: 110%; }
+        100% { width: 100%; }
+    }
+    
+    .hamburger {
+        display: none;
+        cursor: pointer;
+        z-index: 1001;
+        padding: 5px;
+        border-radius: 5px;
+        transition: background 0.3s ease;
+    }
+    
+    .hamburger:hover {
+        background: rgba(255, 255, 255, 0.1);
+    }
+    
+    .hamburger span {
+        width: 25px;
+        height: 3px;
+        background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 50%, #ffffff 100%);
+        border-radius: 2px;
+        transition: all 0.3s ease;
+    }
+    
+    /* Professional Language Switcher */
+    .language-switcher {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        position: relative;
+    }
+    
+    .language-select {
+        padding: 8px 12px;
+        padding-right: 25px;
+        border-radius: 20px;
+        font-size: 1rem;
+        font-weight: 700;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        border: 2px solid rgba(255, 255, 255, 0.4);
+        color: #ffffff;
+        background: linear-gradient(135deg, #505038 0%, #4b4b33 50%, #24240e 100%);
+        cursor: pointer;
+        outline: none;
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        backdrop-filter: blur(10px);
+        box-shadow: 
+            0 4px 15px rgba(0, 0, 0, 0.3),
+            inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        position: relative;
+        min-width: 70px;
+        text-align: center;
+    }
+    
+    .language-select:hover {
+        background: linear-gradient(135deg, rgba(80, 80, 56, 0.9) 0%, rgba(75, 75, 51, 0.9) 50%, rgba(36, 36, 14, 0.9) 100%);
+        border-color: rgba(255, 255, 255, 0.6);
+        transform: translateY(-2px) scale(1.02);
+        box-shadow: 
+            0 8px 25px rgba(0, 0, 0, 0.4),
+            inset 0 1px 0 rgba(255, 255, 255, 0.2),
+            0 0 20px rgba(80, 80, 56, 0.3);
+    }
+    
+    .language-select:focus {
+        border-color: #ffffff;
+        box-shadow: 
+            0 0 0 3px rgba(255, 255, 255, 0.2),
+            0 8px 25px rgba(0, 0, 0, 0.4),
+            inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    }
+    
+    .language-select option {
+        background: linear-gradient(135deg, #505038 0%, #4b4b33 50%, #24240e 100%);
+        color: #000000;
+        padding: 15px 20px;
+        border: none;
+        font-weight: 600;
+        font-size: 0.95rem;
+        border-radius: 0;
+        transition: all 0.3s ease;
+        position: relative;
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    }
+    
+    .language-select option:hover {
+        background: linear-gradient(135deg, #6a6a48 0%, #656538 50%, #3e3e1e 100%);
+        color: #ffffff;
+        text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+        transform: translateX(5px);
+    }
+    
+    .language-select option:checked {
+        background: linear-gradient(135deg, #7a7a58 0%, #757538 50%, #4e4e2e 100%);
+        color: #ffffff;
+        font-weight: 700;
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+    }
+    
             z-index: 1000;
             position: relative;
             transition: all 0.3s ease;
@@ -419,12 +627,13 @@
                     <li><a href="#customers">{{ __('messages.customers') }}</a></li>
                 </ul>
                 <div class="language-switcher">
-                    <select class="language-select" onchange="window.location.href=this.value">
+                    <label for="languageSelect" class="sr-only">{{ __('messages.language') }}</label>
+                    <select id="languageSelect" class="language-select" onchange="window.location.href=this.value" aria-label="{{ __('messages.select_language') }}">
                         <option value="{{ route('language.switch', 'ar') }}" {{ app()->getLocale() == 'ar' ? 'selected' : '' }}>
-                            {{ app()->getLocale() == 'ar' ? 'ع' : 'A' }}
+                            {{ __('messages.arabic') }}
                         </option>
                         <option value="{{ route('language.switch', 'en') }}" {{ app()->getLocale() == 'en' ? 'selected' : '' }}>
-                            {{ app()->getLocale() == 'en' ? 'E' : 'E' }}
+                            {{ __('messages.english') }}
                         </option>
                     </select>
                 </div>

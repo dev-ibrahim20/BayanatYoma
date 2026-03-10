@@ -12,6 +12,27 @@ return [
     'arabic' => 'العربية',
     'english' => 'English',
     
+    // Social Media Links
+    'follow_facebook' => 'Follow us on Facebook',
+    'follow_twitter' => 'Follow us on Twitter',
+    'follow_instagram' => 'Follow us on Instagram',
+    'follow_linkedin' => 'Follow us on LinkedIn',
+    'follow_youtube' => 'Subscribe to our YouTube channel',
+    'contact_whatsapp' => 'Contact us on WhatsApp',
+    'facebook_page' => 'Official Facebook page of Arqco Company',
+    'twitter_profile' => 'Official Twitter profile of Arqco Company',
+    'instagram_profile' => 'Official Instagram profile of Arqco Company',
+    'linkedin_page' => 'Official LinkedIn page of Arqco Company',
+    'youtube_channel' => 'Official YouTube channel of Arqco Company',
+    'whatsapp_contact' => 'WhatsApp number to contact Arqco Company',
+    
+    // Video Accessibility
+    'hero_video_description' => 'Showcase video of Arqco Company services and products',
+    'company_showcase_video' => 'Introductory video of Arqco Company showcasing its work and services',
+    'captions' => 'Closed Captions',
+    'descriptions' => 'Audio Descriptions',
+    'video_not_supported' => 'Your browser does not support the video tag. Please update your browser or use a modern browser.',
+    
     // Hero Section
     'quality' => 'Quality',
     'quality_text' => 'We are committed to the highest quality standards in everything we offer',
@@ -107,6 +128,10 @@ return [
     'email_text' => 'info@byanatyoma.com',
     'location' => 'Location',
     'location_text' => 'Riyadh, Saudi Arabia',
+    'address' => 'Address',
+    'address_text' => 'Yasmin Street - Al Qadisiyah, Riyadh',
+    'map_title' => 'Arqco Company Location Map',
+    'map_description' => 'Google map showing the location of Arqco Company on Yasmin Street - Al Qadisiyah, Riyadh',
     
     // Customers Section
     'customers_title' => 'Our Customers',

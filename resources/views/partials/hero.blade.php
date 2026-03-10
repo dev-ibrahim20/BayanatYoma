@@ -662,23 +662,29 @@
 
 <!-- Social Media Sidebar -->
 <div class="social-sidebar">
-    <a href="https://facebook.com" target="_blank" class="social-icon facebook" data-tooltip="Facebook">
-        <i class="fab fa-facebook-f"></i>
+    <a href="https://facebook.com" target="_blank" class="social-icon facebook" data-tooltip="Facebook" 
+       aria-label="{{ __('messages.follow_facebook') }}" title="{{ __('messages.facebook_page') }}">
+        <i class="fab fa-facebook-f" aria-hidden="true"></i>
     </a>
-    <a href="https://twitter.com" target="_blank" class="social-icon twitter" data-tooltip="Twitter">
-        <i class="fab fa-twitter"></i>
+    <a href="https://twitter.com" target="_blank" class="social-icon twitter" data-tooltip="Twitter"
+       aria-label="{{ __('messages.follow_twitter') }}" title="{{ __('messages.twitter_profile') }}">
+        <i class="fab fa-twitter" aria-hidden="true"></i>
     </a>
-    <a href="https://instagram.com" target="_blank" class="social-icon instagram" data-tooltip="Instagram">
-        <i class="fab fa-instagram"></i>
+    <a href="https://instagram.com" target="_blank" class="social-icon instagram" data-tooltip="Instagram"
+       aria-label="{{ __('messages.follow_instagram') }}" title="{{ __('messages.instagram_profile') }}">
+        <i class="fab fa-instagram" aria-hidden="true"></i>
     </a>
-    <a href="https://linkedin.com" target="_blank" class="social-icon linkedin" data-tooltip="LinkedIn">
-        <i class="fab fa-linkedin-in"></i>
+    <a href="https://linkedin.com" target="_blank" class="social-icon linkedin" data-tooltip="LinkedIn"
+       aria-label="{{ __('messages.follow_linkedin') }}" title="{{ __('messages.linkedin_page') }}">
+        <i class="fab fa-linkedin-in" aria-hidden="true"></i>
     </a>
-    <a href="https://youtube.com" target="_blank" class="social-icon youtube" data-tooltip="YouTube">
-        <i class="fab fa-youtube"></i>
+    <a href="https://youtube.com" target="_blank" class="social-icon youtube" data-tooltip="YouTube"
+       aria-label="{{ __('messages.follow_youtube') }}" title="{{ __('messages.youtube_channel') }}">
+        <i class="fab fa-youtube" aria-hidden="true"></i>
     </a>
-    <a href="https://wa.me/1234567890" target="_blank" class="social-icon whatsapp" data-tooltip="WhatsApp">
-        <i class="fab fa-whatsapp"></i>
+    <a href="https://wa.me/1234567890" target="_blank" class="social-icon whatsapp" data-tooltip="WhatsApp"
+       aria-label="{{ __('messages.contact_whatsapp') }}" title="{{ __('messages.whatsapp_contact') }}">
+        <i class="fab fa-whatsapp" aria-hidden="true"></i>
     </a>
 </div>
 
@@ -698,10 +704,14 @@
                     <div class="island-indicator"></div>
                 </div>
                 
-                <video autoplay muted loop playsinline>
+                <video autoplay muted loop playsinline 
+                       aria-label="{{ __('messages.hero_video_description') }}"
+                       title="{{ __('messages.company_showcase_video') }}">
                     <source src="{{ asset('assets/videos/123.mp4') }}" type="video/mp4">
                     <source src="{{ asset('assets/videos/123.ogg') }}" type="video/ogg">
-                    Your browser does not support video tag.
+                    <track kind="captions" srclang="{{ app()->getLocale() }}" label="{{ __('messages.captions') }}" src="{{ asset('assets/captions/hero-video-' . app()->getLocale() . '.vtt') }}">
+                    <track kind="descriptions" srclang="{{ app()->getLocale() }}" label="{{ __('messages.descriptions') }}" src="{{ asset('assets/descriptions/hero-video-' . app()->getLocale() . '.vtt') }}">
+                    {{ __('messages.video_not_supported') }}
                 </video>
             </div>
             

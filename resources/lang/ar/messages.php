@@ -12,6 +12,27 @@ return [
     'arabic' => 'العربية',
     'english' => 'English',
     
+    // Social Media Links
+    'follow_facebook' => 'تابعنا على فيسبوك',
+    'follow_twitter' => 'تابعنا على تويتر',
+    'follow_instagram' => 'تابعنا على انستغرام',
+    'follow_linkedin' => 'تابعنا على لينكدإن',
+    'follow_youtube' => 'اشترك في قناتنا على يوتيوب',
+    'contact_whatsapp' => 'تواصل معنا عبر واتساب',
+    'facebook_page' => 'صفحة فيسبوك الرسمية لشركة أركو',
+    'twitter_profile' => 'حساب تويتر الرسمي لشركة أركو',
+    'instagram_profile' => 'حساب انستغرام الرسمي لشركة أركو',
+    'linkedin_page' => 'صفحة لينكدإن الرسمية لشركة أركو',
+    'youtube_channel' => 'قناة يوتيوب الرسمية لشركة أركو',
+    'whatsapp_contact' => 'رقم واتساب للتواصل مع شركة أركو',
+    
+    // Video Accessibility
+    'hero_video_description' => 'فيديو عرض لخدمات ومنتجات شركة أركو',
+    'company_showcase_video' => 'فيديو تعريفي لشركة أركو يعرض أعمالها وخدماتها',
+    'captions' => 'ترجمة نصية',
+    'descriptions' => 'وصف صوتي',
+    'video_not_supported' => 'متصفحك لا يدعم علامة الفيديو. يرجى تحديث متصفحك أو استخدام متصفح حديث.',
+    
     // Hero Section
     'quality' => 'الجودة',
     'quality_text' => 'نلتزم بأعلى معايير الجودة في كل ما نقدمه',
@@ -107,6 +128,10 @@ return [
     'email_text' => 'info@byanatyoma.com',
     'location' => 'الموقع',
     'location_text' => 'الرياض، المملكة العربية السعودية',
+    'address' => 'العنوان',
+    'address_text' => 'شارع الياسمين - القادسية، الرياض',
+    'map_title' => 'خريطة موقع شركة أركو',
+    'map_description' => 'خريطة جوجل تعرض موقع شركة أركو في شارع الياسمين - القادسية، الرياض',
     
     // Customers Section
     'customers_title' => 'عملائنا',

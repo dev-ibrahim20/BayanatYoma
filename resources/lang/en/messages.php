@@ -68,6 +68,12 @@ return [
     'consulting_text' => 'We offer expert event organization consulting to help you achieve your vision.',
     'gifts' => 'Gifts',
     'gifts_text' => 'Selected gift solutions for clients, employees, or event attendees that always leave a lasting impression.',
+    'entertainment' => 'Entertainment',
+    'entertainment_text' => 'We organize diverse entertainment programs suitable for all ages and ensure guest enjoyment.',
+    'catering' => 'Catering & Food Services',
+    'catering_text' => 'We provide comprehensive catering services with diverse menus and high quality.',
+    'transportation' => 'Transportation & Logistics',
+    'transportation_text' => 'We offer integrated transportation solutions to ensure guest and VIP arrivals smoothly.',
     
     // Stats Section
     'clients' => 'Clients who trusted us with their projects',
@@ -96,8 +102,8 @@ return [
     'team_text' => 'A team of experts and specialists who put your goals first.',
     'reliable_partnerships' => 'Reliable Partnerships',
     'reliable_partnerships_text' => 'Building long-term relationships with clients based on trust and results.',
-    'quality' => 'High Quality',
-    'quality_text' => 'We are committed to the highest quality standards in every detail of our work.',
+    'high_quality' => 'High Quality',
+    'high_quality_text' => 'We are committed to the highest quality standards in every detail of our work.',
     
     // Gallery Section
     'gallery_title' => 'Our Portfolio',

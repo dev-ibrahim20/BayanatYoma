@@ -745,8 +745,8 @@
             </div>
             
             <div class="hero-buttons">
-                <a href="#services" class="btn-primary">ابدأ الآن</a>
-                <a href="#contact" class="btn-secondary">تواصل معنا</a>
+                <a href="#services" class="btn-primary">{{ __('messages.services_btn') }}</a>
+                <a href="#contact" class="btn-secondary">{{ __('messages.contact_btn') }}</a>
             </div>
         </div>
     </div>

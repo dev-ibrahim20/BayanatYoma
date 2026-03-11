@@ -1,8 +1,8 @@
 <style>
-    /* Gallery Section Styles */
+    /* Simple Horizontal Gallery */
     .gallery {
         padding: 80px 20px;
-  background: linear-gradient(135deg, #1A2F4A, #C6A87D);
+        background: linear-gradient(135deg, #1A2F4A, #C6A87D);
         border-top: 1px solid #484846;
         position: relative;
         overflow: hidden;
@@ -34,106 +34,98 @@
         position: relative;
         max-width: 1400px;
         margin: 0 auto;
-        padding: 0 80px;
         width: 100%;
     }
     
-    .gallery-sidebar {
+    .gallery-slider {
+        position: relative;
+        overflow: hidden;
+        border-radius: 20px;
+        background: rgba(0, 0, 0, 0.2);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    }
+    
+    .gallery-wrapper {
         display: flex;
         overflow-x: auto;
         overflow-y: hidden;
         scroll-behavior: smooth;
-        gap: 30px;
+        gap: 20px;
         padding: 20px 0;
-        position: relative;
-        scrollbar-width: none;
-        -ms-overflow-style: none;
-        width: 100%;
-        min-width: 0;
-        white-space: nowrap;
+        scrollbar-width: thin;
+        scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
     }
     
-    .gallery-sidebar::-webkit-scrollbar {
-        display: none;
+    .gallery-wrapper::-webkit-scrollbar {
+        height: 8px;
+    }
+    
+    .gallery-wrapper::-webkit-scrollbar-track {
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 4px;
+    }
+    
+    .gallery-wrapper::-webkit-scrollbar-thumb {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        border-radius: 4px;
     }
     
     .gallery-item {
-        flex: 0 0 350px;
-        background: linear-gradient(135deg, #575555 0%, #989f89 50%, #494545 100%);
-        border: 1px solid rgba(0, 0, 0, 0.1);
-        border-radius: 16px;
-        overflow: hidden;
-        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        flex: 0 0 400px;
         position: relative;
-        min-height: 400px;
-        display: flex;
-        flex-direction: column;
-    }
-    
-    .gallery-item::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 4px;
-        background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+        overflow: hidden;
+        border-radius: 16px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        transition: all 0.3s ease;
     }
     
     .gallery-item:hover {
-        transform: translateY(-12px);
-        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
-        border-color: #667eea;
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
     }
     
-    .gallery-image {
-        height: 220px;
-        overflow: hidden;
-        background: #3a3a00;
-        position: relative;
-    }
-    
-    .gallery-image img {
+    .gallery-item img {
         width: 100%;
-        height: 100%;
+        height: 300px;
         object-fit: cover;
-        transition: transform 0.4s ease, opacity 0.3s ease;
+        display: block;
+        transition: transform 0.3s ease;
+    }
+    
+    .gallery-item:hover img {
+        transform: scale(1.05);
+    }
+    
+    .gallery-info {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+        color: #ffffff;
+        padding: 30px;
+        transform: translateY(100%);
+        transition: transform 0.3s ease;
+    }
+    
+    .gallery-item:hover .gallery-info {
+        transform: translateY(0);
+    }
+    
+    .gallery-info h3 {
+        font-size: 1.8rem;
+        font-weight: 700;
+        margin-bottom: 10px;
+        font-family: 'Arial Black', Arial, sans-serif;
+    }
+    
+    .gallery-info p {
+        font-size: 1.1rem;
+        line-height: 1.6;
         opacity: 0.9;
     }
     
-    .gallery-item:hover .gallery-image img {
-        transform: scale(1.08);
-        opacity: 1;
-    }
-    
-    .gallery-content {
-        padding: 25px;
-        flex-grow: 1;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-    }
-    
-    .gallery-item h3 {
-        font-size: 1.5rem;
-        color: #ffffff;
-        margin-bottom: 15px;
-        font-weight: 700;
-        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-        letter-spacing: -0.5px;
-        line-height: 1.3;
-    }
-    
-    .gallery-item p {
-        color: #ffffff;
-        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-        font-weight: 400;
-        font-size: 1rem;
-        line-height: 1.7;
-        margin-top: auto;
-    }
-    
+    /* Navigation Arrows */
     .gallery-nav {
         position: absolute;
         top: 50%;
@@ -148,23 +140,23 @@
         justify-content: center;
         cursor: pointer;
         transition: all 0.3s ease;
-        box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
-        z-index: 10;
+        box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+        z-index: 100;
         color: #ffffff;
         font-size: 1.5rem;
     }
     
     .gallery-nav:hover {
         transform: translateY(-50%) scale(1.1);
-        box-shadow: 0 12px 35px rgba(102, 126, 234, 0.4);
+        box-shadow: 0 12px 35px rgba(102, 126, 234, 0.5);
     }
     
     .gallery-nav.prev {
-        left: 10px;
+        left: 20px;
     }
     
     .gallery-nav.next {
-        right: 10px;
+        right: 20px;
     }
     
     .gallery-nav.disabled {
@@ -175,14 +167,14 @@
     
     .gallery-nav.disabled:hover {
         transform: translateY(-50%);
-        box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+        box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
     }
     
-    /* Progress Indicator */
+    /* Progress Indicators */
     .gallery-progress {
         display: flex;
         justify-content: center;
-        gap: 8px;
+        gap: 10px;
         margin-top: 30px;
     }
     
@@ -195,39 +187,54 @@
         transition: all 0.3s ease;
     }
     
+    .gallery-dot:hover {
+        background: rgba(255, 255, 255, 0.5);
+    }
+    
     .gallery-dot.active {
         background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         transform: scale(1.2);
     }
     
+    /* RTL Support */
+    [dir="rtl"] .gallery-nav.prev {
+        right: 20px;
+        left: auto;
+    }
+    
+    [dir="rtl"] .gallery-nav.next {
+        left: 20px;
+        right: auto;
+    }
+    
+    /* Responsive Design */
     @media (max-width: 768px) {
         .gallery {
-            padding: 60px 20px;
+            padding: 60px 15px;
         }
         
-        .gallery-container {
-            padding: 0 60px;
+        .section-header h2 {
+            font-size: 2.5rem;
         }
         
-        .gallery-item {
-            flex: 0 0 280px;
-            min-height: 350px;
+        .section-header p {
+            font-size: 1.4rem;
         }
         
-        .gallery-image {
-            height: 180px;
+        .gallery-item img {
+            height: 350px;
         }
         
-        .gallery-content {
+        .gallery-info {
             padding: 20px;
         }
         
-        .gallery-item h3 {
-            font-size: 1.3rem;
+        .gallery-info h3 {
+            font-size: 1.4rem;
         }
         
-        .gallery-item p {
-            font-size: 0.9rem;
+        .gallery-info p {
+            font-size: 1rem;
         }
         
         .gallery-nav {
@@ -236,35 +243,30 @@
             font-size: 1.2rem;
         }
         
-        .section-header h2 {
-            font-size: 2.2rem;
+        .gallery-nav.prev {
+            left: 10px;
+        }
+        
+        .gallery-nav.next {
+            right: 10px;
         }
     }
     
     @media (max-width: 480px) {
-        .gallery-container {
-            padding: 0 50px;
+        .gallery-item img {
+            height: 280px;
         }
         
-        .gallery-item {
-            flex: 0 0 250px;
-            min-height: 320px;
-        }
-        
-        .gallery-image {
-            height: 160px;
-        }
-        
-        .gallery-content {
+        .gallery-info {
             padding: 15px;
         }
         
-        .gallery-item h3 {
+        .gallery-info h3 {
             font-size: 1.2rem;
         }
         
-        .gallery-item p {
-            font-size: 0.85rem;
+        .gallery-info p {
+            font-size: 0.9rem;
         }
         
         .gallery-nav {
@@ -272,16 +274,12 @@
             height: 45px;
             font-size: 1rem;
         }
-        
-        .section-header h2 {
-            font-size: 1.8rem;
-        }
     }
 </style>
 
 @section('title', __('messages.gallery_title'))
 <!-- Gallery Section -->
-<section id="gallery" class="gallery">
+<section id="gallery" class="gallery" dir="{{ app()->getLocale() == 'ar' ? 'rtl' : 'ltr' }}">
     <div class="container">
         <div class="section-header">
             <h2>{{ __('messages.gallery_title') }}</h2>
@@ -289,287 +287,185 @@
         </div>
         
         <div class="gallery-container">
-            <button class="gallery-nav prev" id="galleryPrev" aria-label="Previous">
-                <i class="fas fa-chevron-right"></i>
-            </button>
-            <button class="gallery-nav next" id="galleryNext" aria-label="Next">
-                <i class="fas fa-chevron-left"></i>
-            </button>
-            
-            <div class="gallery-sidebar" id="gallerySidebar">
-                <div class="gallery-item">
-                    <div class="gallery-image">
-                        <img src="https://picsum.photos/seed/event1/400/300.jpg" alt="{{ __('messages.gallery_event1_alt') }}">
+            <div class="gallery-slider">
+                <div class="gallery-wrapper" id="galleryWrapper">
+                    <!-- Gallery Item 1 -->
+                    <div class="gallery-item">
+                        <img src="https://picsum.photos/seed/event1/400/300.jpg" 
+                             alt="{{ __('messages.gallery_event1_alt') }}"
+                             loading="lazy">
+                        <div class="gallery-info">
+                            <h3>{{ __('messages.gallery_event1_title') }}</h3>
+                            <p>{{ __('messages.gallery_event1_text') }}</p>
+                        </div>
                     </div>
-                    <div class="gallery-content">
-                        <h3>{{ __('messages.gallery_event1_title') }}</h3>
-                        <p>{{ __('messages.gallery_event1_text') }}</p>
+                    
+                    <!-- Gallery Item 2 -->
+                    <div class="gallery-item">
+                        <img src="https://picsum.photos/seed/event2/400/300.jpg" 
+                             alt="{{ __('messages.gallery_event2_alt') }}"
+                             loading="lazy">
+                        <div class="gallery-info">
+                            <h3>{{ __('messages.gallery_event2_title') }}</h3>
+                            <p>{{ __('messages.gallery_event2_text') }}</p>
+                        </div>
                     </div>
-                </div>
-                <div class="gallery-item">
-                    <div class="gallery-image">
-                        <img src="https://picsum.photos/seed/event2/400/300.jpg" alt="{{ __('messages.gallery_event2_alt') }}">
+                    
+                    <!-- Gallery Item 3 -->
+                    <div class="gallery-item">
+                        <img src="https://picsum.photos/seed/event3/400/300.jpg" 
+                             alt="{{ __('messages.gallery_event3_alt') }}"
+                             loading="lazy">
+                        <div class="gallery-info">
+                            <h3>{{ __('messages.gallery_event3_title') }}</h3>
+                            <p>{{ __('messages.gallery_event3_text') }}</p>
+                        </div>
                     </div>
-                    <div class="gallery-content">
-                        <h3>{{ __('messages.gallery_event2_title') }}</h3>
-                        <p>{{ __('messages.gallery_event2_text') }}</p>
+                    
+                    <!-- Gallery Item 4 -->
+                    <div class="gallery-item">
+                        <img src="https://picsum.photos/seed/event4/400/300.jpg" 
+                             alt="{{ __('messages.gallery_event4_alt') }}"
+                             loading="lazy">
+                        <div class="gallery-info">
+                            <h3>{{ __('messages.gallery_event4_title') }}</h3>
+                            <p>{{ __('messages.gallery_event4_text') }}</p>
+                        </div>
                     </div>
-                </div>
-                <div class="gallery-item">
-                    <div class="gallery-image">
-                        <img src="https://picsum.photos/seed/event3/400/300.jpg" alt="{{ __('messages.gallery_event3_alt') }}">
+                    
+                    <!-- Gallery Item 5 -->
+                    <div class="gallery-item">
+                        <img src="https://picsum.photos/seed/event5/400/300.jpg" 
+                             alt="{{ __('messages.gallery_event5_alt') }}"
+                             loading="lazy">
+                        <div class="gallery-info">
+                            <h3>{{ __('messages.gallery_event5_title') }}</h3>
+                            <p>{{ __('messages.gallery_event5_text') }}</p>
+                        </div>
                     </div>
-                    <div class="gallery-content">
-                        <h3>{{ __('messages.gallery_event3_title') }}</h3>
-                        <p>{{ __('messages.gallery_event3_text') }}</p>
+                    
+                    <!-- Gallery Item 6 -->
+                    <div class="gallery-item">
+                        <img src="https://picsum.photos/seed/event6/400/300.jpg" 
+                             alt="{{ __('messages.gallery_event6_alt') }}"
+                             loading="lazy">
+                        <div class="gallery-info">
+                            <h3>{{ __('messages.gallery_event6_title') }}</h3>
+                            <p>{{ __('messages.gallery_event6_text') }}</p>
+                        </div>
                     </div>
-                </div>
-                <div class="gallery-item">
-                    <div class="gallery-image">
-                        <img src="https://picsum.photos/seed/event4/400/300.jpg" alt="{{ __('messages.gallery_event4_alt') }}">
+                    
+                    <!-- Gallery Item 7 -->
+                    <div class="gallery-item">
+                        <img src="https://picsum.photos/seed/event7/400/300.jpg" 
+                             alt="{{ __('messages.gallery_event7_alt') }}"
+                             loading="lazy">
+                        <div class="gallery-info">
+                            <h3>{{ __('messages.gallery_event7_title') }}</h3>
+                            <p>{{ __('messages.gallery_event7_text') }}</p>
+                        </div>
                     </div>
-                    <div class="gallery-content">
-                        <h3>{{ __('messages.gallery_event4_title') }}</h3>
-                        <p>{{ __('messages.gallery_event4_text') }}</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <div class="gallery-image">
-                        <img src="https://picsum.photos/seed/event5/400/300.jpg" alt="{{ __('messages.gallery_event5_alt') }}">
-                    </div>
-                    <div class="gallery-content">
-                        <h3>{{ __('messages.gallery_event5_title') }}</h3>
-                        <p>{{ __('messages.gallery_event5_text') }}</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <div class="gallery-image">
-                        <img src="https://picsum.photos/seed/event6/400/300.jpg" alt="{{ __('messages.gallery_event6_alt') }}">
-                    </div>
-                    <div class="gallery-content">
-                        <h3>{{ __('messages.gallery_event6_title') }}</h3>
-                        <p>{{ __('messages.gallery_event6_text') }}</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <div class="gallery-image">
-                        <img src="https://picsum.photos/seed/event7/400/300.jpg" alt="{{ __('messages.gallery_event7_alt') }}">
-                    </div>
-                    <div class="gallery-content">
-                        <h3>{{ __('messages.gallery_event7_title') }}</h3>
-                        <p>{{ __('messages.gallery_event7_text') }}</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <div class="gallery-image">
-                        <img src="https://picsum.photos/seed/event8/400/300.jpg" alt="{{ __('messages.gallery_event8_alt') }}">
-                    </div>
-                    <div class="gallery-content">
-                        <h3>{{ __('messages.gallery_event8_title') }}</h3>
-                        <p>{{ __('messages.gallery_event8_text') }}</p>
+                    
+                    <!-- Gallery Item 8 -->
+                    <div class="gallery-item">
+                        <img src="https://picsum.photos/seed/event8/400/300.jpg" 
+                             alt="{{ __('messages.gallery_event8_alt') }}"
+                             loading="lazy">
+                        <div class="gallery-info">
+                            <h3>{{ __('messages.gallery_event8_title') }}</h3>
+                            <p>{{ __('messages.gallery_event8_text') }}</p>
+                        </div>
                     </div>
                 </div>
             </div>
+            
+            <!-- Navigation Arrows -->
+            <button class="gallery-nav prev" id="galleryPrev" 
+                    aria-label="{{ __('messages.previous_project') }}"
+                    title="{{ __('messages.view_previous') }}">
+                <i class="fas fa-chevron-{{ app()->getLocale() == 'ar' ? 'right' : 'left' }}"></i>
+            </button>
+            <button class="gallery-nav next" id="galleryNext" 
+                    aria-label="{{ __('messages.next_project') }}"
+                    title="{{ __('messages.view_next') }}">
+                <i class="fas fa-chevron-{{ app()->getLocale() == 'ar' ? 'left' : 'right' }}"></i>
+            </button>
         </div>
         
-        <div class="gallery-progress" id="galleryProgress"></div>
+        <!-- Progress Indicators -->
+        <div class="gallery-progress" id="galleryProgress">
+            <div class="gallery-dot active" data-slide="0" 
+                 aria-label="{{ __('messages.slide') }} 1"></div>
+            <div class="gallery-dot" data-slide="1" 
+                 aria-label="{{ __('messages.slide') }} 2"></div>
+            <div class="gallery-dot" data-slide="2" 
+                 aria-label="{{ __('messages.slide') }} 3"></div>
+            <div class="gallery-dot" data-slide="3" 
+                 aria-label="{{ __('messages.slide') }} 4"></div>
+            <div class="gallery-dot" data-slide="4" 
+                 aria-label="{{ __('messages.slide') }} 5"></div>
+            <div class="gallery-dot" data-slide="5" 
+                 aria-label="{{ __('messages.slide') }} 6"></div>
+        </div>
     </div>
 </section>
 
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    const sidebar = document.getElementById('gallerySidebar');
-    const prevBtn = document.getElementById('galleryPrev');
-    const nextBtn = document.getElementById('galleryNext');
-    const progressContainer = document.getElementById('galleryProgress');
-    
-    let currentIndex = 0;
-    let itemWidth = 350;
-    let gap = 30;
-    let visibleItems = 3;
-    
-    function updateLayout() {
-        const containerWidth = sidebar.parentElement.offsetWidth - 160;
-        if (window.innerWidth <= 480) {
-            itemWidth = 250;
-            visibleItems = 1;
-        } else if (window.innerWidth <= 768) {
-            itemWidth = 280;
-            visibleItems = 2;
-        } else {
-            // Always show exactly 4 items on desktop
-            visibleItems = 4;
-            itemWidth = (containerWidth - (gap * (visibleItems - 1))) / visibleItems;
-            itemWidth = Math.min(350, Math.max(280, itemWidth)); // Clamp between 280-350px
-        }
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const galleryWrapper = document.getElementById('galleryWrapper');
+        const prevBtn = document.getElementById('galleryPrev');
+        const nextBtn = document.getElementById('galleryNext');
         
-        const items = document.querySelectorAll('.gallery-item');
-        items.forEach(item => {
-            item.style.flex = `0 0 ${itemWidth}px`;
-        });
-        
-        // Reset to first position when layout changes
-        currentIndex = 0;
-        updateScroll();
-    }
-    
-    function updateProgress() {
-        const items = document.querySelectorAll('.gallery-item');
-        const totalItems = items.length;
-        const maxIndex = Math.max(0, totalItems - visibleItems);
-        
-        progressContainer.innerHTML = '';
-        
-        for (let i = 0; i <= maxIndex; i++) {
-            const dot = document.createElement('div');
-            dot.className = 'gallery-dot';
-            if (i === currentIndex) {
-                dot.classList.add('active');
-            }
-            dot.addEventListener('click', () => {
-                currentIndex = i;
-                updateScroll();
+        // Smooth scroll functions
+        function scrollLeft() {
+            galleryWrapper.scrollBy({
+                left: -420, // 400px image width + 20px gap
+                behavior: 'smooth'
             });
-            progressContainer.appendChild(dot);
         }
-    }
-    
-    function updateScroll() {
-        const scrollPosition = currentIndex * (itemWidth + gap);
-        console.log('Scrolling to position:', scrollPosition, 'Index:', currentIndex);
-        console.log('Item width:', itemWidth, 'Gap:', gap);
-        console.log('Sidebar scrollWidth:', sidebar.scrollWidth);
-        console.log('Sidebar clientWidth:', sidebar.clientWidth);
         
-        // Ensure the sidebar allows horizontal scrolling
-        sidebar.style.overflowX = 'auto';
-        sidebar.style.overflowY = 'hidden';
+        function scrollRight() {
+            galleryWrapper.scrollBy({
+                left: 420, // 400px image width + 20px gap
+                behavior: 'smooth'
+            });
+        }
         
-        // Force scroll using multiple methods for better compatibility
-        sidebar.scrollLeft = scrollPosition;
+        // Event listeners
+        nextBtn.addEventListener('click', scrollRight);
+        prevBtn.addEventListener('click', scrollLeft);
         
-        // Try smooth scroll as backup with immediate execution
-        sidebar.scrollTo({
-            left: scrollPosition,
-            behavior: 'smooth'
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight') scrollRight();
+            if (e.key === 'ArrowLeft') scrollLeft();
         });
         
-        // Update progress and buttons after scroll animation
-        setTimeout(() => {
-            updateProgress();
-            updateButtons();
-            console.log('Actual scroll position:', sidebar.scrollLeft);
-        }, 100);
-    }
-    
-    function updateButtons() {
-        const items = document.querySelectorAll('.gallery-item');
-        const totalItems = items.length;
-        const maxIndex = Math.max(0, totalItems - visibleItems);
+        // Auto-scroll on hover (optional)
+        let autoScrollInterval;
         
-        prevBtn.classList.toggle('disabled', currentIndex === 0);
-        nextBtn.classList.toggle('disabled', currentIndex >= maxIndex);
-    }
-    
-    prevBtn.addEventListener('click', () => {
-        console.log('Previous clicked, current index:', currentIndex);
-        if (currentIndex > 0) {
-            currentIndex--;
-            console.log('New index:', currentIndex);
-            updateScroll();
-        }
-    });
-    
-    nextBtn.addEventListener('click', () => {
-        console.log('Next clicked, current index:', currentIndex);
-        const items = document.querySelectorAll('.gallery-item');
-        const totalItems = items.length;
-        const maxIndex = Math.max(0, totalItems - visibleItems);
-        
-        if (currentIndex < maxIndex) {
-            currentIndex++;
-            console.log('New index:', currentIndex, 'Max index:', maxIndex);
-            updateScroll();
-        }
-    });
-    
-    // Keyboard navigation
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'ArrowLeft') {
-            prevBtn.click();
-        } else if (e.key === 'ArrowRight') {
-            nextBtn.click();
-        }
-    });
-    
-    // Touch/swipe support
-    let startX = 0;
-    let isDragging = false;
-    
-    sidebar.addEventListener('touchstart', (e) => {
-        startX = e.touches[0].clientX;
-        isDragging = true;
-    });
-    
-    sidebar.addEventListener('touchmove', (e) => {
-        if (!isDragging) return;
-        e.preventDefault();
-    });
-    
-    sidebar.addEventListener('touchend', (e) => {
-        if (!isDragging) return;
-        
-        const endX = e.changedTouches[0].clientX;
-        const diff = startX - endX;
-        
-        if (Math.abs(diff) > 50) {
-            if (diff > 0) {
-                nextBtn.click();
-            } else {
-                prevBtn.click();
-            }
+        function startAutoScroll(direction) {
+            stopAutoScroll();
+            autoScrollInterval = setInterval(() => {
+                if (direction === 'right') {
+                    scrollRight();
+                } else {
+                    scrollLeft();
+                }
+            }, 50);
         }
         
-        isDragging = false;
+        function stopAutoScroll() {
+            clearInterval(autoScrollInterval);
+        }
+        
+        // Optional: Auto-scroll when holding arrow buttons
+        nextBtn.addEventListener('mousedown', () => startAutoScroll('right'));
+        nextBtn.addEventListener('mouseup', stopAutoScroll);
+        nextBtn.addEventListener('mouseleave', stopAutoScroll);
+        
+        prevBtn.addEventListener('mousedown', () => startAutoScroll('left'));
+        prevBtn.addEventListener('mouseup', stopAutoScroll);
+        prevBtn.addEventListener('mouseleave', stopAutoScroll);
     });
-    
-    // Debug function to check scroll position
-    function debugScroll() {
-        console.log('Current index:', currentIndex);
-        console.log('Item width:', itemWidth);
-        console.log('Gap:', gap);
-        console.log('Scroll position:', sidebar.scrollLeft);
-        console.log('Calculated position:', currentIndex * (itemWidth + gap));
-    }
-    
-    // Add debug button (remove in production)
-    window.debugGallery = debugScroll;
-    
-    // Initialize
-    setTimeout(() => {
-        console.log('Initializing gallery...');
-        console.log('Sidebar element:', sidebar);
-        console.log('Items:', document.querySelectorAll('.gallery-item').length);
-        
-        // Ensure proper scrolling setup
-        sidebar.style.overflowX = 'auto';
-        sidebar.style.overflowY = 'hidden';
-        
-        updateLayout();
-        updateButtons();
-        updateProgress();
-        
-        console.log('Initialization complete');
-        console.log('Initial item width:', itemWidth);
-        console.log('Initial visible items:', visibleItems);
-        console.log('Total scroll width:', sidebar.scrollWidth);
-    }, 100);
-    
-    window.addEventListener('resize', () => {
-        clearTimeout(window.resizeTimer);
-        window.resizeTimer = setTimeout(() => {
-            updateLayout();
-        }, 250);
-    });
-});
 </script>

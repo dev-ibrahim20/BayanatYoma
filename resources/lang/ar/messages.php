@@ -26,6 +26,14 @@ return [
     'youtube_channel' => 'قناة يوتيوب الرسمية لشركة أركو',
     'whatsapp_contact' => 'رقم واتساب للتواصل مع شركة أركو',
     
+    // Gallery Navigation
+    'previous_project' => 'المشروع السابق',
+    'next_project' => 'المشروع التالي',
+    'view_previous' => 'عرض المشروع السابق',
+    'view_next' => 'عرض المشروع التالي',
+    'slide' => 'شريحة',
+    'event_date' => 'تاريخ الفعالية',
+    
     // Video Accessibility
     'hero_video_description' => 'فيديو عرض لخدمات ومنتجات شركة أركو',
     'company_showcase_video' => 'فيديو تعريفي لشركة أركو يعرض أعمالها وخدماتها',

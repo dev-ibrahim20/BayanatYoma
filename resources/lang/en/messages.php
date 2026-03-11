@@ -26,6 +26,14 @@ return [
     'youtube_channel' => 'Official YouTube channel of Arqco Company',
     'whatsapp_contact' => 'WhatsApp number to contact Arqco Company',
     
+    // Gallery Navigation
+    'previous_project' => 'Previous Project',
+    'next_project' => 'Next Project',
+    'view_previous' => 'View Previous Project',
+    'view_next' => 'View Next Project',
+    'slide' => 'Slide',
+    'event_date' => 'Event Date',
+    
     // Video Accessibility
     'hero_video_description' => 'Showcase video of Arqco Company services and products',
     'company_showcase_video' => 'Introductory video of Arqco Company showcasing its work and services',

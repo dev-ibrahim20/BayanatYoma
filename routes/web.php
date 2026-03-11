@@ -35,7 +35,7 @@ Route::get('/language/{locale}', [LanguageController::class, 'switch'])->name('l
 
 
 
-Route::get('/dashboard', function () {
+Route::get('/atdashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 

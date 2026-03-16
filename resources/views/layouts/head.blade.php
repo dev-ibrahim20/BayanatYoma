@@ -262,7 +262,7 @@
         .hamburger span {
             width: 25px;
             height: 3px;
-            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 50%, #ffffff 100%);
+            /* background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 50%, #ffffff 100%); */
             border-radius: 3px;
             transition: background 0.2s ease;
         }

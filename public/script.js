@@ -20,17 +20,17 @@ document.querySelectorAll('.nav-menu a').forEach(link => {
 });
 
 // Navbar scroll effect
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 100) {
-        navbar.style.background = 'rgba(255, 255, 255, 0.98)';
-        navbar.style.boxShadow = '0 2px 30px rgba(0, 0, 0, 0.15)';
-        backToTopBtn.classList.add('show');
-    } else {
-        navbar.style.background = 'rgba(255, 255, 255, 0.95)';
-        navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
-        backToTopBtn.classList.remove('show');
-    }
-});
+// window.addEventListener('scroll', () => {
+//     if (window.scrollY > 100) {
+//         // navbar.style.background = 'rgba(255, 255, 255, 0.98)';
+//         // navbar.style.boxShadow = '0 2px 30px rgba(0, 0, 0, 0.15)';
+//         backToTopBtn.classList.add('show');
+//     } else {
+//         // navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+//         // navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+//         backToTopBtn.classList.remove('show');
+//     }
+// });
 
 // Back to top button
 backToTopBtn.addEventListener('click', () => {
@@ -101,6 +101,11 @@ const observer = new IntersectionObserver((entries) => {
 
 // Observe elements for animation
 document.addEventListener('DOMContentLoaded', () => {
+    const heroTitle = document.querySelector('.hero-text h1');
+    const heroParagraphs = document.querySelectorAll('.hero-text p');
+    const heroButtons = document.querySelector('.hero-buttons');
+    const contactForm = document.querySelector('#contactForm');
+    
     // Observe stat items
     document.querySelectorAll('.stat-item').forEach(item => {
         item.style.opacity = '0';
@@ -119,60 +124,105 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Animate hero elements on load
     setTimeout(() => {
-        document.querySelector('.hero-text h1').style.opacity = '1';
-        document.querySelector('.hero-text h1').style.transform = 'translateY(0)';
+        const heroTitle = document.querySelector('.hero-text h1');
+        const heroButtons = document.querySelector('.hero-buttons');
+        
+        if (heroTitle) {
+            heroTitle.style.opacity = '1';
+            heroTitle.style.transform = 'translateY(0)';
+        }
         
         setTimeout(() => {
-            document.querySelectorAll('.hero-text p').forEach((p, index) => {
-                setTimeout(() => {
-                    p.style.opacity = '1';
-                    p.style.transform = 'translateY(0)';
-                }, index * 200);
-            });
+            const heroParagraphs = document.querySelectorAll('.hero-text p');
+            if (heroParagraphs) {
+                heroParagraphs.forEach((p, index) => {
+                    setTimeout(() => {
+                        p.style.opacity = '1';
+                        p.style.transform = 'translateY(0)';
+                    }, index * 200);
+                });
+            }
         }, 300);
         
         setTimeout(() => {
-            document.querySelector('.hero-buttons').style.opacity = '1';
-            document.querySelector('.hero-buttons').style.transform = 'translateY(0)';
+            if (heroButtons) {
+                heroButtons.style.opacity = '1';
+                heroButtons.style.transform = 'translateY(0)';
+            }
         }, 700);
     }, 300);
 });
 
-// Initialize hero elements
+// Initialize hero elements and form
 document.addEventListener('DOMContentLoaded', () => {
     const heroTitle = document.querySelector('.hero-text h1');
     const heroParagraphs = document.querySelectorAll('.hero-text p');
     const heroButtons = document.querySelector('.hero-buttons');
+    const contactForm = document.querySelector('#contactForm');
     
-    // Set initial state
-    heroTitle.style.opacity = '0';
-    heroTitle.style.transform = 'translateY(30px)';
-    heroTitle.style.transition = 'all 0.8s ease';
+    // Set initial state for hero elements
+    if (heroTitle) {
+        heroTitle.style.opacity = '0';
+        heroTitle.style.transform = 'translateY(30px)';
+        heroTitle.style.transition = 'all 0.8s ease';
+    }
     
-    heroParagraphs.forEach(p => {
-        p.style.opacity = '0';
-        p.style.transform = 'translateY(30px)';
-        p.style.transition = 'all 0.8s ease';
-    });
+    if (heroParagraphs) {
+        heroParagraphs.forEach(p => {
+            p.style.opacity = '0';
+            p.style.transform = 'translateY(30px)';
+            p.style.transition = 'all 0.8s ease';
+        });
+    }
     
-    heroButtons.style.opacity = '0';
-    heroButtons.style.transform = 'translateY(30px)';
-    heroButtons.style.transition = 'all 0.8s ease';
-});
+    if (heroButtons) {
+        heroButtons.style.opacity = '0';
+        heroButtons.style.transform = 'translateY(30px)';
+        heroButtons.style.transition = 'all 0.8s ease';
+    }
 
-// Form submission
-contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    
-    // Get form data
-    const formData = new FormData(contactForm);
-    const data = Object.fromEntries(formData);
-    
-    // Show success message
-    showNotification('تم إرسال رسالتك بنجاح! سنتواصل معك قريباً.', 'success');
-    
-    // Reset form
-    contactForm.reset();
+    // Animate hero elements on load
+    setTimeout(() => {
+        if (heroTitle) {
+            heroTitle.style.opacity = '1';
+            heroTitle.style.transform = 'translateY(0)';
+        }
+        
+        setTimeout(() => {
+            if (heroParagraphs) {
+                heroParagraphs.forEach((p, index) => {
+                    setTimeout(() => {
+                        p.style.opacity = '1';
+                        p.style.transform = 'translateY(0)';
+                    }, index * 200);
+                });
+            }
+        }, 300);
+        
+        setTimeout(() => {
+            if (heroButtons) {
+                heroButtons.style.opacity = '1';
+                heroButtons.style.transform = 'translateY(0)';
+            }
+        }, 700);
+    }, 300);
+
+    // Form submission
+    if (contactForm) {
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(contactForm);
+            const data = Object.fromEntries(formData);
+            
+            // Show success message
+            showNotification('تم إرسال رسالتك بنجاح! سنتواصل معك قريباً.', 'success');
+            
+            // Reset form
+            contactForm.reset();
+        });
+    }
 });
 
 // Notification system

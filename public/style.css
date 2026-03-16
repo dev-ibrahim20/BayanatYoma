@@ -806,7 +806,7 @@ section {
         left: -100%;
         top: 80px;
         flex-direction: column;
-        background: white;
+        /* background: white; */
         width: 100%;
         text-align: center;
         transition: 0.3s;

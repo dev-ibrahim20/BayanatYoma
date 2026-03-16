@@ -13,7 +13,7 @@
     }
     
     .navbar {
-        background: linear-gradient(135deg, #1A2F4A, #C6A87D);
+        background: linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #2d2d2d 100%);
         backdrop-filter: blur(20px);
         border-bottom: 1px solid rgba(0, 0, 0, 0.1);
         padding: 1rem 0;
@@ -626,6 +626,11 @@
                     <li><a href="#contact">{{ __('messages.contact') }}</a></li>
                     <li><a href="#customers">{{ __('messages.customers') }}</a></li>
                 </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
                 <div class="language-switcher">
                     <label for="languageSelect" class="sr-only">{{ __('messages.language') }}</label>
                     <select id="languageSelect" class="language-select" onchange="window.location.href=this.value" aria-label="{{ __('messages.select_language') }}">

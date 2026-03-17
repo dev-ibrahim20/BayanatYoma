@@ -3,7 +3,7 @@
 /* Different Section Styles */
 .different {
     padding: 80px 20px;
-  background: linear-gradient(135deg, #1A2F4A, #C6A87D);
+    background: rgb(247, 240, 222);
     border-top: 1px solid #5a5a00;
 }
 
@@ -14,7 +14,7 @@
 
 .section-header h2 {
     font-size: 3.5rem;
-    color: #ffffff;
+    color: #000000;
     margin-bottom: 1rem;
     font-weight: 900;
     font-family: 'Arial Black', Arial, sans-serif;
@@ -24,7 +24,7 @@
 
 .section-header p {
     font-size: 1.8rem;
-    color: #ffffff;
+    color: #000000;
     font-weight: 600;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
@@ -39,8 +39,8 @@
 }
 
 .different-item {
-    background: linear-gradient(135deg, #575555 0%, #989f89 50%, #494545 100%);
-        border: 1px solid rgba(0, 0, 0, 0.1);
+    background: #e2e1e1;
+    border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 16px;
     padding: 35px;
     text-align: center;
@@ -87,7 +87,7 @@
 
 .different-item h3 {
     font-size: 1.5rem;
-    color: #ffffff;
+    color: #000000;
     margin-bottom: 18px;
     font-weight: 700;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -96,7 +96,7 @@
 }
 
 .different-item p {
-    color: #ffffff;
+    color: #000000;
     line-height: 1.7;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     font-weight: 400;

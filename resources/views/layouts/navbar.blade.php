@@ -314,10 +314,12 @@
         .hamburger {
             display: none;
             cursor: pointer;
-            z-index: 1001;
+            /* z-index: 1001; */
             padding: 5px;
             border-radius: 5px;
             transition: background 0.3s ease;
+            overflow: hidden;
+            scroll-behavior: none;
         }
         
         .hamburger:hover {
@@ -611,7 +613,7 @@
                 padding: 8px 12px;
             }
         }
-    </style>
+</style>
     <!-- Navigation -->
     <nav class="navbar">
         <div class="container navbar-container">

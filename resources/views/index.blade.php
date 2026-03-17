@@ -8,6 +8,6 @@
     @include('partials.different')
     @include('partials.gallery')
     @include('partials.stats')
-    @include('partials.contact')
     @include('partials.customers')
+    @include('partials.contact')
 @endsection

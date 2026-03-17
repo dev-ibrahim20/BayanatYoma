@@ -2,8 +2,7 @@
     /* Contact Section Styles */
     .contact {
         padding: 80px 20px;
-        background: linear-gradient(135deg, #1A2F4A, #C6A87D);
-        border-top: 1px solid rgba(80, 75, 51, 0.3);
+        background-image: linear-gradient(135deg, rgb(55, 78, 68) 0%, rgb(55, 78, 68) 40%, rgb(0, 0, 0) 100%);
     }
     
     .section-header {

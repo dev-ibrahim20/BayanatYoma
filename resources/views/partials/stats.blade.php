@@ -3,7 +3,7 @@
 /* Stats Section Styles */
 .stats {
     padding: 80px 20px;
-  background: linear-gradient(135deg, #1A2F4A, #C6A87D);
+    background: rgb(255, 249, 230);
     border-top: 1px solid #585858;
     position: relative;
     overflow: hidden;
@@ -46,12 +46,12 @@
     font-size: 3.5rem;
     font-weight: 1000;
     margin-bottom: 8px;
-    color: #ffffff;
+    color: rgb(26, 48, 33);
     text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .stat-item p {
-    color: #ffffff;
+    color: rgb(26, 48, 33);
     font-size: 1.8rem;
     font-weight: 600;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);

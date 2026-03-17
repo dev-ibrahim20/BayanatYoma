@@ -3,7 +3,7 @@
 /* iPhone 17 Pro Max Hero Styles */
 .hero {
     padding: 20px;
-    background: linear-gradient(135deg, #1A2F4A, #C6A87D);
+  background-image: linear-gradient(135deg, rgb(26, 47, 74) 0%, rgb(26, 47, 74) 40%, rgb(15, 23, 42) 100%);
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -660,6 +660,7 @@
 }
 </style>
 
+
 <!-- Social Media Sidebar -->
 <div class="social-sidebar">
     <a href="https://facebook.com" target="_blank" class="social-icon facebook" data-tooltip="Facebook" 
@@ -688,9 +689,44 @@
     </a>
 </div>
 
+
+
 <!-- Hero Section -->
 <section id="home" class="hero">
+    {{-- <nav class="navbar">
+        <div class="container navbar-container">
+            <div class="nav-content">
+                <div class="logo">
+                    <h2>{{ __('messages.logo') }}</h2>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#home">{{ __('messages.home') }}</a></li>
+                    <li><a href="#services">{{ __('messages.services') }}</a></li>
+                    <li><a href="#gallery">{{ __('messages.gallery') }}</a></li>
+                    <li><a href="#contact">{{ __('messages.contact') }}</a></li>
+                    <li><a href="#customers">{{ __('messages.customers') }}</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="language-switcher">
+                    <label for="languageSelect" class="sr-only">{{ __('messages.language') }}</label>
+                    <select id="languageSelect" class="language-select" onchange="window.location.href=this.value" aria-label="{{ __('messages.select_language') }}">
+                        <option value="{{ route('language.switch', 'ar') }}" {{ app()->getLocale() == 'ar' ? 'selected' : '' }}>
+                            {{ __('messages.arabic') }}
+                        </option>
+                        <option value="{{ route('language.switch', 'en') }}" {{ app()->getLocale() == 'en' ? 'selected' : '' }}>
+                            {{ __('messages.english') }}
+                        </option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </nav> --}}
     <div class="hero-content">
+        
         <!-- Phone Mockup with Video - Left Side -->
         <div class="hero-phone">
             {{-- <div class="phone-mockup">

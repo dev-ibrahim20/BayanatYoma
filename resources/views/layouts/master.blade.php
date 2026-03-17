@@ -3,13 +3,13 @@
 @include('layouts.head')
 
 <body style="display: flex; flex-direction: column; min-height: 100vh; margin: 0; padding: 0; width: 100vw; overflow-x: hidden;">
-    @include('layouts.navbar')
+    {{-- @include('layouts.navbar') --}}
     
     <main style="flex: 1; width: 100%; overflow-x: hidden;">
         @yield('content')
     </main>
     
-    @include('layouts.footer')
+    {{-- @include('layouts.footer') --}}
     @include('partials.back-to-top')
     
     <script src="script.js"></script>

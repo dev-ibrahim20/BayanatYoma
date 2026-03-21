@@ -40,8 +40,8 @@
 
 .phone-mockup {
     position: relative;
-    width: 350px;
-    height: 700px;
+    width: 380px;
+    height: 780px;
 }
 
 .phone-image {
@@ -55,16 +55,17 @@
 
 .video-container {
     position: relative;
-    width: 350px;
-    height: 700px;
-    border-radius: 40px;
+    width: 380px;
+    height: 780px;
+    border-radius: 45px;
     overflow: hidden;
-  background: linear-gradient(135deg, #1A2F4A, #C6A87D);
-    border: 8px solid #000000;
+    background: linear-gradient(135deg, #1A2F4A, #C6A87D);
+    border: 12px solid #000000;
     box-shadow: 
-        0 0 0 2px #4a4a4c,
-        0 20px 60px rgba(0, 0, 0, 0.4),
-        inset 0 0 0 2px rgba(255, 255, 255, 0.1);
+        0 0 0 3px #4a4a4c,
+        0 25px 80px rgba(0, 0, 0, 0.5),
+        inset 0 0 0 3px rgba(255, 255, 255, 0.1),
+        0 0 100px rgba(59, 130, 246, 0.3);
 }
 
 .video-container video {
@@ -73,67 +74,50 @@
     object-fit: cover;
 }
 
-/* Dynamic Island for Video */
+/* Dynamic Island Pro Max */
 .dynamic-island {
     position: absolute;
-    top: 15px;
+    top: 8px;
     left: 50%;
     transform: translateX(-50%);
-    width: 100px;
-    height: 30px;
+    width: 120px;
+    height: 25px;
     background: #000000;
-    border-radius: 20px;
+    border-radius: 18px;
     z-index: 1000;
     box-shadow: 
-        0 0 0 1px rgba(255, 255, 255, 0.2),
-        inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+        0 0 0 2px rgba(255, 255, 255, 0.3),
+        inset 0 0 0 2px rgba(255, 255, 255, 0.2),
+        0 8px 25px rgba(0, 0, 0, 0.3);
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 0 15px;
+    justify-content: center;
+    padding: 0;
+    backdrop-filter: blur(20px);
 }
 
-.island-camera {
-    width: 6px;
-    height: 6px;
-    background: #34c759;
-    border-radius: 50%;
-    animation: pulse 2s infinite;
-}
-
-.island-indicator {
-    width: 4px;
-    height: 4px;
-    background: #ff3b30;
-    border-radius: 50%;
-}
-
-@keyframes pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.5; }
-}
-
-/* iPhone Screen */
+/* iPhone 17 Pro Max Screen */
 .iphone-screen {
     position: absolute;
     top: 60px;
-    left: 10px;
-    right: 10px;
-    bottom: 10px;
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
     background: #000000;
-    border-radius: 35px;
+    border-radius: 40px;
     overflow: hidden;
-    border: 2px solid #2d2d2d;
+    border: 3px solid #2d2d2d;
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);
 }
 
 .iphone-screen video {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 33px;
+    border-radius: 37px;
 }
 
-/* iPhone Frame Details */
+/* iPhone 17 Pro Max Frame Details */
 .iphone-frame-details {
     position: absolute;
     top: 0;
@@ -145,45 +129,103 @@
 
 .volume-buttons {
     position: absolute;
-    left: -5px;
-    top: 140px;
+    left: -8px;
+    top: 150px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 12px;
+    z-index: 10;
 }
 
 .volume-up, .volume-down {
-    width: 5px;
-    height: 45px;
-    background: linear-gradient(135deg, #d35400 0%, #e67e22 100%);
-    border-radius: 2px;
-    box-shadow: 0 2px 4px rgba(211, 84, 0, 0.3);
+    width: 8px;
+    height: 55px;
+    background: linear-gradient(135deg, #c7c7cc 0%, #8e8e93 100%);
+    border-radius: 4px;
+    box-shadow: 
+        0 4px 12px rgba(0, 0, 0, 0.6),
+        inset 0 0 3px rgba(255, 255, 255, 0.3),
+        0 0 0 1px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .volume-down {
-    height: 35px;
+    height: 45px;
 }
 
 .power-button {
     position: absolute;
-    right: -5px;
-    top: 160px;
-    width: 5px;
-    height: 70px;
-    background: linear-gradient(135deg, #d35400 0%, #e67e22 100%);
-    border-radius: 2px;
-    box-shadow: 0 2px 4px rgba(211, 84, 0, 0.3);
+    right: -8px;
+    top: 170px;
+    width: 8px;
+    height: 85px;
+    background: linear-gradient(135deg, #c7c7cc 0%, #8e8e93 100%);
+    border-radius: 4px;
+    box-shadow: 
+        0 4px 12px rgba(0, 0, 0, 0.6),
+        inset 0 0 3px rgba(255, 255, 255, 0.3),
+        0 0 0 1px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    z-index: 10;
 }
 
 .silent-switch {
     position: absolute;
-    left: -5px;
-    top: 90px;
-    width: 5px;
-    height: 25px;
-    background: linear-gradient(135deg, #d35400 0%, #e67e22 100%);
-    border-radius: 2px;
-    box-shadow: 0 2px 4px rgba(211, 84, 0, 0.3);
+    left: -8px;
+    top: 100px;
+    width: 8px;
+    height: 35px;
+    background: linear-gradient(135deg, #c7c7cc 0%, #8e8e93 100%);
+    border-radius: 4px;
+    box-shadow: 
+        0 4px 12px rgba(0, 0, 0, 0.6),
+        inset 0 0 3px rgba(255, 255, 255, 0.3),
+        0 0 0 1px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    z-index: 10;
+}
+
+/* iPhone 17 Pro Max Single Camera */
+.camera-system {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 60px;
+    background: #1a1a1a;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 
+        0 0 0 3px #2d2d2d,
+        0 5px 20px rgba(0, 0, 0, 0.5),
+        inset 0 0 0 2px rgba(255, 255, 255, 0.1);
+}
+
+.main-camera {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
+    border-radius: 50%;
+    border: 2px solid #3d3d3d;
+    box-shadow: 
+        inset 0 0 10px rgba(0, 0, 0, 0.5),
+        0 0 20px rgba(59, 130, 246, 0.2);
+}
+
+.camera-lens {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    background: #000000;
+    border-radius: 50%;
+    border: 2px solid #4d4d4d;
+    box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.8);
 }
 
 /* Hero Text - Right Side */
@@ -447,6 +489,88 @@
     }
 }
 
+/* Large Screens - Smaller Phone */
+@media (min-width: 1400px) {
+    .phone-mockup {
+        width: 320px;
+        height: 660px;
+    }
+    
+    .video-container {
+        width: 320px;
+        height: 660px;
+        border-radius: 38px;
+        border: 10px solid #000000;
+    }
+    
+    .dynamic-island {
+        width: 90px;
+        height: 20px;
+        top: 6px;
+        border-radius: 12px;
+    }
+    
+    .dynamic-island:hover {
+        width: 120px;
+    }
+    
+    .iphone-screen {
+        top: 50px;
+        left: 10px;
+        right: 10px;
+        bottom: 10px;
+        border-radius: 35px;
+        border: 2px solid #2d2d2d;
+    }
+    
+    .volume-buttons {
+        left: -6px;
+        top: 120px;
+    }
+    
+    .volume-up, .volume-down {
+        width: 6px;
+        height: 45px;
+        border-radius: 3px;
+    }
+    
+    .volume-down {
+        height: 35px;
+    }
+    
+    .power-button {
+        right: -6px;
+        top: 140px;
+        width: 6px;
+        height: 70px;
+        border-radius: 3px;
+    }
+    
+    .silent-switch {
+        left: -6px;
+        top: 80px;
+        width: 6px;
+        height: 25px;
+        border-radius: 3px;
+    }
+    
+    .camera-system {
+        width: 30px;
+        height: 30px;
+        top: 10px;
+    }
+    
+    .main-camera {
+        width: 25px;
+        height: 25px;
+    }
+    
+    .camera-lens {
+        width: 10px;
+        height: 10px;
+    }
+}
+
 @media (max-width: 768px) {
     .hero {
         padding: 10px;
@@ -479,8 +603,10 @@
     }
     
     .dynamic-island {
-        width: 50px;
-        height: 18px;
+        width: 40px;
+        height: 12px;
+        top: 5px;
+        border-radius: 8px;
     }
     
     .value-point .value-text h3 {
@@ -535,8 +661,10 @@
     }
     
     .dynamic-island {
-        width: 40px;
-        height: 15px;
+        width: 35px;
+        height: 10px;
+        top: 4px;
+        border-radius: 6px;
     }
     
     .volume-up, .volume-down {
@@ -549,6 +677,22 @@
     
     .power-button {
         height: 35px;
+    }
+    
+    .camera-system {
+        width: 20px;
+        height: 20px;
+        top: 8px;
+    }
+    
+    .main-camera {
+        width: 16px;
+        height: 16px;
+    }
+    
+    .camera-lens {
+        width: 6px;
+        height: 6px;
     }
     
     .value-point .value-text h3 {

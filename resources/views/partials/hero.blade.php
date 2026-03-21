@@ -625,7 +625,10 @@
     
     .btn-primary, .btn-secondary {
         width: 100%;
-        max-width: 200px;
+        max-width: 160px;
+        padding: 8px 16px;
+        font-size: 12px;
+        min-width: 80px;
     }
 }
 
@@ -710,9 +713,11 @@
     }
     
     .btn-primary, .btn-secondary {
-        padding: 12px 25px;
-        font-size: 14px;
-        min-width: 120px;
+        width: 100%;
+        max-width: 140px;
+        padding: 6px 12px;
+        font-size: 11px;
+        min-width: 70px;
     }
 }
 
@@ -749,9 +754,11 @@
     }
     
     .btn-primary, .btn-secondary {
-        padding: 10px 20px;
-        font-size: 13px;
-        min-width: 100px;
+        width: 100%;
+        max-width: 120px;
+        padding: 5px 10px;
+        font-size: 10px;
+        min-width: 60px;
     }
 }
 

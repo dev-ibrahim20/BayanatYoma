@@ -13,7 +13,7 @@
     }
     
     .navbar {
-        background: linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #2d2d2d 100%);
+        background-image: linear-gradient(135deg, rgb(26, 47, 74) 0%, rgb(26, 47, 74) 40%, rgb(15, 23, 20) 80%);
         backdrop-filter: blur(20px);
         border-bottom: 1px solid rgba(0, 0, 0, 0.1);
         padding: 1rem 0;
@@ -25,7 +25,7 @@
     }
     
     .navbar.scrolled {
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        /* box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); */
         padding: 0.7rem 0;
     }
     
@@ -140,84 +140,160 @@
     /* Professional Language Switcher */
     .language-switcher {
         display: flex;
-        gap: 10px;
         align-items: center;
         position: relative;
+        z-index: 1000;
     }
     
-    .language-select {
-        padding: 8px 12px;
-        padding-right: 25px;
-        border-radius: 20px;
-        font-size: 1rem;
-        font-weight: 700;
-        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        border: 2px solid rgba(255, 255, 255, 0.4);
+    .language-dropdown {
+        position: relative;
+    }
+    
+    .language-button {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 10px 16px;
+        background: linear-gradient(135deg, #1A2F4A 0%, #2C5F8D 50%, #3B82F6 100%);
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        border-radius: 25px;
         color: #ffffff;
-        background: linear-gradient(135deg, #505038 0%, #4b4b33 50%, #24240e 100%);
+        font-size: 0.95rem;
+        font-weight: 600;
         cursor: pointer;
-        outline: none;
-        appearance: none;
-        -webkit-appearance: none;
-        -moz-appearance: none;
+        transition: all 0.3s ease;
         backdrop-filter: blur(10px);
         box-shadow: 
-            0 4px 15px rgba(0, 0, 0, 0.3),
+            0 4px 15px rgba(0, 0, 0, 0.2),
             inset 0 1px 0 rgba(255, 255, 255, 0.1);
-        position: relative;
-        min-width: 70px;
-        text-align: center;
+        min-width: 120px;
+        justify-content: space-between;
     }
     
-    .language-select:hover {
-        background: linear-gradient(135deg, rgba(80, 80, 56, 0.9) 0%, rgba(75, 75, 51, 0.9) 50%, rgba(36, 36, 14, 0.9) 100%);
-        border-color: rgba(255, 255, 255, 0.6);
-        transform: translateY(-2px) scale(1.02);
+    .language-button:hover {
+        background: linear-gradient(135deg, rgba(26, 47, 74, 0.9) 0%, rgba(44, 95, 141, 0.9) 50%, rgba(59, 130, 246, 0.9) 100%);
+        border-color: rgba(255, 255, 255, 0.5);
+        transform: translateY(-2px);
         box-shadow: 
-            0 8px 25px rgba(0, 0, 0, 0.4),
+            0 8px 25px rgba(0, 0, 0, 0.3),
             inset 0 1px 0 rgba(255, 255, 255, 0.2),
-            0 0 20px rgba(80, 80, 56, 0.3);
+            0 0 20px rgba(59, 130, 246, 0.3);
     }
     
-    .language-select:focus {
-        border-color: #ffffff;
+    .language-button i.fa-globe {
+        font-size: 1.1rem;
+        color: #ffffff;
+    }
+    
+    .language-button i.fa-chevron-down {
+        font-size: 0.8rem;
+        color: rgba(255, 255, 255, 0.8);
+        transition: transform 0.3s ease;
+    }
+    
+    .language-button:hover i.fa-chevron-down {
+        transform: rotate(180deg);
+    }
+    
+    .language-menu {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        margin-top: 8px;
+        background: linear-gradient(135deg, #1A2F4A 0%, #2C5F8D 50%, #3B82F6 100%);
+        border: 2px solid rgba(255, 255, 255, 0.2);
+        border-radius: 15px;
+        backdrop-filter: blur(15px);
         box-shadow: 
-            0 0 0 3px rgba(255, 255, 255, 0.2),
-            0 8px 25px rgba(0, 0, 0, 0.4),
-            inset 0 1px 0 rgba(255, 255, 255, 0.2);
-    }
-    
-    .language-select option {
-        background: linear-gradient(135deg, #505038 0%, #4b4b33 50%, #24240e 100%);
-        color: #000000;
-        padding: 15px 20px;
-        border: none;
-        font-weight: 600;
-        font-size: 0.95rem;
-        border-radius: 0;
+            0 8px 32px rgba(0, 0, 0, 0.3),
+            inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        overflow: hidden;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
         transition: all 0.3s ease;
+        min-width: 150px;
+    }
+    
+    .language-menu.show {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+    
+    .language-option {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 12px 16px;
+        color: #ffffff;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         position: relative;
-        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+        font-weight: 500;
     }
     
-    .language-select option:hover {
-        background: linear-gradient(135deg, #6a6a48 0%, #656538 50%, #3e3e1e 100%);
-        color: #ffffff;
-        text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
-        transform: translateX(5px);
+    .language-option:last-child {
+        border-bottom: none;
     }
     
-    .language-select option:checked {
-        background: linear-gradient(135deg, #7a7a58 0%, #757538 50%, #4e4e2e 100%);
-        color: #ffffff;
+    .language-option:hover {
+        background: rgba(255, 255, 255, 0.1);
+        padding-left: 20px;
+    }
+    
+    .language-option.active {
+        background: rgba(255, 255, 255, 0.15);
         font-weight: 700;
-        text-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
     }
+    
+    .language-option.active::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 3px;
+        background: #ffffff;
+    }
+    
+    .language-option i.fa-language {
+        font-size: 1rem;
+        color: rgba(255, 255, 255, 0.9);
+    }
+    
+    .language-option i.fa-check {
+        font-size: 0.9rem;
+        color: #60A5FA;
+        margin-left: auto;
+    }
+    
+    .language-option span {
+        flex: 1;
+        white-space: nowrap;
+    }
+    
+    /* Mobile Responsive */
+    @media (max-width: 768px) {
+        /* .language-button {
+            padding: 8px 12px;
+            min-width: 100px;
+            font-size: 0.9rem;
+        }
+        
+        .language-menu {
+            min-width: 130px;
+        }
+        
+        .language-option {
+            padding: 10px 12px;
+        }
     
             z-index: 1000;
             position: relative;
             transition: all 0.3s ease;
-        }
+        } */
         
         .navbar.scrolled {
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
@@ -334,124 +410,39 @@
             transition: all 0.3s ease;
         }
         
-        /* Professional Language Switcher */
-        .language-switcher {
-            display: flex;
-            gap: 10px;
-            align-items: center;
-            position: relative;
-        }
+        /* Professional Language Switcher - Old styles removed */
+    
+    /* Enhanced select styling */
+    select {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        background: transparent !important;
+        border: none !important;
+        outline: none !important;
+        cursor: pointer !important;
+    }
+    
+    select::-webkit-scrollbar {
+        width: 6px;
+    }
+    
+    select::-webkit-scrollbar-track {
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 3px;
+    }
+    
+    select::-webkit-scrollbar-thumb {
+        background: rgba(255, 255, 255, 0.3);
+        border-radius: 3px;
+    }
+    
+    select::-webkit-scrollbar-thumb:hover {
+        background: rgba(255, 255, 255, 0.5);
+    }
         
-        .language-select {
-            padding: 8px 12px;
-            padding-right: 25px;
-            border-radius: 20px;
-            font-size: 1rem;
-            font-weight: 700;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            border: 2px solid rgba(255, 255, 255, 0.4);
-            color: #ffffff;
-            background: linear-gradient(135deg, #505038 0%, #4b4b33 50%, #24240e 100%);
-            cursor: pointer;
-            outline: none;
-            appearance: none;
-            -webkit-appearance: none;
-            -moz-appearance: none;
-            backdrop-filter: blur(10px);
-            box-shadow: 
-                0 4px 15px rgba(0, 0, 0, 0.3),
-                inset 0 1px 0 rgba(255, 255, 255, 0.1);
-            position: relative;
-            min-width: 70px;
-            text-align: center;
-        }
-        
-        .language-select:hover {
-            background: linear-gradient(135deg, rgba(80, 80, 56, 0.9) 0%, rgba(75, 75, 51, 0.9) 50%, rgba(36, 36, 14, 0.9) 100%);
-            border-color: rgba(255, 255, 255, 0.6);
-            transform: translateY(-2px) scale(1.02);
-            box-shadow: 
-                0 8px 25px rgba(0, 0, 0, 0.4),
-                inset 0 1px 0 rgba(255, 255, 255, 0.2),
-                0 0 20px rgba(80, 80, 56, 0.3);
-        }
-        
-        .language-select:focus {
-            border-color: #ffffff;
-            box-shadow: 
-                0 0 0 3px rgba(255, 255, 255, 0.2),
-                0 8px 25px rgba(0, 0, 0, 0.4),
-                inset 0 1px 0 rgba(255, 255, 255, 0.2);
-        }
-        
-        .language-select option {
-            background: linear-gradient(135deg, #505038 0%, #4b4b33 50%, #24240e 100%);
-            color: #000000;
-            padding: 15px 20px;
-            border: none;
-            font-weight: 600;
-            font-size: 0.95rem;
-            border-radius: 0;
-            transition: all 0.3s ease;
-            position: relative;
-            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
-        }
-        
-        .language-select option:hover {
-            background: linear-gradient(135deg, #6a6a48 0%, #656538 50%, #3e3e1e 100%);
-            color: #ffffff;
-            text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
-            transform: translateX(5px);
-        }
-        
-        .language-select option:checked {
-            background: linear-gradient(135deg, #7a7a58 0%, #757538 50%, #4e4e2e 100%);
-            color: #ffffff;
-            font-weight: 700;
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
-        }
-        
-        .language-select option:first-child {
-            border-radius: 8px 8px 0 0;
-        }
-        
-        .language-select option:last-child {
-            border-radius: 0 0 8px 8px;
-        }
-        
-        /* Custom dropdown arrow */
-        .language-switcher::after {
-            content: '▼';
-            position: absolute;
-            right: 15px;
-            top: 50%;
-            transform: translateY(-50%);
-            color: #ffffff;
-            font-size: 0.7rem;
-            pointer-events: none;
-            transition: transform 0.3s ease;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-        }
-        
-        .language-switcher:hover::after {
-            transform: translateY(-50%) rotate(180deg);
-        }
-        
-        /* Language icon */
-        .language-switcher::before {
-            content: '🌐';
-            position: absolute;
-            left: 15px;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 1rem;
-            pointer-events: none;
-        }
-        
-        .language-select {
-            padding-left: 35px;
-        }
-        
+                
+                
         @media (max-width: 768px) {
             .navbar-container {
                 padding: 0 15px;
@@ -473,27 +464,14 @@
                 font-size: 1.5rem;
             }
             
-            .language-switcher {
+            /* .language-switcher {
                 order: 1;
                 margin-right: auto;
                 margin-left: 0;
-            }
+            } */
             
-            .language-select {
-                width: 60px;
-                height: 35px;
-                font-size: 0.9rem;
-                font-weight: 700;
-                padding-left: 10px;
-                padding-right: 20px;
-                min-width: 60px;
-            }
-            
-            .language-switcher::before {
-                left: 8px;
-                font-size: 0.7rem;
-            }
-            
+                        
+                        
             .hamburger {
                 order: 3;
                 display: flex;
@@ -562,21 +540,8 @@
                 font-size: 1.3rem;
             }
             
-            .language-select {
-                width: 55px;
-                height: 32px;
-                font-size: 2rem;
-                font-weight: 700;
-                padding-left: 8px;
-                padding-right: 18px;
-                min-width: 55px;
-            }
-            
-            .language-switcher::before {
-                left: 6px;
-                font-size: 0.6rem;
-            }
-            
+                        
+                        
             .hamburger span {
                 width: 18px;
                 height: 2px;
@@ -593,21 +558,7 @@
                 font-size: 1.1rem;
             }
             
-            .language-select {
-                width: 45px;
-                height: 35px;
-                font-size: 0.8rem;
-                font-weight: 700;
-                padding-left: 6px;
-                padding-right: 16px;
-                min-width: 50px;
-            }
-            
-            .language-switcher::before {
-                left: 5px;
-                font-size: 0.55rem;
-            }
-            
+                        
             .nav-menu a {
                 font-size: 0.85rem;
                 padding: 8px 12px;
@@ -634,28 +585,92 @@
                     <span></span>
                 </div>
                 <div class="language-switcher">
-                    <label for="languageSelect" class="sr-only">{{ __('messages.language') }}</label>
-                    <select id="languageSelect" class="language-select" onchange="window.location.href=this.value" aria-label="{{ __('messages.select_language') }}">
-                        <option value="{{ route('language.switch', 'ar') }}" {{ app()->getLocale() == 'ar' ? 'selected' : '' }}>
-                            {{ __('messages.arabic') }}
-                        </option>
-                        <option value="{{ route('language.switch', 'en') }}" {{ app()->getLocale() == 'en' ? 'selected' : '' }}>
-                            {{ __('messages.english') }}
-                        </option>
-                    </select>
+                    <div class="language-dropdown">
+                        <button class="language-button" onclick="toggleLanguageDropdown()" aria-label="{{ __('messages.select_language') }}">
+                            <i class="fas fa-globe"></i>
+                            <span>{{ app()->getLocale() == 'ar' ? 'العربية' : 'English' }}</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="language-menu" id="languageMenu">
+                            <a href="javascript:void(0)" onclick="changeLanguage('{{ route('language.switch', 'ar') }}')" class="language-option {{ app()->getLocale() == 'ar' ? 'active' : '' }}">
+                                <i class="fas fa-language"></i>
+                                <span>العربية</span>
+                                {{ app()->getLocale() == 'ar' ? '-' : '' }}
+                            </a>
+                            <a href="javascript:void(0)" onclick="changeLanguage('{{ route('language.switch', 'en') }}')" class="language-option {{ app()->getLocale() == 'en' ? 'active' : '' }}">
+                                <i class="fas fa-language"></i>
+                                <span>English</span>
+                                {{ app()->getLocale() == 'en' ? '-' : '' }}
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </nav>
 
 <script>
-// Navbar scroll effect
-window.addEventListener('scroll', function() {
-    const navbar = document.querySelector('.navbar');
-    if (window.scrollY > 50) {
-        navbar.classList.add('scrolled');
-    } else {
-        navbar.classList.remove('scrolled');
+// Language Dropdown Toggle
+function toggleLanguageDropdown() {
+    const menu = document.getElementById('languageMenu');
+    const isShowing = menu.classList.contains('show');
+    
+    // Close all other dropdowns
+    document.querySelectorAll('.language-menu').forEach(m => m.classList.remove('show'));
+    
+    // Toggle current dropdown
+    if (!isShowing) {
+        menu.classList.add('show');
     }
-});
-</script>
+}
+// Close dropdown when clicking outside
+// document.addEventListener('click', function(event) {
+//     const dropdown = document.querySelector('.language-dropdown');
+//     const menu = document.getElementById('languageMenu');
+    
+//     if (!dropdown.contains(event.target)) {
+//         menu.classList.remove('show');
+//     }
+// });
+
+// Close dropdown when pressing Escape
+// document.addEventListener('keydown', function(event) {
+//     if (event.key === 'Escape') {
+//         document.getElementById('languageMenu').classList.remove('show');
+//     }
+// });
+
+// Handle language change with confirmation
+function changeLanguage(url) {
+    window.location.href = url;
+}
+
+// Mobile menu toggle
+// document.querySelector('.hamburger').addEventListener('click', function() {
+//     document.querySelector('.sidebar').classList.toggle('active');
+//     document.querySelector('.overlay').classList.toggle('active');
+// });
+
+// Close sidebar when clicking overlay
+// document.querySelector('.overlay').addEventListener('click', function() {
+//     document.querySelector('.sidebar').classList.remove('active');
+//     document.querySelector('.overlay').classList.remove('active');
+// });
+
+// Close sidebar when clicking links
+// // document.querySelectorAll('.sidebar ul li a').forEach(link => {
+//     link.addEventListener('click', function() {
+//         document.querySelector('.sidebar').classList.remove('active');
+//         document.querySelector('.overlay').classList.remove('active');
+//     });
+// });
+
+// Handle responsive behavior
+// window.addEventListener('resize', function() {
+//     const menu = document.getElementById('languageMenu');
+//     if (window.innerWidth > 768) {
+//         menu.classList.remove('show');
+//     }
+// });
+
+</script> 

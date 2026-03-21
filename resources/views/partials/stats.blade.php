@@ -3,7 +3,7 @@
 /* Stats Section Styles */
 .stats {
     padding: 80px 20px;
-    background: rgb(255, 249, 230);
+    background-image: linear-gradient(135deg, rgb(26, 47, 74) 0%, rgb(26, 47, 74) 40%, rgb(15, 23, 20) 80%);
     border-top: 1px solid #585858;
     position: relative;
     overflow: hidden;
@@ -16,9 +16,9 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: radial-gradient(circle at 25% 25%, rgba(80, 75, 51, 0.1) 0%, transparent 50%),
+    /* background: radial-gradient(circle at 25% 25%, rgba(80, 75, 51, 0.1) 0%, transparent 50%),
                 radial-gradient(circle at 75% 75%, rgba(80, 75, 51, 0.05) 0%, transparent 50%),
-                radial-gradient(circle at 50% 50%, rgba(80, 75, 51, 0.03) 0%, transparent 70%);
+                radial-gradient(circle at 50% 50%, rgba(80, 75, 51, 0.03) 0%, transparent 70%); */
     z-index: 0;
 }
 
@@ -46,12 +46,12 @@
     font-size: 3.5rem;
     font-weight: 1000;
     margin-bottom: 8px;
-    color: rgb(26, 48, 33);
+    color: #ffffff;
     text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .stat-item p {
-    color: rgb(26, 48, 33);
+    color: #ffffff;
     font-size: 1.8rem;
     font-weight: 600;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);

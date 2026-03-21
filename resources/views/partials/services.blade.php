@@ -3,7 +3,7 @@
 /* Services Section Styles */
 .services {
     padding: 80px 20px;
-  /* background: linear-gradient(135deg, #1A2F4A, #C6A87D); */
+  background-image: linear-gradient(135deg, rgb(26, 47, 74) 0%, rgb(26, 47, 74) 40%, rgb(15, 23, 20) 80%);
     border-top: 1px solid #484846;
 }
     

@@ -4,7 +4,7 @@
     /* Customers Slider Section */
     .customers-section {
         padding: 40px 0;
-  background: linear-gradient(135deg, #1A2F4A, #C6A87D);
+        background-image: rgb(255, 249, 230);
         overflow: hidden;
         position: relative;
         width: 100%;
@@ -23,7 +23,7 @@
     
     .section-header h2 {
         font-size: 3.5rem;
-        color: #ffffff;
+        color: #000000;
         margin-bottom: 1rem;
         font-weight: 900;
         font-family: 'Arial Black', Arial, sans-serif;
@@ -122,8 +122,7 @@
 <section class="customers-section" id="customers">
     <div class="customers-container">
         <div class="section-header">
-            <h2>{{ __('messages.customers_title') }}</h2>
-            <p>{{ __('messages.customers_subtitle') }}</p>
+            <h2 style="color:#1a382a">{{ __('messages.customers_title') }}</h2>
         </div>
         
         <div class="customers-slider">

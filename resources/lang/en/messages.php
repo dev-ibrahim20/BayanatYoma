@@ -148,8 +148,7 @@ return [
     'map_description' => 'Google map showing the location of Arqco Company on Yasmin Street - Al Qadisiyah, Riyadh',
     
     // Customers Section
-    'customers_title' => 'Our Customers',
-    'customers_subtitle' => 'We are proud of our valued customers\' trust',
+    'customers_title' => 'Partners of Success',
     
     // Footer
     'footer_about' => 'Byanat Yoma platform is your first destination for organizing your events and occasions with the highest standards of quality and professionalism.',

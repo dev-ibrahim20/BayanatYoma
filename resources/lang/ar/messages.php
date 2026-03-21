@@ -148,8 +148,7 @@ return [
     'map_description' => 'خريطة جوجل تعرض موقع شركة أركو في شارع الياسمين - القادسية، الرياض',
     
     // Customers Section
-    'customers_title' => 'عملائنا',
-    'customers_subtitle' => 'نفتخر بثقة عملائنا الكرام',
+    'customers_title' => 'شركاء النجاح',
     
     // Footer
     'footer_about' => 'منصة Byanat Yoma هي وجهتك الأولى لتنظيم الفعاليات والمناسبات الخاصة بك بأعلى معايير الجودة والاحترافية.',

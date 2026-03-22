@@ -42,7 +42,13 @@
         justify-content: center;
     }
     
-    .wake-slide h2 {
+    .wake-slide img {
+        width: 280px;
+        height: 150px;
+        object-fit: contain;
+    }
+    
+    .wake-slide img {
         font-size: 2.5rem;
         font-weight: 800;
         color: #1A2F4A;
@@ -55,14 +61,14 @@
         gap: 15px;
     }
     
-    .wake-slide h2::before {
+    .wake-slide img::before {
         content: "↑";
         font-size: 2.8rem;
         color: #1A2F4A;
         font-weight: bold;
     }
     
-    .wake-slide h2::after {
+    .wake-slide img::after {
         content: "↓";
         font-size: 2.8rem;
         color: #1A2F4A;
@@ -72,7 +78,7 @@
     .wake-slide:hover {
     }
     
-    .wake-slide:hover h2 {
+    .wake-slide:hover img {
         color: #1A2F4A;
     }
     
@@ -86,7 +92,7 @@
     }
     
     @media (max-width: 768px) {
-        .section-header h2 {
+        .section-header img {
             font-size: 2rem;
         }
           .slider-wrapper {
@@ -102,7 +108,7 @@
             margin: 0 15px;
         }
         
-        .wake-slide h2 {
+        .wake-slide img {
             font-size: 1.8rem;
         }
         
@@ -120,68 +126,68 @@
             <div class="slider-wrapper">
                 <!-- First set of logos -->
                 <div class="wake-slide">
-                    <h2>Arqco Events </h2>
+                    <img src="{{ asset('assets/arqco-banar.png') }}" alt="Arqco Events">
                 </div>
                 
                 <div class="wake-slide">
-                    <h2>Arqco Events</h2>
+                    <img src="{{ asset('assets/arqco-banar.png') }}" alt="Arqco Events">
                 </div>
                 
                 <div class="wake-slide">
-                    <h2>Arqco Events</h2>
+                    <img src="{{ asset('assets/arqco-banar.png') }}" alt="Arqco Events">
                 </div>
                 
                 <div class="wake-slide">
-                    <h2>Arqco Events</h2>
+                    <img src="{{ asset('assets/arqco-banar.png') }}" alt="Arqco Events">
                 </div>
                 
                 <div class="wake-slide">
-                    <h2>Arqco Events</h2>
+                    <img src="{{ asset('assets/arqco-banar.png') }}" alt="Arqco Events">
                 </div>
                 
                 <div class="wake-slide">
-                    <h2>Arqco Events</h2>
+                    <img src="{{ asset('assets/arqco-banar.png') }}" alt="Arqco Events">
                 </div>
                 
                 <div class="wake-slide">
-                    <h2>Arqco Events</h2>
+                    <img src="{{ asset('assets/arqco-banar.png') }}" alt="Arqco Events">
                 </div>
                 
                 <div class="wake-slide">
-                    <h2>Arqco Events</h2>
+                    <img src="{{ asset('assets/arqco-banar.png') }}" alt="Arqco Events">
                 </div>
                 
                 <!-- Duplicate logos for continuous animation -->
                 <div class="wake-slide">
-                    <h2>Arqco Events</h2>
+                    <img src="{{ asset('assets/arqco-banar.png') }}" alt="Arqco Events">
                 </div>
                 
                 <div class="wake-slide">
-                    <h2>Arqco Events</h2>
+                    <img src="{{ asset('assets/arqco-banar.png') }}" alt="Arqco Events">
                 </div>
                 
                 <div class="wake-slide">
-                    <h2>Arqco Events</h2>
+                    <img src="{{ asset('assets/arqco-banar.png') }}" alt="Arqco Events">
                 </div>
                 
                 <div class="wake-slide">
-                    <h2>Arqco Events</h2>
+                    <img src="{{ asset('assets/arqco-banar.png') }}" alt="Arqco Events">
                 </div>
                 
                 <div class="wake-slide">
-                    <h2>Arqco Events</h2>
+                    <img src="{{ asset('assets/arqco-banar.png') }}" alt="Arqco Events">
                 </div>
                 
                 <div class="wake-slide">
-                    <h2>Arqco Events</h2>
+                    <img src="{{ asset('assets/arqco-banar.png') }}" alt="Arqco Events">
                 </div>
                 
                 <div class="wake-slide">
-                    <h2>Arqco Events</h2>
+                    <img src="{{ asset('assets/arqco-banar.png') }}" alt="Arqco Events">
                 </div>
                 
                 <div class="wake-slide">
-                    <h2>Arqco Events</h2>
+                    <img src="{{ asset('assets/arqco-banar.png') }}" alt="Arqco Events">
                 </div>
             </div>
         </div>

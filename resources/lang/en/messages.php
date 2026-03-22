@@ -139,11 +139,11 @@ return [
     'phone' => 'Phone',
     'phone_text' => '+966 50 123 4567',
     'email' => 'Email',
-    'email_text' => 'info@byanatyoma.com',
+    'email_text' => 'info@arqco-events.com',
     'location' => 'Location',
     'location_text' => 'Riyadh, Saudi Arabia',
     'address' => 'Address',
-    'address_text' => 'Yasmin Street - Al Qadisiyah, Riyadh',
+    'address_text' => 'Al Murabba District, King Abdulaziz Road',
     'map_title' => 'Arqco Company Location Map',
     'map_description' => 'Google map showing the location of Arqco Company on Yasmin Street - Al Qadisiyah, Riyadh',
     

@@ -118,6 +118,10 @@
     }
 </style>
 
+    @php
+        $clients = \App\Models\Client::get();
+    @endphp
+
 <!-- Customers Section -->
 <section class="customers-section" id="customers">
     <div class="customers-container">
@@ -127,7 +131,19 @@
         
         <div class="customers-slider">
             <div class="slider-wrapper">
-                <!-- First set of logos -->
+
+                @if ($clients->count() > 0)
+                    @foreach ($clients as $client)
+                        <div class="customer-slide">
+                            <img src="{{ $client->image }}" alt="{{ $client->name }}">
+                        </div>
+                        <!-- Duplicate logos for continuous animation -->
+                        <div class="customer-slide">
+                            <img src="{{ $client->image }}" alt="{{ $client->name }}">
+                        </div>
+                    @endforeach
+                @else
+                    <!-- First set of logos -->
                 <div class="customer-slide">
                     <img src="https://picsum.photos/seed/customer1/120/120.jpg" alt="شركة النخبة">
                 </div>
@@ -192,6 +208,7 @@
                 <div class="customer-slide">
                     <img src="https://picsum.photos/seed/customer8/120/120.jpg" alt="مؤسسة العطاء">
                 </div>
+                @endif
             </div>
         </div>
     </div>

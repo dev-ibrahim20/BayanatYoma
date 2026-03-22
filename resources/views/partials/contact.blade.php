@@ -10,22 +10,49 @@
         margin-bottom: 60px;
     }
     
-    .section-header h2 {
-        font-size: 3.5rem;
-        color: #ffffff;
-        margin-bottom: 1rem;
-        font-weight: 900;
-        font-family: 'Arial Black', Arial, sans-serif;
-        letter-spacing: 2px;
-        text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    .section-header img {
+        max-width: 500px;
+        height: auto;
+        margin-bottom: -6rem;
+        transition: all 0.3s ease;
     }
     
-    .section-header p {
-        font-size: 1.8rem;
-        color: #ffffff;
-        font-weight: 600;
-        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    /* Responsive Design for Contact Header Image */
+    @media (max-width: 1200px) {
+        .section-header img {
+            max-width: 450px;
+            margin-bottom: -5rem;
+        }
     }
+    
+    @media (max-width: 992px) {
+        .section-header img {
+            max-width: 400px;
+            margin-bottom: -4rem;
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .section-header img {
+            max-width: 350px;
+            margin-bottom: -3rem;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .section-header img {
+            max-width: 300px;
+            margin-bottom: -2rem;
+        }
+    }
+    
+    @media (max-width: 360px) {
+        .section-header img {
+            max-width: 250px;
+            margin-bottom: -1.5rem;
+        }
+    }
+
     
     .contact-content {
         max-width: 1200px;
@@ -154,8 +181,7 @@
 <section id="contact" class="contact">
     <div class="container">
         <div class="section-header">
-            <h2>{{ __('messages.contact_title') }}</h2>
-            <p>{{ __('messages.contact_subtitle') }}</p>
+            <img src="{{ asset('assets/arqco-logo.png') }}" alt="ARQCO LOGO">
         </div>
         <div class="contact-content">
             <div class="contact-info">
@@ -165,7 +191,7 @@
                     </div>
                     <div class="contact-details">
                         <h3>اتصل بنا</h3>
-                        <a href="tel:+966537666223">+966 537 666 223</a>
+                        <a href="tel:+966570723038">+966 570 723 038</a>
                     </div>
                 </div>
                 <div class="contact-item">
@@ -175,7 +201,7 @@
                     <div class="contact-details">
                         <h3>{{ __('messages.email') }}</h3>
                         <p>{{ __('messages.email_text') }}</p>
-                        <a href="mailto:info@muhaya-sa.com">info@muhaya-sa.com</a>
+                        <a href="mailto:info@arqco-events.com">info@arqco-events.com</a>
                     </div>
                 </div>
                 <div class="contact-item">
@@ -185,14 +211,14 @@
                     <div class="contact-details">
                         <h3>{{ __('messages.address') }}</h3>
                         <p>{{ __('messages.address_text') }}</p>
-                        <a href="https://maps.app.goo.gl/d3JZryN9baiC5TK47" target="_blank">شارع الياسمين - القادسية</a>
+                        <a href="https://maps.app.goo.gl/d3JZryN9baiC5TK47" target="_blank">حي المربع - طريق الملك عبدالعزيز</a>
                     </div>
                 </div>
             </div>
             
             <div class="map-container">
                 <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3632.123456789!2d46.7123456789!3d24.7123456789!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjTCsDQyJzQ1LjYiTiA0NsKwNDInMzguNiJF!5e0!3m2!1sen!2ssa!4v1234567890"
+                    src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3626.2312673956085!2d46.7153889!3d24.650166700000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjTCsDM5JzAwLjYiTiA0NsKwNDInNTUuNCJF!5e0!3m2!1sen!2seg!4v1773956627625!5m2!1sen!2seg"
                     allowfullscreen=""
                     loading="lazy"
                     referrerpolicy="no-referrer-when-downgrade"

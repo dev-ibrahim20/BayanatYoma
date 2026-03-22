@@ -205,8 +205,149 @@
         font-size: 0.9rem;
     }
 }
-</style>
 
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        padding: 0 10px;
+    }
+    
+    .section-header h2 {
+        font-size: 1.5rem;
+    }
+    
+    .service-card {
+        padding: 15px;
+        min-height: 220px;
+    }
+    
+    .service-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.3rem;
+    }
+    
+    .service-card h3 {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+        padding: 0 8px;
+    }
+    
+    .section-header h2 {
+        font-size: 1.4rem;
+    }
+    
+    .service-card {
+        padding: 12px;
+        min-height: 200px;
+    }
+    
+    .service-icon {
+        width: 45px;
+        height: 45px;
+        font-size: 1.2rem;
+    }
+    
+    .service-card h3 {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 0 15px;
+    }
+    
+    .section-header h2 {
+        font-size: 1.3rem;
+    }
+    
+    .service-card {
+        padding: 20px;
+        min-height: 180px;
+    }
+    
+    .service-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+        margin: 0 auto 15px;
+    }
+    
+    .service-card h3 {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        padding: 0 10px;
+    }
+    
+    .section-header h2 {
+        font-size: 1rem;
+    }
+    
+    .service-card {
+        padding: 15px;
+        min-height: 160px;
+    }
+    
+    .service-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.3rem;
+        margin: 0 auto 10px;
+    }
+    
+    .service-card h3 {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 360px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        padding: 0 8px;
+    }
+    
+    .section-header h2 {
+        font-size: 1rem;
+    }
+    
+    .service-card {
+        padding: 12px;
+        min-height: 140px;
+    }
+    
+    .service-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+        margin: 0 auto 8px;
+    }
+    
+    .service-card h3 {
+        font-size: 0.85rem;
+    }
+}
+</style>
+@php
+    $services = App\Models\Service::all();
+@endphp
 <!-- Services Section -->
 <section id="services" class="services">
     <div class="container">
@@ -215,62 +356,15 @@
             <p>{{ __('messages.services_subtitle') }}</p>
         </div>
         <div class="services-grid">
+            @foreach ($services as $service)
             <div class="service-card">
                 <div class="service-icon">
                     <i class="fas fa-lightbulb"></i>
                 </div>
-                <h3>{{ __('messages.lighting') }}</h3>
-                <p>{{ __('messages.lighting_text') }}</p>
+                <h3>{{ $service->title }}</h3>
+                <p>{{ $service->description }}</p>
             </div>
-            <div class="service-card">
-                <div class="service-icon">
-                    <i class="fas fa-volume-up"></i>
-                </div>
-                <h3>{{ __('messages.sound') }}</h3>
-                <p>{{ __('messages.sound_text') }}</p>
-            </div>
-            <div class="service-card">
-                <div class="service-icon">
-                    <i class="fas fa-camera"></i>
-                </div>
-                <h3>{{ __('messages.consulting') }}</h3>
-                <p>{{ __('messages.consulting_text') }}</p>
-            </div>
-            <div class="service-card">
-                <div class="service-icon">
-                    <i class="fas fa-hotel"></i>
-                </div>
-                <h3>{{ __('messages.decoration') }}</h3>
-                <p>{{ __('messages.decoration_text') }}</p>
-            </div>
-            <div class="service-card">
-                <div class="service-icon">
-                    <i class="fas fa-music"></i>
-                </div>
-                <h3>{{ __('messages.entertainment') }}</h3>
-                <p>{{ __('messages.entertainment_text') }}</p>
-            </div>
-            <div class="service-card">
-                <div class="service-icon">
-                    <i class="fas fa-utensils"></i>
-                </div>
-                <h3>{{ __('messages.catering') }}</h3>
-                <p>{{ __('messages.catering_text') }}</p>
-            </div>
-            <div class="service-card">
-                <div class="service-icon">
-                    <i class="fas fa-car"></i>
-                </div>
-                <h3>{{ __('messages.transportation') }}</h3>
-                <p>{{ __('messages.transportation_text') }}</p>
-            </div>
-            <div class="service-card">
-                <div class="service-icon">
-                    <i class="fas fa-car"></i>
-                </div>
-                <h3>{{ __('messages.transportation') }}</h3>
-                <p>{{ __('messages.transportation_text') }}</p>
-            </div>
+            @endforeach
         </div>
     </div>
 </section>

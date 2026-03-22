@@ -875,27 +875,19 @@
                 <div class="camera-icon"></div>
             </div>
         </div>
-        
+        @php
+            $about = App\Models\AboutUs::get() ?? [];
+        @endphp
         <!-- Hero Text - Right Side -->
         <div class="hero-text">
             <div class="hero-values">
                 <div class="value-point" id="value1">
-                    <div class="value-text">
-                        <h3>{{ __('messages.quality') }}</h3>
-                        <p>بسم الله الرحمن الرحيم كل حاجة تمام وبسم الله ما شاء الله ولا حول ولا قوة الا بالله العلي العظيم</p>
-                    </div>
-                </div>
-                <div class="value-point" id="value2">
-                    <div class="value-text">
-                        <h3>{{ __('messages.creativity') }}</h3>
-                        <p>{{ __('messages.creativity_text') }}</p>
-                    </div>
-                </div>
-                <div class="value-point" id="value3">
-                    <div class="value-text">
-                        <h3>{{ __('messages.trust') }}</h3>
-                        <p>{{ __('messages.trust_text') }}</p>
-                    </div>
+                    @foreach ($about as $key => $value)
+                        <div class="value-text">
+                            <h3>{{ $key }}</h3>
+                            <p>{{ $value }}</p>
+                        </div>
+                    @endforeach
                 </div>
             </div>
             

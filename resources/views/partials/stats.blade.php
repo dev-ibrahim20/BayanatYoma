@@ -77,28 +77,34 @@
 }
 </style>
 
-
+@php
+    $stats = App\Models\SiteSetting::first();
+    $clients_count = $stats->clients_count ?? 500;
+    $projects_count = $stats->projects_count ?? 1200;
+    $experience_years = $stats->experience_years ?? 15;
+    $satisfaction_rate = $stats->satisfaction_rate ?? 98;
+@endphp
 @section('title', __('messages.stats_title'))
 <!-- Stats Section -->
 <section class="stats">
     <div class="container">
         <div class="stats-grid">
-            <div class="stat-item">
-                <h3 class="stat-number" data-target="500">{{ __('messages.stats_500') }}</h3>
-                <p>{{ __('messages.clients') }}</p>
-            </div>
-            <div class="stat-item">
-                <h3 class="stat-number" data-target="1200">{{ __('messages.stats_1200') }}</h3>
-                <p>{{ __('messages.projects') }}</p>
-            </div>
-            <div class="stat-item">
-                <h3 class="stat-number" data-target="15">{{ __('messages.stats_15') }}</h3>
-                <p>{{ __('messages.experience') }}</p>
-            </div>
-            <div class="stat-item">
-                <h3 class="stat-number" data-target="98">{{ __('messages.stats_98') }}</h3>
-                <p>{{ __('messages.satisfaction') }}%</p>
-            </div>
+                <div class="stat-item">
+                    <h3 class="stat-number" data-target="{{ $clients_count }}">{{ $clients_count }}</h3>
+                    <p>{{ __('messages.clients') }}</p>
+                </div>
+                <div class="stat-item">
+                    <h3 class="stat-number" data-target="{{ $projects_count }}">{{ $projects_count }}</h3>
+                    <p>{{ __('messages.projects') }}</p>
+                </div>
+                <div class="stat-item">
+                    <h3 class="stat-number" data-target="{{ $experience_years }}">{{ $experience_years }}</h3>
+                    <p>{{ __('messages.experience') }}</p>
+                </div>
+                <div class="stat-item">
+                    <h3 class="stat-number" data-target="{{ $satisfaction_rate }}">{{ $satisfaction_rate }}%</h3>
+                    <p>{{ __('messages.satisfaction') }}%</p>
+                </div>                
         </div>
     </div>
 </section>
@@ -116,6 +122,8 @@ document.addEventListener('DOMContentLoaded', function() {
         const arabicNumerals = ['٠', '١', '٢', '٣', '٤', '٥', '٦', '٧', '٨', '٩'];
         return num.toString().split('').map(digit => arabicNumerals[parseInt(digit)] || digit).join('');
     }
+    
+    
     
     const animateCounter = (counter) => {
         const target = +counter.getAttribute('data-target');

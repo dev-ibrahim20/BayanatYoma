@@ -276,7 +276,9 @@
         }
     }
 </style>
-
+@php
+    $galleryImages = App\Models\OurWork::all();
+@endphp
 @section('title', __('messages.gallery_title'))
 <!-- Gallery Section -->
 <section id="gallery" class="gallery" dir="{{ app()->getLocale() == 'ar' ? 'rtl' : 'ltr' }}">
@@ -289,6 +291,31 @@
         <div class="gallery-container">
             <div class="gallery-slider">
                 <div class="gallery-wrapper" id="galleryWrapper">
+
+                    @if ($galleryImages->count() > 0)
+                        @foreach ($galleryImages as $image)
+                            <!-- Gallery Item {{ $loop->index + 1 }} -->
+                            <div class="gallery-item">
+                                <img src="{{ $image->image }}" 
+                                     alt="{{ $image->title }}"
+                                     loading="lazy">
+                                <div class="gallery-info">
+                                    <h3>{{ $image->title }}</h3>
+                                    <p>{{ $image->description }}</p>
+                                </div>
+                            </div>
+                        @endforeach
+                    @else
+                        <!-- Gallery Item 1 -->
+                        <div class="gallery-item">
+                            <img src="https://picsum.photos/seed/event1/400/300.jpg" 
+                                 alt="{{ __('messages.gallery_event1_alt') }}"
+                                 loading="lazy">
+                            <div class="gallery-info">
+                                <h3>{{ __('messages.gallery_event1_title') }}</h3>
+                                <p>{{ __('messages.gallery_event1_text') }}</p>
+                            </div>
+                        </div>
                     <!-- Gallery Item 1 -->
                     <div class="gallery-item">
                         <img src="https://picsum.photos/seed/event1/400/300.jpg" 
@@ -376,6 +403,7 @@
                             <p>{{ __('messages.gallery_event8_text') }}</p>
                         </div>
                     </div>
+                    @endif
                 </div>
             </div>
             

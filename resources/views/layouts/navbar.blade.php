@@ -38,18 +38,10 @@
         align-items: center;
     }
     
-    .logo h2 {
-        background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 50%, #ffffff 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        font-size: 2.5rem;
-        margin: 0;
-        font-weight: 900;
-        font-family: 'Arial Black', Arial, sans-serif;
-        letter-spacing: 1px;
-        animation: logoGlow 2s ease-in-out infinite alternate;
-    }
+        .logo img {
+            height: 70px;
+            max-width: 360px;
+        }
     
     @keyframes logoGlow {
         0% { filter: drop-shadow(0 0 10px rgba(102, 126, 234, 0.5)); }
@@ -269,9 +261,172 @@
         margin-left: auto;
     }
     
-    .language-option span {
-        flex: 1;
-        white-space: nowrap;
+    /* Responsive Language Switcher */
+    @media (max-width: 1200px) {
+        .language-button {
+            padding: 10px 14px;
+            font-size: 0.9rem;
+            min-width: 110px;
+        }
+        
+        .language-button i.fa-globe {
+            font-size: 1rem;
+        }
+        
+        .language-button i.fa-chevron-down {
+            font-size: 0.7rem;
+        }
+        
+        .language-menu {
+            min-width: 140px;
+        }
+        
+        .language-option {
+            padding: 10px 14px;
+            font-size: 0.9rem;
+        }
+    }
+    
+    @media (max-width: 992px) {
+        .language-button {
+            padding: 8px 12px;
+            font-size: 0.85rem;
+            min-width: 100px;
+        }
+        
+        .language-button i.fa-globe {
+            font-size: 0.95rem;
+        }
+        
+        .language-button i.fa-chevron-down {
+            font-size: 0.65rem;
+        }
+        
+        .language-menu {
+            min-width: 130px;
+        }
+        
+        .language-option {
+            padding: 8px 12px;
+            font-size: 0.85rem;
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .language-button {
+            padding: 6px 10px;
+            font-size: 0.8rem;
+            min-width: 90px;
+        }
+        
+        .language-button i.fa-globe {
+            font-size: 0.9rem;
+        }
+        
+        .language-button i.fa-chevron-down {
+            font-size: 0.6rem;
+        }
+        
+        .language-menu {
+            min-width: 120px;
+            margin-top: 6px;
+        }
+        
+        .language-option {
+            padding: 6px 10px;
+            font-size: 0.8rem;
+            gap: 10px;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .language-button {
+            padding: 5px 8px;
+            font-size: 0.75rem;
+            min-width: 80px;
+        }
+        
+        .language-button i.fa-globe {
+            font-size: 0.85rem;
+        }
+        
+        .language-button i.fa-chevron-down {
+            font-size: 0.55rem;
+        }
+        
+        .language-menu {
+            min-width: 110px;
+            margin-top: 4px;
+        }
+        
+        .language-option {
+            padding: 5px 8px;
+            font-size: 0.75rem;
+            gap: 8px;
+        }
+    }
+    
+    @media (max-width: 360px) {
+        .language-button {
+            padding: 4px 6px;
+            font-size: 0.7rem;
+            min-width: 70px;
+        }
+        
+        .language-button i.fa-globe {
+            font-size: 0.8rem;
+        }
+        
+        .language-button i.fa-chevron-down {
+            font-size: 0.5rem;
+        }
+        
+        .language-menu {
+            min-width: 100px;
+            margin-top: 3px;
+        }
+        
+        .language-option {
+            padding: 4px 6px;
+            font-size: 0.7rem;
+            gap: 6px;
+        }
+    }
+    
+    /* Responsive Design for Logo */
+    @media (max-width: 1200px) {
+        .logo img {
+            height: 50px;
+            max-width: 160px;
+        }
+    }
+        
+    @media (max-width: 992px) {
+        .logo img {
+            height: 50px;
+            max-width: 160px;
+        }
+    }
+        
+    @media (max-width: 768px) {
+        .logo img {
+            height: 60px;
+            max-width: 200px;
+        }
+    }
+        
+    @media (max-width: 480px) {
+        .logo img {
+            height: 50px;
+            max-width: 160px;
+        }
+    }
+        
+    @media (max-width: 360px) {
+        .logo img {
+            height: 45px;
+            max-width: 140px;
+        }
     }
     
     /* Mobile Responsive */
@@ -570,7 +725,7 @@
         <div class="container navbar-container">
             <div class="nav-content">
                 <div class="logo">
-                    <h2>{{ __('messages.logo') }}</h2>
+                    <img src="{{ asset('assets/arqco-logo.png') }}" alt="ARQCO Logo">
                 </div>
                 <ul class="nav-menu">
                     <li><a href="#home">{{ __('messages.home') }}</a></li>
@@ -623,54 +778,10 @@ function toggleLanguageDropdown() {
         menu.classList.add('show');
     }
 }
-// Close dropdown when clicking outside
-// document.addEventListener('click', function(event) {
-//     const dropdown = document.querySelector('.language-dropdown');
-//     const menu = document.getElementById('languageMenu');
-    
-//     if (!dropdown.contains(event.target)) {
-//         menu.classList.remove('show');
-//     }
-// });
-
-// Close dropdown when pressing Escape
-// document.addEventListener('keydown', function(event) {
-//     if (event.key === 'Escape') {
-//         document.getElementById('languageMenu').classList.remove('show');
-//     }
-// });
 
 // Handle language change with confirmation
 function changeLanguage(url) {
     window.location.href = url;
 }
-
-// Mobile menu toggle
-// document.querySelector('.hamburger').addEventListener('click', function() {
-//     document.querySelector('.sidebar').classList.toggle('active');
-//     document.querySelector('.overlay').classList.toggle('active');
-// });
-
-// Close sidebar when clicking overlay
-// document.querySelector('.overlay').addEventListener('click', function() {
-//     document.querySelector('.sidebar').classList.remove('active');
-//     document.querySelector('.overlay').classList.remove('active');
-// });
-
-// Close sidebar when clicking links
-// // document.querySelectorAll('.sidebar ul li a').forEach(link => {
-//     link.addEventListener('click', function() {
-//         document.querySelector('.sidebar').classList.remove('active');
-//         document.querySelector('.overlay').classList.remove('active');
-//     });
-// });
-
-// Handle responsive behavior
-// window.addEventListener('resize', function() {
-//     const menu = document.getElementById('languageMenu');
-//     if (window.innerWidth > 768) {
-//         menu.classList.remove('show');
-//     }
-// });
 
 </script> 

@@ -14,7 +14,9 @@
     
     <script src="script.js"></script>
     @stack('scripts')
-    
+                    @php
+                    $service = \App\Models\Service::all();
+                @endphp
 
     <script>
             // Add click handler to hamburger - MOBILE ONLY
@@ -267,7 +269,7 @@
                 `;
                 document.body.appendChild(mobileMenu);
             } 
-            
+
             // Toggle menu visibility
             if (mobileMenu.style.transform === 'translateX(-100%)' || mobileMenu.style.transform === '') {
                 mobileMenu.style.transform = 'translateX(0)';
@@ -282,6 +284,7 @@
                 mobileMenu.style.transform = 'translateX(-100%)';
             }
         }
-    </script>
+
+    </script>  
 </body>
 </html>

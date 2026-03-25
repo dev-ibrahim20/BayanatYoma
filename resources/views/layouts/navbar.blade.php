@@ -13,12 +13,13 @@
     }
     
     .navbar {
-        background-image: linear-gradient(135deg, rgb(26, 47, 74) 0%, rgb(26, 47, 74) 40%, rgb(15, 23, 20) 80%);
+        background-image: linear-gradient(rgb(15, 23, 20));
         backdrop-filter: blur(20px);
         border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-        padding: 1rem 0;
+        padding: 0.5rem 0;
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         width: 100%;
+        max-height: 75px;
         z-index: 1000;
         position: relative;
         transition: all 0.3s ease;
@@ -39,7 +40,7 @@
     }
     
         .logo img {
-            height: 70px;
+            height: 100px;
             max-width: 360px;
         }
     

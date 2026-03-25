@@ -49,7 +49,7 @@
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
     position: relative;
     overflow: hidden;
-    min-height: 340px;
+    min-height: 200px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -359,15 +359,47 @@
         <div class="services-grid">
             @foreach ($services as $service)
             <div class="service-card">
-                <div class="service-icon">
-                    <i class="fas fa-lightbulb"></i>
-                </div>
-                <h3>{{ app()->getLocale() == 'ar' ? $service->title_ar : $service->title_en }}</h3>
-                <p>{{ app()->getLocale() == 'ar' ? $service->description_ar : $service->description_en }}</p>
+                <a href="{{ route('service.show', $service->slug) }}" class="service-link">
+                    <div class="service-icon {{ $service->slug }}">
+                        @switch($service->slug)
+                            @case('Setting up tents for events and weddings')
+                                <i class="fas fa-campground"></i>
+                            @break
+                            @case('Organizing conferences and exhibitions')
+                                <i class="fas fa-microphone-alt"></i>
+                            @break
+                            @case('Shooting a video')
+                                <i class="fas fa-video"></i>
+                            @break
+                            @case('Providing toilet caravans')
+                                <i class="fas fa-toilet-portable"></i>
+                            @break
+                            @case('Hajj tents')
+                                <i class="fas fa-tent"></i>
+                            @break
+                            @case('Hospitality services')
+                                <i class="fas fa-hands-helping"></i>
+                            @break
+                            @case('Iftar tents for fasting people')
+                                <i class="fas fa-tent"></i>
+                            @break
+                            @case('Event and entertainment halls')
+                                <i class="fas fa-music"></i>
+                            @break
+                            @default
+                                <i class="fas fa-lightbulb"></i>
+                        @endswitch
+                    </div>
+                    <h3>{{ app()->getLocale() == 'ar' ? $service->title_ar : $service->title_en }}</h3>
+                    <p>{{ app()->getLocale() == 'ar' ? $service->description_ar : $service->description_en }}</p>
+                </a>
             </div>
             @endforeach
         </div>
     </div>
 </section>
+
+<!-- Include Service Icons CSS -->
+<link rel="stylesheet" href="{{ asset('css/service-icons.css') }}">
 
 

@@ -10,7 +10,9 @@ use App\Http\Controllers\Admin\SocialMediaController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ServiceController as FrontServiceController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,6 +26,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
+
+// Service Routes
+Route::get('/services-details/{slug}', [App\Http\Controllers\ServiceController::class, 'show'])->name('service.show');
 
 Route::get('/sitemap.xml', function (Request $request) {
     return response()->view('sitemap')->header('Content-Type', 'text/xml');

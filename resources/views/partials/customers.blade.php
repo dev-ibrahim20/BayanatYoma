@@ -59,7 +59,7 @@
     .customer-slide {
         min-width: 220px;
         width: 220px;
-        height: 120px;
+        height: 220px;
         margin: 0 20px;
         /* border-radius: 8px; */
         overflow: hidden;

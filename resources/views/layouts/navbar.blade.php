@@ -729,11 +729,11 @@
                     <img src="{{ asset('Arqco/public/assets/arqco-logo.png') }}" alt="ARQCO Logo">
                 </div>
                 <ul class="nav-menu">
-                    <li><a href="#home">{{ __('messages.home') }}</a></li>
-                    <li><a href="#services">{{ __('messages.services') }}</a></li>
-                    <li><a href="#gallery">{{ __('messages.gallery') }}</a></li>
-                    <li><a href="#contact">{{ __('messages.contact') }}</a></li>
-                    <li><a href="#customers">{{ __('messages.customers') }}</a></li>
+                    <li><a href="/#home">{{ __('messages.home') }}</a></li>
+                    <li><a href="/#services">{{ __('messages.services') }}</a></li>
+                    <li><a href="/#gallery">{{ __('messages.gallery') }}</a></li>
+                    <li><a href="/#contact">{{ __('messages.contact') }}</a></li>
+                    <li><a href="/#customers">{{ __('messages.customers') }}</a></li>
                 </ul>
                 <div class="hamburger">
                     <span></span>

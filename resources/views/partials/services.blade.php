@@ -75,7 +75,7 @@
     width: 80px;
     height: 80px;
     background: linear-gradient(135deg, #3B82F6 0%, #1A2F4A 100%);
-    border-radius: 20px;
+    border-radius: 50%; /* 👈 الحل هنا */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -84,8 +84,9 @@
     color: #ffffff;
     transition: all 0.3s ease;
     box-shadow: 0 8px 25px rgba(59, 130, 246, 0.3);
+    padding: 0;
+    box-sizing: border-box;
 }
-
 .service-card h3 {
     font-size: 1.5rem;
     color: #000000;

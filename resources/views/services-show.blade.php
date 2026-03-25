@@ -12,7 +12,7 @@
                 <p>{{ app()->getLocale() == 'ar' ? $service->description_ar : $service->description_en }}</p>
             </div>
             <div class="service-hero-image">
-                <img src="{{ asset( 'Arqco/public/' . $service->image) }}" alt="{{ app()->getLocale() == 'ar' ? $service->title_ar : $service->title_en }}">
+                <img src="{{ asset('Arqco/public/assets/arqco-logo.png') }}" alt="{{ app()->getLocale() == 'ar' ? $service->title_ar : $service->title_en }}">
             </div>
         </div>
     </div>
@@ -58,8 +58,8 @@
                                 </div>
                             </div>
                             
-                            <!-- Additional Portfolio Images -->
-                            @foreach($portfolioImages->slice(1, 7) as $index => $work)
+                            <!-- Additional Portfolio Images (4 more for total of 5) -->
+                            @foreach($portfolioImages->slice(1, 4) as $index => $work)
                                 <div class="gallery-item" onclick="openLightbox({{ $index + 1 }})">
                                     <img src="{{ asset('Arqco/public/' . $work->image) }}" alt="{{ app()->getLocale() == 'ar' ? $work->title_ar : $work->title_en }}">
                                     <div class="gallery-overlay">
@@ -112,7 +112,7 @@
                                     <div class="related-service-icon">
                                         <i class="fas fa-briefcase"></i>
                                     </div>
-                                    <a href="{{ route('services.show', $relatedService->slug) }}">
+                                    <a href="{{ route('service.show', $relatedService->slug) }}">
                                         {{ app()->getLocale() == 'ar' ? $relatedService->title_ar : $relatedService->title_en }}
                                     </a>
                                 </div>
@@ -144,18 +144,6 @@
     </div>
 </section>
 
-<!-- Lightbox HTML -->
-<div id="lightbox" class="lightbox" style="display: none;">
-    <div class="lightbox-content">
-        <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
-        <button class="lightbox-nav prev" onclick="navigateLightbox(-1)">&#10094;</button>
-        <img id="lightbox-image" src="" alt="Gallery Image">
-        <button class="lightbox-nav next" onclick="navigateLightbox(1)">&#10095;</button>
-        <div class="lightbox-counter">
-            <span id="current-image">1</span> / <span id="total-images">6</span>
-        </div>
-    </div>
-</div>
 
     @include('partials.contact')
 @endsection
@@ -165,7 +153,7 @@
 // Gallery Images Array
 const galleryImages = [
     @if(isset($portfolioImages) && $portfolioImages && $portfolioImages->count() > 0)
-        @foreach($portfolioImages->take(8) as $work)
+        @foreach($portfolioImages->take(5) as $work)
             "{{ asset('Arqco/public/' . $work->image) }}",
         @endforeach
     @else

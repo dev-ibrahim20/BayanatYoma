@@ -108,7 +108,7 @@
                         ">{{ __('messages.logo') }}</h3>
                     </div>
                     <div style="display: flex; flex-direction: column; gap: 15px;">
-                        <a href="#home" style="
+                        <a href="/#home" style="
                             display: block;
                             color: #1A2F4A;
                             padding: 15px 25px;
@@ -123,7 +123,7 @@
                         " onmouseover="this.style.background='rgba(255, 255, 255, 0.2)'" onmouseout="this.style.background='rgba(255, 255, 255, 0.1)'">
                             {{ __('messages.home') }}
                         </a>
-                        <a href="#services" style="
+                        <a href="/#services" style="
                             display: block;
                             color: #1A2F4A;
                             padding: 15px 25px;
@@ -138,7 +138,7 @@
                         " onmouseover="this.style.background='rgba(255, 255, 255, 0.2)'" onmouseout="this.style.background='rgba(255, 255, 255, 0.1)'">
                             {{ __('messages.services') }}
                         </a>
-                        <a href="#gallery" style="
+                        <a href="/#gallery" style="
                             display: block;
                             color: #1A2F4A;
                             padding: 15px 25px;
@@ -153,7 +153,7 @@
                         " onmouseover="this.style.background='rgba(255, 255, 255, 0.2)'" onmouseout="this.style.background='rgba(255, 255, 255, 0.1)'">
                             {{ __('messages.gallery') }}
                         </a>
-                        <a href="#contact" style="
+                        <a href="/#contact" style="
                             display: block;
                             color: #1A2F4A;
                             padding: 15px 25px;
@@ -168,7 +168,7 @@
                         " onmouseover="this.style.background='rgba(255, 255, 255, 0.2)'" onmouseout="this.style.background='rgba(255, 255, 255, 0.1)'">
                             {{ __('messages.contact') }}
                         </a>
-                        <a href="#customers" style="
+                        <a href="/#customers" style="
                             display: block;
                             color: #1A2F4A;
                             padding: 15px 25px;

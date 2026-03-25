@@ -181,7 +181,7 @@
 <section id="contact" class="contact">
     <div class="container">
         <div class="section-header">
-            <img src="{{ asset('assets/arqco-logo.png') }}" alt="ARQCO LOGO">
+            <img src="{{ asset('Arqco/public/assets/arqco-logo.png') }}" alt="ARQCO LOGO">
         </div>
         <div class="contact-content">
             <div class="contact-info">

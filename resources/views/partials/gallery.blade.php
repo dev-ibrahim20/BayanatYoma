@@ -1,499 +1,277 @@
+
 <style>
-    /* Simple Horizontal Gallery */
-    .gallery {
-        padding: 80px 20px;
-          background-image: linear-gradient(135deg, rgb(26, 47, 74) 0%, rgb(26, 47, 74) 40%, rgb(15, 23, 20) 80%);
-        border-top: 1px solid #484846;
-        position: relative;
-        overflow: hidden;
+/* Different Section Styles */
+.different {
+    padding: 80px 20px;
+    background-image: linear-gradient(135deg, rgb(26, 47, 74) 0%, rgb(26, 47, 74) 40%, rgb(15, 23, 20) 80%);
+    border-top: 1px solid #5a5a00;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-header h2 {
+    font-size: 3.5rem;
+    color: #000000;
+    margin-bottom: 1rem;
+    font-weight: 900;
+    font-family: 'Arial Black', Arial, sans-serif;
+    letter-spacing: 2px;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.section-header p {
+    font-size: 1.8rem;
+    color: #000000;
+    font-weight: 600;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.different-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.different-item {
+    background: #e2e1e1;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 16px;
+    padding: 35px;
+    text-align: center;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+    min-height: 340px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.different-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    /* background: linear-gradient(90deg, #667eea 0%, #764ba2 100%); */
+}
+
+.different-item:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+    /* border-color: #667eea; */
+}
+
+.different-icon {
+    width: 100px;
+    height: 100px;
+    background: #2F4F4F;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 30px;
+    font-size: 2.5rem;
+    color: #ffffff;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(47, 79, 79, 0.3);
+}
+
+.different-item h3 {
+    font-size: 1.5rem;
+    color: #000000;
+    margin-bottom: 18px;
+    font-weight: 700;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    letter-spacing: -0.5px;
+    line-height: 1.3;
+}
+
+.different-item p {
+    color: #000000;
+    line-height: 1.7;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    margin-top: auto;
+    flex-grow: 1;
+}
+
+@media (max-width: 768px) {
+    .different {
+        padding: 60px 20px;
     }
     
-    .section-header {
-        text-align: center;
-        margin-bottom: 60px;
+    .different-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        padding: 0 15px;
     }
     
     .section-header h2 {
-        font-size: 3.5rem;
-        color: #ffffff;
-        margin-bottom: 1rem;
-        font-weight: 900;
-        font-family: 'Arial Black', Arial, sans-serif;
-        letter-spacing: 2px;
-        text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        font-size: 2.2rem;
     }
     
-    .section-header p {
-        font-size: 1.8rem;
-        color: #ffffff;
-        font-weight: 600;
-        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    .different-item {
+        padding: 20px;
+        min-height: 250px;
     }
     
-    .gallery-container {
-        position: relative;
-        max-width: 1400px;
-        margin: 0 auto;
-        width: 100%;
-    }
-    
-    .gallery-slider {
-        position: relative;
-        overflow: hidden;
-        border-radius: 20px;
-        background: rgba(0, 0, 0, 0.2);
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-    }
-    
-    .gallery-wrapper {
-        display: flex;
-        overflow-x: auto;
-        overflow-y: hidden;
-        scroll-behavior: smooth;
-        gap: 20px;
-        padding: 20px 0;
-        scrollbar-width: thin;
-        scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
-    }
-    
-    .gallery-wrapper::-webkit-scrollbar {
-        height: 8px;
-    }
-    
-    .gallery-wrapper::-webkit-scrollbar-track {
-        background: rgba(255, 255, 255, 0.1);
-        border-radius: 4px;
-    }
-    
-    .gallery-wrapper::-webkit-scrollbar-thumb {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        border-radius: 4px;
-    }
-    
-    .gallery-item {
-        flex: 0 0 400px;
-        position: relative;
-        overflow: hidden;
-        border-radius: 16px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-        transition: all 0.3s ease;
-    }
-    
-    .gallery-item:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-    }
-    
-    .gallery-item img {
-        width: 100%;
-        height: 300px;
-        object-fit: cover;
-        display: block;
-        transition: transform 0.3s ease;
-    }
-    
-    .gallery-item:hover img {
-        transform: scale(1.05);
-    }
-    
-    .gallery-info {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
-        color: #ffffff;
-        padding: 30px;
-        transform: translateY(100%);
-        transition: transform 0.3s ease;
-    }
-    
-    .gallery-item:hover .gallery-info {
-        transform: translateY(0);
-    }
-    
-    .gallery-info h3 {
-        font-size: 1.8rem;
-        font-weight: 700;
-        margin-bottom: 10px;
-        font-family: 'Arial Black', Arial, sans-serif;
-    }
-    
-    .gallery-info p {
-        font-size: 1.1rem;
-        line-height: 1.6;
-        opacity: 0.9;
-    }
-    
-    /* Navigation Arrows */
-    .gallery-nav {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        border: none;
-        border-radius: 50%;
+    .different-icon {
         width: 60px;
         height: 60px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
-        z-index: 100;
-        color: #ffffff;
-        font-size: 1.5rem;
+        font-size: 1.6rem;
     }
     
-    .gallery-nav:hover {
-        transform: translateY(-50%) scale(1.1);
-        box-shadow: 0 12px 35px rgba(102, 126, 234, 0.5);
+    .different-item h3 {
+        font-size: 1.1rem;
     }
     
-    .gallery-nav.prev {
-        left: 20px;
+    .different-item p {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .different {
+        padding: 40px 15px;
     }
     
-    .gallery-nav.next {
-        right: 20px;
+    .different-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        padding: 0 10px;
     }
     
-    .gallery-nav.disabled {
-        opacity: 0.3;
-        cursor: not-allowed;
-        transform: translateY(-50%);
+    .section-header h2 {
+        font-size: 1.8rem;
     }
     
-    .gallery-nav.disabled:hover {
-        transform: translateY(-50%);
-        box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+    .different-item {
+        padding: 15px;
+        min-height: 220px;
     }
     
-    /* Progress Indicators */
-    .gallery-progress {
-        display: flex;
-        justify-content: center;
+    .different-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.4rem;
+    }
+    
+    .different-item h3 {
+        font-size: 1rem;
+    }
+    
+    .different-item p {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 360px) {
+    .different {
+        padding: 30px 10px;
+    }
+    
+    .different-grid {
+        grid-template-columns: repeat(2, 1fr);
         gap: 10px;
-        margin-top: 30px;
+        padding: 0 5px;
     }
     
-    .gallery-dot {
-        width: 12px;
-        height: 12px;
-        border-radius: 50%;
-        background: rgba(255, 255, 255, 0.3);
-        cursor: pointer;
-        transition: all 0.3s ease;
+    .section-header h2 {
+        font-size: 1.6rem;
     }
     
-    .gallery-dot:hover {
-        background: rgba(255, 255, 255, 0.5);
+    .different-item {
+        padding: 12px;
+        min-height: 200px;
     }
     
-    .gallery-dot.active {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        transform: scale(1.2);
+    .different-icon {
+        width: 45px;
+        height: 45px;
+        font-size: 1.2rem;
     }
     
-    /* RTL Support */
-    [dir="rtl"] .gallery-nav.prev {
-        right: 20px;
-        left: auto;
+    .different-item h3 {
+        font-size: 0.9rem;
     }
-    
-    [dir="rtl"] .gallery-nav.next {
-        left: 20px;
-        right: auto;
-    }
-    
-    /* Responsive Design */
-    @media (max-width: 768px) {
-        .gallery {
-            padding: 60px 15px;
-        }
-        
-        .section-header h2 {
-            font-size: 2.5rem;
-        }
-        
-        .section-header p {
-            font-size: 1.4rem;
-        }
-        
-        .gallery-item img {
-            height: 350px;
-        }
-        
-        .gallery-info {
-            padding: 20px;
-        }
-        
-        .gallery-info h3 {
-            font-size: 1.4rem;
-        }
-        
-        .gallery-info p {
-            font-size: 1rem;
-        }
-        
-        .gallery-nav {
-            width: 50px;
-            height: 50px;
-            font-size: 1.2rem;
-        }
-        
-        .gallery-nav.prev {
-            left: 10px;
-        }
-        
-        .gallery-nav.next {
-            right: 10px;
-        }
-    }
-    
-    @media (max-width: 480px) {
-        .gallery-item img {
-            height: 280px;
-        }
-        
-        .gallery-info {
-            padding: 15px;
-        }
-        
-        .gallery-info h3 {
-            font-size: 1.2rem;
-        }
-        
-        .gallery-info p {
-            font-size: 0.9rem;
-        }
-        
-        .gallery-nav {
-            width: 45px;
-            height: 45px;
-            font-size: 1rem;
-        }
-    }
+}
 </style>
-@php
-    $galleryImages = App\Models\OurWork::all();
-@endphp
-@section('title', __('messages.gallery_title'))
-<!-- Gallery Section -->
-<section id="gallery" class="gallery" dir="{{ app()->getLocale() == 'ar' ? 'rtl' : 'ltr' }}">
+
+@section('title', __('messages.different_title'))
+<!-- Different Section -->
+<section class="different">
     <div class="container">
         <div class="section-header">
-            <h2>{{ __('messages.gallery_title') }}</h2>
-            <p>{{ __('messages.gallery_subtitle') }}</p>
+            <h2>{{ __('messages.different_title') }}</h2>
+            <p>{{ __('messages.different_subtitle') }}</p>
         </div>
-        
-        <div class="gallery-container">
-            <div class="gallery-slider">
-                <div class="gallery-wrapper" id="galleryWrapper">
-
-                    @if ($galleryImages->count() > 0)
-                        @foreach ($galleryImages as $image)
-                            <!-- Gallery Item {{ $loop->index + 1 }} -->
-                            <div class="gallery-item">
-                                <img src="{{ $image->image }}" 
-                                     alt="{{ $image->title }}"
-                                     loading="lazy">
-                                <div class="gallery-info">
-                                    <h3>{{ $image->title }}</h3>
-                                    <p>{{ $image->description }}</p>
-                                </div>
-                            </div>
-                        @endforeach
-                    @else
-                        <!-- Gallery Item 1 -->
-                        <div class="gallery-item">
-                            <img src="https://picsum.photos/seed/event1/400/300.jpg" 
-                                 alt="{{ __('messages.gallery_event1_alt') }}"
-                                 loading="lazy">
-                            <div class="gallery-info">
-                                <h3>{{ __('messages.gallery_event1_title') }}</h3>
-                                <p>{{ __('messages.gallery_event1_text') }}</p>
-                            </div>
-                        </div>
-                    <!-- Gallery Item 1 -->
-                    <div class="gallery-item">
-                        <img src="https://picsum.photos/seed/event1/400/300.jpg" 
-                             alt="{{ __('messages.gallery_event1_alt') }}"
-                             loading="lazy">
-                        <div class="gallery-info">
-                            <h3>{{ __('messages.gallery_event1_title') }}</h3>
-                            <p>{{ __('messages.gallery_event1_text') }}</p>
-                        </div>
-                    </div>
-                    
-                    <!-- Gallery Item 2 -->
-                    <div class="gallery-item">
-                        <img src="https://picsum.photos/seed/event2/400/300.jpg" 
-                             alt="{{ __('messages.gallery_event2_alt') }}"
-                             loading="lazy">
-                        <div class="gallery-info">
-                            <h3>{{ __('messages.gallery_event2_title') }}</h3>
-                            <p>{{ __('messages.gallery_event2_text') }}</p>
-                        </div>
-                    </div>
-                    
-                    <!-- Gallery Item 3 -->
-                    <div class="gallery-item">
-                        <img src="https://picsum.photos/seed/event3/400/300.jpg" 
-                             alt="{{ __('messages.gallery_event3_alt') }}"
-                             loading="lazy">
-                        <div class="gallery-info">
-                            <h3>{{ __('messages.gallery_event3_title') }}</h3>
-                            <p>{{ __('messages.gallery_event3_text') }}</p>
-                        </div>
-                    </div>
-                    
-                    <!-- Gallery Item 4 -->
-                    <div class="gallery-item">
-                        <img src="https://picsum.photos/seed/event4/400/300.jpg" 
-                             alt="{{ __('messages.gallery_event4_alt') }}"
-                             loading="lazy">
-                        <div class="gallery-info">
-                            <h3>{{ __('messages.gallery_event4_title') }}</h3>
-                            <p>{{ __('messages.gallery_event4_text') }}</p>
-                        </div>
-                    </div>
-                    
-                    <!-- Gallery Item 5 -->
-                    <div class="gallery-item">
-                        <img src="https://picsum.photos/seed/event5/400/300.jpg" 
-                             alt="{{ __('messages.gallery_event5_alt') }}"
-                             loading="lazy">
-                        <div class="gallery-info">
-                            <h3>{{ __('messages.gallery_event5_title') }}</h3>
-                            <p>{{ __('messages.gallery_event5_text') }}</p>
-                        </div>
-                    </div>
-                    
-                    <!-- Gallery Item 6 -->
-                    <div class="gallery-item">
-                        <img src="https://picsum.photos/seed/event6/400/300.jpg" 
-                             alt="{{ __('messages.gallery_event6_alt') }}"
-                             loading="lazy">
-                        <div class="gallery-info">
-                            <h3>{{ __('messages.gallery_event6_title') }}</h3>
-                            <p>{{ __('messages.gallery_event6_text') }}</p>
-                        </div>
-                    </div>
-                    
-                    <!-- Gallery Item 7 -->
-                    <div class="gallery-item">
-                        <img src="https://picsum.photos/seed/event7/400/300.jpg" 
-                             alt="{{ __('messages.gallery_event7_alt') }}"
-                             loading="lazy">
-                        <div class="gallery-info">
-                            <h3>{{ __('messages.gallery_event7_title') }}</h3>
-                            <p>{{ __('messages.gallery_event7_text') }}</p>
-                        </div>
-                    </div>
-                    
-                    <!-- Gallery Item 8 -->
-                    <div class="gallery-item">
-                        <img src="https://picsum.photos/seed/event8/400/300.jpg" 
-                             alt="{{ __('messages.gallery_event8_alt') }}"
-                             loading="lazy">
-                        <div class="gallery-info">
-                            <h3>{{ __('messages.gallery_event8_title') }}</h3>
-                            <p>{{ __('messages.gallery_event8_text') }}</p>
-                        </div>
-                    </div>
-                    @endif
+        <div class="different-grid">
+            <div class="different-item">
+                <div class="different-icon">
+                    <i class="fas fa-tasks"></i>
                 </div>
+                <h3>{{ __('messages.execution') }}</h3>
+                <p>{{ __('messages.execution_text') }}</p>
             </div>
-            
-            <!-- Navigation Arrows -->
-            <button class="gallery-nav prev" id="galleryPrev" 
-                    aria-label="{{ __('messages.previous_project') }}"
-                    title="{{ __('messages.view_previous') }}">
-                <i class="fas fa-chevron-{{ app()->getLocale() == 'ar' ? 'right' : 'left' }}"></i>
-            </button>
-            <button class="gallery-nav next" id="galleryNext" 
-                    aria-label="{{ __('messages.next_project') }}"
-                    title="{{ __('messages.view_next') }}">
-                <i class="fas fa-chevron-{{ app()->getLocale() == 'ar' ? 'left' : 'right' }}"></i>
-            </button>
-        </div>
-        
-        <!-- Progress Indicators -->
-        <div class="gallery-progress" id="galleryProgress">
-            <div class="gallery-dot active" data-slide="0" 
-                 aria-label="{{ __('messages.slide') }} 1"></div>
-            <div class="gallery-dot" data-slide="1" 
-                 aria-label="{{ __('messages.slide') }} 2"></div>
-            <div class="gallery-dot" data-slide="2" 
-                 aria-label="{{ __('messages.slide') }} 3"></div>
-            <div class="gallery-dot" data-slide="3" 
-                 aria-label="{{ __('messages.slide') }} 4"></div>
-            <div class="gallery-dot" data-slide="4" 
-                 aria-label="{{ __('messages.slide') }} 5"></div>
-            <div class="gallery-dot" data-slide="5" 
-                 aria-label="{{ __('messages.slide') }} 6"></div>
+            <div class="different-item">
+                <div class="different-icon">
+                    <i class="fas fa-handshake"></i>
+                </div>
+                <h3>{{ __('messages.commitment') }}</h3>
+                <p>{{ __('messages.commitment_text') }}</p>
+            </div>
+            <div class="different-item">
+                <div class="different-icon">
+                    <i class="fas fa-tachometer-alt"></i>
+                </div>
+                <h3>{{ __('messages.speed') }}</h3>
+                <p>{{ __('messages.speed_text') }}</p>
+            </div>
+            <div class="different-item">
+                <div class="different-icon">
+                    <i class="fas fa-adjust"></i>
+                </div>
+                <h3>{{ __('messages.innovation') }}</h3>
+                <p>{{ __('messages.innovation_text') }}</p>
+            </div>
+            <div class="different-item">
+                <div class="different-icon">
+                    <i class="fas fa-lightbulb"></i>
+                </div>
+                <h3>{{ __('messages.creative_ideas') }}</h3>
+                <p>{{ __('messages.creative_ideas_text') }}</p>
+            </div>
+            <div class="different-item">
+                <div class="different-icon">
+                    <i class="fas fa-user-tie"></i>
+                </div>
+                <h3>{{ __('messages.team') }}</h3>
+                <p>{{ __('messages.team_text') }}</p>
+            </div>
+            <div class="different-item">
+                <div class="different-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h3>{{ __('messages.reliable_partnerships') }}</h3>
+                <p>{{ __('messages.reliable_partnerships_text') }}</p>
+            </div>
+            <div class="different-item">
+                <div class="different-icon">
+                    <i class="fas fa-globe"></i>
+                </div>
+                <h3>{{ __('messages.quality') }}</h3>
+                <p>{{ __('messages.quality_text') }}</p>
+            </div>
         </div>
     </div>
 </section>
-
-    <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const galleryWrapper = document.getElementById('galleryWrapper');
-        const prevBtn = document.getElementById('galleryPrev');
-        const nextBtn = document.getElementById('galleryNext');
-        
-        // Smooth scroll functions
-        function scrollLeft() {
-            galleryWrapper.scrollBy({
-                left: -420, // 400px image width + 20px gap
-                behavior: 'smooth'
-            });
-        }
-        
-        function scrollRight() {
-            galleryWrapper.scrollBy({
-                left: 420, // 400px image width + 20px gap
-                behavior: 'smooth'
-            });
-        }
-        
-        // Event listeners
-        nextBtn.addEventListener('click', scrollRight);
-        prevBtn.addEventListener('click', scrollLeft);
-        
-        // Keyboard navigation
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'ArrowRight') scrollRight();
-            if (e.key === 'ArrowLeft') scrollLeft();
-        });
-        
-        // Auto-scroll on hover (optional)
-        let autoScrollInterval;
-        
-        function startAutoScroll(direction) {
-            stopAutoScroll();
-            autoScrollInterval = setInterval(() => {
-                if (direction === 'right') {
-                    scrollRight();
-                } else {
-                    scrollLeft();
-                }
-            }, 50);
-        }
-        
-        function stopAutoScroll() {
-            clearInterval(autoScrollInterval);
-        }
-        
-        // Optional: Auto-scroll when holding arrow buttons
-        nextBtn.addEventListener('mousedown', () => startAutoScroll('right'));
-        nextBtn.addEventListener('mouseup', stopAutoScroll);
-        nextBtn.addEventListener('mouseleave', stopAutoScroll);
-        
-        prevBtn.addEventListener('mousedown', () => startAutoScroll('left'));
-        prevBtn.addEventListener('mouseup', stopAutoScroll);
-        prevBtn.addEventListener('mouseleave', stopAutoScroll);
-    });
-</script>

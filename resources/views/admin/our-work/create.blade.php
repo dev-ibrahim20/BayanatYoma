@@ -28,13 +28,13 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="title_ar">العنوان بالعربية <span class="text-danger">*</span></label>
-                                    <input type="text" class="form-control" id="title_ar" name="title_ar" required>
+                                    <input type="text" class="form-control" id="title_ar" name="title_ar">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="title_en">العنوان بالإنجليزية <span class="text-danger">*</span></label>
-                                    <input type="text" class="form-control" id="title_en" name="title_en" required>
+                                    <input type="text" class="form-control" id="title_en" name="title_en">
                                 </div>
                             </div>
                         </div>
@@ -48,7 +48,7 @@
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label for="project_date">تاريخ المشروع <span class="text-danger">*</span></label>
-                                    <input type="date" class="form-control" id="project_date" name="project_date" required>
+                                    <input type="date" class="form-control" id="project_date" name="project_date">
                                 </div>
                             </div>
                         </div>

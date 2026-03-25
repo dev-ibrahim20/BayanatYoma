@@ -269,7 +269,7 @@
     background: #ffffff;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    background-clip: text;
+    background-cli
     line-height: 1.2;
 }
 
@@ -609,12 +609,108 @@
         border-radius: 8px;
     }
     
+    .value-point {
+        border-radius: 15px;
+        text-align: center;
+        transition: all 0.3s ease;
+        width: 100%;
+        max-width: 280px;
+        height: auto;
+        min-height: 120px;
+    }
+    
     .value-point .value-text h3 {
         font-size: 2.2rem;
     }
     
     .value-point .value-text p {
         font-size: 1.2rem;
+    }
+    
+    /* Responsive Design for Hero Values */
+    @media (max-width: 1200px) {
+        .value-point {
+            max-width: 260px;
+            min-height: 110px;
+            padding: 18px;
+        }
+        
+        .value-point .value-text h3 {
+            font-size: 2rem;
+        }
+        
+        .value-point .value-text p {
+            font-size: 1.1rem;
+        }
+    }
+    
+    @media (max-width: 992px) {
+        .value-point {
+            max-width: 240px;
+            min-height: 100px;
+            padding: 15px;
+        }
+        
+        .value-point .value-text h3 {
+            font-size: 1.8rem;
+        }
+        
+        .value-point .value-text p {
+            font-size: 1rem;
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .hero-values {
+            grid-template-columns: 1fr;
+            gap: 15px;
+        }
+        
+        .value-point {
+            max-width: 100%;
+            min-height: 90px;
+            padding: 12px;
+        }
+        
+        .value-point .value-text h3 {
+            font-size: 1.6rem;
+        }
+        
+        .value-point .value-text p {
+            font-size: 0.95rem;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .value-point {
+            max-width: 100%;
+            min-height: 80px;
+            padding: 10px;
+        }
+        
+        .value-point .value-text h3 {
+            font-size: 1.4rem;
+        }
+        
+        .value-point .value-text p {
+            font-size: 0.9rem;
+        }
+    }
+    
+    @media (max-width: 360px) {
+        .value-point {
+            max-width: 100%;
+            min-height: 70px;
+            padding: 8px;
+        }
+        
+        .value-point .value-text h3 {
+            font-size: 1.2rem;
+        }
+        
+        .value-point .value-text p {
+            font-size: 0.85rem;
+        }
     }
     
     .hero-buttons {
@@ -876,24 +972,35 @@
             </div>
         </div>
         @php
-            $about = App\Models\AboutUs::get() ?? [];
+            $about = App\Models\AboutUs::first();
         @endphp
         <!-- Hero Text - Right Side -->
         <div class="hero-text">
             <div class="hero-values">
                 <div class="value-point" id="value1">
-                    @foreach ($about as $key => $value)
                         <div class="value-text">
-                            <h3>{{ $key }}</h3>
-                            <p>{{ $value }}</p>
+                            <h3>{{ app()->getLocale() == 'ar' ? 'رويتنا' : 'Our Story' }}</h3>
+                            <p>{{ app()->getLocale() == 'ar' ? $about->our_story_ar : $about->our_story_en }}</p>
                         </div>
-                    @endforeach
                 </div>
-            </div>
-            
-            <div class="hero-buttons">
-                <a href="#services" class="btn-primary">{{ __('messages.services_btn') }}</a>
-                <a href="#contact" class="btn-secondary">{{ __('messages.contact_btn') }}</a>
+                <div class="value-point" id="value2">
+                    <div class="value-text">
+                        <h3>{{ app()->getLocale() == 'ar' ? 'رويتنا' : 'Our Vision' }}</h3>
+                        <p>{{ app()->getLocale() == 'ar' ? $about->our_vision_ar : $about->our_vision_en }}</p>
+                    </div>
+                </div>
+                <div class="value-point" id="value3">
+                    <div class="value-text">
+                        <h3>{{ app()->getLocale() == 'ar' ? 'مهمتنا' : 'Our Mission' }}</h3>
+                        <p>{{ app()->getLocale() == 'ar' ? $about->our_mission_ar : $about->our_mission_en }}</p>
+                    </div>
+                </div>
+                <div class="value-point" id="value4">
+                    <div class="value-text">
+                        <h3>{{ app()->getLocale() == 'ar' ? 'رسالتنا' : 'Our Message' }}</h3>
+                        <p>{{ app()->getLocale() == 'ar' ? $about->our_message_ar : $about->our_message_en }}</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -903,10 +1010,20 @@
 <script>
 // Professional dynamic value points display - Change every 10 seconds
 document.addEventListener('DOMContentLoaded', function() {
-    const values = ['value1', 'value2', 'value3'];
+    const values = ['value1', 'value2', 'value3', 'value4'];
     let currentIndex = 0;
     let autoRotateInterval;
     let isTransitioning = false;
+    
+    // Check if all elements exist
+    function checkElementsExist() {
+        return values.every(id => document.getElementById(id));
+    }
+    
+    if (!checkElementsExist()) {
+        console.warn('Some value elements are missing');
+        return;
+    }
     
     function showValue(index, direction = 'next') {
         if (isTransitioning) return;
@@ -914,6 +1031,11 @@ document.addEventListener('DOMContentLoaded', function() {
         
         const currentElement = document.getElementById(values[currentIndex]);
         const nextElement = document.getElementById(values[index]);
+        
+        if (!currentElement || !nextElement) {
+            isTransitioning = false;
+            return;
+        }
         
         // Exit animation for current element
         currentElement.classList.add('exit');

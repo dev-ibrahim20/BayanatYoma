@@ -23,7 +23,7 @@
     
     .section-header h2 {
         font-size: 3.5rem;
-        color: #000000;
+        color: #ffffff;
         margin-bottom: 1rem;
         font-weight: 900;
         font-family: 'Arial Black', Arial, sans-serif;
@@ -48,7 +48,7 @@
     
     .slider-wrapper {
         display: flex;
-        animation: slideAnimation 25s linear infinite;
+        animation: slideAnimation 10s linear infinite;
         width: fit-content;
     }
     
@@ -57,33 +57,24 @@
     }
     
     .customer-slide {
-        min-width: 120px;
-        width: 120px;
+        min-width: 220px;
+        width: 220px;
         height: 120px;
         margin: 0 20px;
-        border-radius: 50%;
+        /* border-radius: 8px; */
         overflow: hidden;
-        background: rgba(255, 255, 255, 0.1);
-        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
         transition: all 0.3s ease;
-        border: 3px solid transparent;
-        background: linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)) padding-box,
-                    linear-gradient(135deg, #505038 0%, #4b4b33 50%, #24240e 100%) border-box;
     }
     
     .customer-slide img {
         width: 100%;
         height: 100%;
-        object-fit: cover;
+        object-fit: contain;
         transition: all 0.3s ease;
     }
     
     .customer-slide:hover {
         transform: scale(1.1);
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-        border: 3px solid transparent;
-        background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)) padding-box,
-                    linear-gradient(135deg, #505038 0%, #4b4b33 50%, #24240e 100%) border-box;
     }
     
     .customer-slide:hover img {
@@ -108,7 +99,7 @@
         .customer-slide {
             min-width: 80px;
             width: 80px;
-            height: 80px;
+            height: 60px;
             margin: 0 15px;
         }
         
@@ -135,12 +126,9 @@
                 @if ($clients->count() > 0)
                     @foreach ($clients as $client)
                         <div class="customer-slide">
-                            <img src="{{ $client->image }}" alt="{{ $client->name }}">
+                            <img src="{{ 'Arqco/public/' . $client->image }}" alt="{{ $client->name }}">
                         </div>
-                        <!-- Duplicate logos for continuous animation -->
-                        <div class="customer-slide">
-                            <img src="{{ $client->image }}" alt="{{ $client->name }}">
-                        </div>
+ 
                     @endforeach
                 @else
                     <!-- First set of logos -->

@@ -3,20 +3,21 @@
 /* Services Section Styles */
 .services {
     padding: 80px 20px;
-  background-image: linear-gradient(135deg, rgb(26, 47, 74) 0%, rgb(26, 47, 74) 40%, rgb(15, 23, 20) 80%);
+    background-image: linear-gradient(135deg, rgb(26, 47, 74) 0%, rgb(26, 47, 74) 40%, rgb(15, 23, 20) 80%);
     border-top: 1px solid #484846;
 }
     
 .section-header {
     text-align: center;
     margin-bottom: 60px;
+
 }
 
 .section-header h2 {
     font-size: 3.5rem;
     color: #000000;
     margin-bottom: 1rem;
-    font-weight: 900;
+    font-weight: 500;
     font-family: 'Arial Black', Arial, sans-serif;
     letter-spacing: 2px;
     text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
@@ -352,7 +353,7 @@
 <section id="services" class="services">
     <div class="container">
         <div class="section-header">
-            <h2>{{ __('messages.services_title') }}</h2>
+            <h2 style="color:white">{{ __('messages.services_title') }}</h2>
             <p>{{ __('messages.services_subtitle') }}</p>
         </div>
         <div class="services-grid">
@@ -361,8 +362,8 @@
                 <div class="service-icon">
                     <i class="fas fa-lightbulb"></i>
                 </div>
-                <h3>{{ $service->title }}</h3>
-                <p>{{ $service->description }}</p>
+                <h3>{{ app()->getLocale() == 'ar' ? $service->title_ar : $service->title_en }}</h3>
+                <p>{{ app()->getLocale() == 'ar' ? $service->description_ar : $service->description_en }}</p>
             </div>
             @endforeach
         </div>

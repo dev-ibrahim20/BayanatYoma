@@ -101,11 +101,6 @@ const observer = new IntersectionObserver((entries) => {
 
 // Observe elements for animation
 document.addEventListener('DOMContentLoaded', () => {
-    const heroTitle = document.querySelector('.hero-text h1');
-    const heroParagraphs = document.querySelectorAll('.hero-text p');
-    const heroButtons = document.querySelector('.hero-buttons');
-    const contactForm = document.querySelector('#contactForm');
-    
     // Observe stat items
     document.querySelectorAll('.stat-item').forEach(item => {
         item.style.opacity = '0';
@@ -114,115 +109,14 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(item);
     });
     
-    // Observe all sections
-    document.querySelectorAll('section').forEach(section => {
-        section.style.opacity = '0';
-        section.style.transform = 'translateY(50px)';
-        section.style.transition = 'all 0.8s ease';
-        observer.observe(section);
-    });
+    // // Observe all sections
+    // document.querySelectorAll('section').forEach(section => {
+    //     section.style.opacity = '0';
+    //     section.style.transform = 'translateY(50px)';
+    //     section.style.transition = 'all 0.8s ease';
+    //     observer.observe(section);
+    // });
     
-    // Animate hero elements on load
-    setTimeout(() => {
-        const heroTitle = document.querySelector('.hero-text h1');
-        const heroButtons = document.querySelector('.hero-buttons');
-        
-        if (heroTitle) {
-            heroTitle.style.opacity = '1';
-            heroTitle.style.transform = 'translateY(0)';
-        }
-        
-        setTimeout(() => {
-            const heroParagraphs = document.querySelectorAll('.hero-text p');
-            if (heroParagraphs) {
-                heroParagraphs.forEach((p, index) => {
-                    setTimeout(() => {
-                        p.style.opacity = '1';
-                        p.style.transform = 'translateY(0)';
-                    }, index * 200);
-                });
-            }
-        }, 300);
-        
-        setTimeout(() => {
-            if (heroButtons) {
-                heroButtons.style.opacity = '1';
-                heroButtons.style.transform = 'translateY(0)';
-            }
-        }, 700);
-    }, 300);
-});
-
-// Initialize hero elements and form
-document.addEventListener('DOMContentLoaded', () => {
-    const heroTitle = document.querySelector('.hero-text h1');
-    const heroParagraphs = document.querySelectorAll('.hero-text p');
-    const heroButtons = document.querySelector('.hero-buttons');
-    const contactForm = document.querySelector('#contactForm');
-    
-    // Set initial state for hero elements
-    if (heroTitle) {
-        heroTitle.style.opacity = '0';
-        heroTitle.style.transform = 'translateY(30px)';
-        heroTitle.style.transition = 'all 0.8s ease';
-    }
-    
-    if (heroParagraphs) {
-        heroParagraphs.forEach(p => {
-            p.style.opacity = '0';
-            p.style.transform = 'translateY(30px)';
-            p.style.transition = 'all 0.8s ease';
-        });
-    }
-    
-    if (heroButtons) {
-        heroButtons.style.opacity = '0';
-        heroButtons.style.transform = 'translateY(30px)';
-        heroButtons.style.transition = 'all 0.8s ease';
-    }
-
-    // Animate hero elements on load
-    setTimeout(() => {
-        if (heroTitle) {
-            heroTitle.style.opacity = '1';
-            heroTitle.style.transform = 'translateY(0)';
-        }
-        
-        setTimeout(() => {
-            if (heroParagraphs) {
-                heroParagraphs.forEach((p, index) => {
-                    setTimeout(() => {
-                        p.style.opacity = '1';
-                        p.style.transform = 'translateY(0)';
-                    }, index * 200);
-                });
-            }
-        }, 300);
-        
-        setTimeout(() => {
-            if (heroButtons) {
-                heroButtons.style.opacity = '1';
-                heroButtons.style.transform = 'translateY(0)';
-            }
-        }, 700);
-    }, 300);
-
-    // Form submission
-    if (contactForm) {
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            
-            // Get form data
-            const formData = new FormData(contactForm);
-            const data = Object.fromEntries(formData);
-            
-            // Show success message
-            showNotification('تم إرسال رسالتك بنجاح! سنتواصل معك قريباً.', 'success');
-            
-            // Reset form
-            contactForm.reset();
-        });
-    }
 });
 
 // Notification system

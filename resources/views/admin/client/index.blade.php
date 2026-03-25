@@ -42,7 +42,7 @@
                                                 <div class="card-body text-center">
                                                     <div class="client-image-container mb-3">
                                                         @if($client->image)
-                                                            <img src="{{ asset( $client->image) }}" 
+                                                            <img src="{{ asset('Arqco/public/' . $client->image) }}" 
                                                                  alt="{{ $client->name }}" 
                                                                  class="client-image img-fluid"
                                                                  style="max-height: 120px; object-fit: contain;">

@@ -71,7 +71,6 @@
                                         <thead>
                                             <tr>
                                                 <th class="border-bottom-0">#</th>
-                                                <th class="border-bottom-0">الصورة</th>
                                                 <th class="border-bottom-0">اسم الخدمة</th>
                                                 <th class="border-bottom-0">الوصف</th>
                                                 <th class="border-bottom-0">المميزات</th>
@@ -83,19 +82,19 @@
                                                 @foreach ($serv as $service)
                                                     <tr>
                                                             <td>{{$loop->iteration}}</td>
-                                                            <td>
-                                                                @if($service->image)
-                                                                    <img src="{{ asset($service->image) }}" alt="{{ $service->title_ar }}" 
-                                                                         style="width: 80px; height: 80px; object-fit: cover; border-radius: 8px; cursor: pointer;"
-                                                                         onclick="openImageModal('{{ asset($service->image) }}', '{{ $service->title_ar }}')"
-                                                                         class="service-image">
-                                                                @else
-                                                                    <div class="bg-gray-200 d-flex align-items-center justify-content-center" 
-                                                                         style="width: 80px; height: 80px; border-radius: 8px;">
-                                                                        <i class="fas fa-image text-gray-400"></i>
-                                                                    </div>
-                                                                @endif
-                                                            </td>
+                                                            <!--<td>-->
+                                                            <!--    @if($service->image)-->
+                                                            <!--        <img src="{{ asset('Arqco/public/' . $service->image) }}" alt="{{ $service->title_ar }}" -->
+                                                            <!--             style="width: 80px; height: 80px; object-fit: cover; border-radius: 8px; cursor: pointer;"-->
+                                                            <!--             onclick="openImageModal('{{ asset($service->image) }}', '{{ $service->title_ar }}')"-->
+                                                            <!--             class="service-image">-->
+                                                            <!--    @else-->
+                                                            <!--        <div class="bg-gray-200 d-flex align-items-center justify-content-center" -->
+                                                            <!--             style="width: 80px; height: 80px; border-radius: 8px;">-->
+                                                            <!--            <i class="fas fa-image text-gray-400"></i>-->
+                                                            <!--        </div>-->
+                                                            <!--    @endif-->
+                                                            <!--</td>-->
                                                             <td>
                                                                 <strong>{{ $service->title_ar }}</strong><br>
                                                                 <small class="text-muted">{{ $service->title_en }}</small>

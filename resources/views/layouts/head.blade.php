@@ -827,6 +827,50 @@
         gap: 20px;
     }
 }
+
+/* Service Hero Text Spacing */
+.service-hero-text {
+    margin-left: 40px;
+}
+
+/* Arabic Language Right Margin */
+[lang="ar"] .service-hero-text {
+    margin-left: 0;
+    margin-right: 40px;
+}
+
+@media (max-width: 768px) {
+    .service-hero-text {
+        margin-left: 20px;
+    }
+    
+    [lang="ar"] .service-hero-text {
+        margin-left: 0;
+        margin-right: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .service-hero-text {
+        margin-left: 15px;
+    }
+    
+    [lang="ar"] .service-hero-text {
+        margin-left: 0;
+        margin-right: 15px;
+    }
+}
+
+@media (max-width: 360px) {
+    .service-hero-text {
+        margin-left: 10px;
+    }
+    
+    [lang="ar"] .service-hero-text {
+        margin-left: 0;
+        margin-right: 10px;
+    }
+}
 </style>
 
 </head>

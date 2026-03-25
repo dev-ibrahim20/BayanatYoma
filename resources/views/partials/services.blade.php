@@ -72,18 +72,18 @@
 }
 
 .service-icon {
-    width: 100px;
-    height: 100px;
-    background: #2F4F4F;
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #3B82F6 0%, #1A2F4A 100%);
     border-radius: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 auto 30px;
-    font-size: 2.5rem;
+    margin: 0 auto 25px;
+    font-size: 2rem;
     color: #ffffff;
     transition: all 0.3s ease;
-    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+    box-shadow: 0 8px 25px rgba(59, 130, 246, 0.3);
 }
 
 .service-card h3 {
@@ -129,7 +129,8 @@
     .service-icon {
         width: 60px;
         height: 60px;
-        font-size: 1.6rem;
+        font-size: 1.8rem;
+        margin: 0 auto 15px;
     }
     
     .service-card h3 {
@@ -164,7 +165,8 @@
     .service-icon {
         width: 50px;
         height: 50px;
-        font-size: 1.4rem;
+        font-size: 1.5rem;
+        margin: 0 auto 10px;
     }
     
     .service-card h3 {
@@ -225,9 +227,10 @@
     }
     
     .service-icon {
-        width: 50px;
-        height: 50px;
-        font-size: 1.3rem;
+        width: 60px;
+        height: 60px;
+        font-size: 1.8rem;
+        margin: 0 auto 15px;
     }
     
     .service-card h3 {
@@ -279,10 +282,10 @@
     }
     
     .service-icon {
-        width: 60px;
-        height: 60px;
+        width: 50px;
+        height: 50px;
         font-size: 1.5rem;
-        margin: 0 auto 15px;
+        margin: 0 auto 10px;
     }
     
     .service-card h3 {
@@ -307,10 +310,10 @@
     }
     
     .service-icon {
-        width: 50px;
-        height: 50px;
+        width: 45px;
+        height: 45px;
         font-size: 1.3rem;
-        margin: 0 auto 10px;
+        margin: 0 auto 8px;
     }
     
     .service-card h3 {
@@ -377,14 +380,14 @@
                             @case('Hajj tents')
                                 <i class="fas fa-tent"></i>
                             @break
-                            @case('Hospitality services')
-                                <i class="fas fa-hands-helping"></i>
-                            @break
                             @case('Iftar tents for fasting people')
                                 <i class="fas fa-tent"></i>
                             @break
                             @case('Event and entertainment halls')
                                 <i class="fas fa-music"></i>
+                            @break
+                            @case('Hospitality services')
+                                <i class="fas fa-hands-helping"></i>
                             @break
                             @default
                                 <i class="fas fa-lightbulb"></i>

@@ -726,7 +726,7 @@
         <div class="container navbar-container">
             <div class="nav-content">
                 <div class="logo">
-                    <img src="{{ asset('assets/arqco-logo.png') }}" alt="ARQCO Logo">
+                    <img src="{{ asset('Arqco/public/assets/arqco-logo.png') }}" alt="ARQCO Logo">
                 </div>
                 <ul class="nav-menu">
                     <li><a href="#home">{{ __('messages.home') }}</a></li>

@@ -152,7 +152,7 @@
         <img id="lightbox-image" src="" alt="Gallery Image">
         <button class="lightbox-nav next" onclick="navigateLightbox(1)">&#10095;</button>
         <div class="lightbox-counter">
-            <span id="current-image">1</span> / <span id="total-images">8</span>
+            <span id="current-image">1</span> / <span id="total-images">6</span>
         </div>
     </div>
 </div>

@@ -16,5 +16,11 @@ class OurWork extends Model
         'client_name',
         'project_date',
         'is_active',
+        'service_id',
     ];
+
+    public function service()
+    {
+        return $this->belongsTo(Service::class);
+    }
 }

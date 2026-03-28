@@ -78,6 +78,7 @@
                                     <th class="border-bottom-0">#</th>
                                     <th class="border-bottom-0">المرفق</th>
                                     <th class="border-bottom-0">العنوان</th>
+                                    <th class="border-bottom-0">الخدمة</th>
                                     <th class="border-bottom-0">العميل</th>
                                     <th class="border-bottom-0">التاريخ</th>
                                     <th class="border-bottom-0">الحالة</th>
@@ -101,6 +102,13 @@
                                         </td>
                                         <td>
                                             <strong>{{ $work->title_ar }}</strong>
+                                        </td>
+                                        <td>
+                                            @if($work->service)
+                                                <span class="badge badge-info">{{ $work->service->title_ar }}</span>
+                                            @else
+                                                <span class="text-muted">-</span>
+                                            @endif
                                         </td>
                                         <td>{{ $work->client_name ?? '-' }}</td>
                                         <td>{{ $work->project_date ?? '-' }}</td>

@@ -47,7 +47,26 @@
                                 @enderror
                             </div>
                         </div>
-                        <div class="col-md-6">
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="service_id" class="form-label">الخدمة <span class="text-danger">*</span></label>
+                                <select class="form-control" id="service_id" name="service_id" required>
+                                    <option value="">اختر الخدمة</option>
+                                    @foreach(\App\Models\Service::where('status', 1)->get() as $service)
+                                        <option value="{{ $service->id }}" {{ old('service_id', $ourWork->service_id) == $service->id ? 'selected' : '' }}>
+                                            {{ $service->title_ar }}
+                                        </option>
+                                    @endforeach
+                                </select>
+                                @error('service_id')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="col-md-4">
                             <div class="form-group">
                                 <label for="client_name" class="form-label">اسم العميل</label>
                                 <input type="text" class="form-control" id="client_name" name="client_name" 
@@ -57,10 +76,7 @@
                                 @enderror
                             </div>
                         </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                             <div class="form-group">
                                 <label for="project_date" class="form-label">تاريخ المشروع</label>
                                 <input type="date" class="form-control" id="project_date" name="project_date" 
@@ -70,6 +86,9 @@
                                 @enderror
                             </div>
                         </div>
+                    </div>
+
+                    <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label class="form-label d-block mb-2">الحالة</label>

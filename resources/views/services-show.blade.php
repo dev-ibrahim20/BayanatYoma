@@ -49,17 +49,22 @@
                 <div class="service-gallery">
                     <h2>{{ __('messages.service_gallery') }}</h2>
                     <div class="gallery-grid">
-                        @if(isset($portfolioImages) && $portfolioImages && $portfolioImages->count() > 0)
-                            <!-- Main Service Image -->
+                        @php
+                            // جلب الأعمال المرتبطة بالخدمة الحالية
+                            $serviceWorks = \App\Models\OurWork::where('service_id', $service->id)->where('is_active', 1)->get();
+                        @endphp
+                        
+                        @if($serviceWorks && $serviceWorks->count() > 0)
+                            <!-- Main Service Work -->
                             <div class="gallery-item main-image" onclick="openLightbox(0)">
-                                <img src="{{ asset('Arqco/public/' . $portfolioImages->first()->image) }}" alt="{{ app()->getLocale() == 'ar' ? $portfolioImages->first()->title_ar : $portfolioImages->first()->title_en }}">
+                                <img src="{{ asset('Arqco/public/' . $serviceWorks->first()->image) }}" alt="{{ app()->getLocale() == 'ar' ? $serviceWorks->first()->title_ar : $serviceWorks->first()->title_en }}">
                                 <div class="gallery-overlay">
                                     <i class="fas fa-search-plus"></i>
                                 </div>
                             </div>
                             
-                            <!-- Additional Portfolio Images (4 more for total of 5) -->
-                            @foreach($portfolioImages->slice(1, 4) as $index => $work)
+                            <!-- Additional Service Works (4 more for total of 5) -->
+                            @foreach($serviceWorks->slice(1, 4) as $index => $work)
                                 <div class="gallery-item" onclick="openLightbox({{ $index + 1 }})">
                                     <img src="{{ asset('Arqco/public/' . $work->image) }}" alt="{{ app()->getLocale() == 'ar' ? $work->title_ar : $work->title_en }}">
                                     <div class="gallery-overlay">
@@ -68,13 +73,13 @@
                                 </div>
                             @endforeach
                         @else
-                            <!-- No Images Available Message -->
+                            <!-- No Works Available Message -->
                             <div class="no-images-container">
                                 <div class="no-images-icon">
-                                    <i class="fas fa-images"></i>
+                                    <i class="fas fa-briefcase"></i>
                                 </div>
-                                <h3>{{ app()->getLocale() == 'ar' ? 'لا توجد صور متاحة' : 'No Images Available' }}</h3>
-                                <p>{{ app()->getLocale() == 'ar' ? 'لم تتم إضافة أي صور إلى معرض الأعمال بعد' : 'No images have been added to the portfolio yet' }}</p>
+                                <h3>{{ app()->getLocale() == 'ar' ? 'لا يوجد أعمال حالياً' : 'No Works Available' }}</h3>
+                                <p>{{ app()->getLocale() == 'ar' ? 'لم تتم إضافة أي أعمال لهذه الخدمة بعد' : 'No works have been added to this service yet' }}</p>
                             </div>
                         @endif
                     </div>

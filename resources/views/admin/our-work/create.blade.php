@@ -41,6 +41,17 @@
                         <div class="row">
                             <div class="col-md-4">
                                 <div class="form-group">
+                                    <label for="service_id">الخدمة <span class="text-danger">*</span></label>
+                                    <select class="form-control" id="service_id" name="service_id" required>
+                                        <option value="">اختر الخدمة</option>
+                                        @foreach(\App\Models\Service::where('status', 1)->get() as $service)
+                                            <option value="{{ $service->id }}">{{ $service->title_ar }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
                                     <label for="client_name">اسم العميل</label>
                                     <input type="text" class="form-control" id="client_name" name="client_name">
                                 </div>

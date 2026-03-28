@@ -411,22 +411,22 @@
         
     @media (max-width: 768px) {
         .logo img {
-            height: 60px;
-            max-width: 200px;
+            height: 80px;
+            max-width: 280px;
         }
     }
         
     @media (max-width: 480px) {
         .logo img {
-            height: 50px;
-            max-width: 160px;
+            height: 70px;
+            max-width: 240px;
         }
     }
         
     @media (max-width: 360px) {
         .logo img {
-            height: 45px;
-            max-width: 140px;
+            height: 60px;
+            max-width: 200px;
         }
     }
     
@@ -726,7 +726,7 @@
         <div class="container navbar-container">
             <div class="nav-content">
                 <div class="logo">
-                    <img src="{{ asset('Arqco/public/assets/arqco-logo.png') }}" alt="ARQCO Logo">
+                    <img src="{{ asset(path: 'Arqco/public/assets/arqco-logo.png') }}" alt="ARQCO Logo">
                 </div>
                 <ul class="nav-menu">
                     <li><a href="/#home">{{ __('messages.home') }}</a></li>

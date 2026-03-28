@@ -24,7 +24,7 @@
     
     .slider-wrapper {
         display: flex;
-        animation: slideAnimation 1s linear infinite;
+        animation: slideAnimation 3s linear infinite;
         width: fit-content;
     }
     
@@ -33,18 +33,18 @@
     }
     
     .wake-slide {
-        min-width: 300px;
-        width: 300px;
+        min-width: 450px;
+        width: 450px;
         height: auto;
-        margin: 0 20px;
+        margin: 0;
         display: flex;
         align-items: center;
         justify-content: center;
     }
     
     .wake-slide img {
-        width: 280px;
-        height: 150px;
+        width: 420px;
+        height: 250px;
         object-fit: contain;
     }
     
@@ -97,15 +97,21 @@
         }
           .slider-wrapper {
         display: flex;
-        animation: slideAnimation 1s linear infinite;
+        animation: slideAnimation 3s linear infinite;
         width: fit-content;
     }
         
         .wake-slide {
-            min-width: 200px;
-            width: 200px;
+            min-width: 250px;
+            width: 250px;
             height: auto;
-            margin: 0 15px;
+            margin: 0;
+        }
+        
+        .wake-slide img {
+            width: 230px;
+            height: 140px;
+            object-fit: contain;
         }
         
         .wake-slide img {

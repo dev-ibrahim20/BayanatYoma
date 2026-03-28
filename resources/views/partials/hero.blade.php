@@ -443,7 +443,7 @@
     }
     
     .value-point .value-text h3 {
-        font-size: 2.8rem;
+        font-size: 3.8rem;
     }
 }
 
@@ -574,26 +574,81 @@
 @media (max-width: 768px) {
     .hero {
         padding: 10px;
+        min-height: 80vh;
     }
     
     .hero-content {
-        gap: 20px;
+        gap: 30px;
         padding: 0 10px;
-        grid-template-columns: 1fr 2fr;
-        align-items: center;
+        grid-template-columns: 1fr;
+        align-items: stretch;
+        min-height: 80vh;
     }
     
     .hero-phone {
-        flex-direction: row;
+        order: 2;
         gap: 15px;
         height: auto;
-        min-height: 40vh;
+        min-height: 20vh;
         justify-content: center;
+        flex: 0 0 auto;
+        display: flex;
+        align-items: center;
+        margin-top: auto;
     }
     
     .hero-text {
         padding: 25px 15px;
         min-height: auto;
+        order: 1;
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .hero-values {
+        width: 100%;
+        min-height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .value-point {
+        border-radius: 15px;
+        text-align: center;
+        transition: all 0.3s ease;
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        min-height: 100px;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .value-point .value-text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+    
+    .value-point .value-text p {
+        font-size: 2.5rem;
+        margin-bottom: 15px;
+        order: 1;
+        line-height: 1.4;
+        font-weight: 600;
+    }
+    
+    .value-point .value-text h3 {
+        font-size: 2.2rem;
+        margin-bottom: 0;
         order: 2;
     }
     
@@ -609,54 +664,36 @@
         border-radius: 8px;
     }
     
-    .value-point {
-        border-radius: 15px;
-        text-align: center;
-        transition: all 0.3s ease;
-        width: 100%;
-        max-width: 280px;
-        height: auto;
-        min-height: 120px;
-    }
-    
-    .value-point .value-text h3 {
-        font-size: 2.2rem;
-    }
-    
-    .value-point .value-text p {
-        font-size: 1.2rem;
-    }
-    
     /* Responsive Design for Hero Values */
     @media (max-width: 1200px) {
         .value-point {
-            max-width: 260px;
+            max-width: 100%;
             min-height: 110px;
             padding: 18px;
+        }
+        
+        .value-point .value-text p {
+            font-size: 2.2rem;
         }
         
         .value-point .value-text h3 {
             font-size: 2rem;
         }
-        
-        .value-point .value-text p {
-            font-size: 1.1rem;
-        }
     }
     
     @media (max-width: 992px) {
         .value-point {
-            max-width: 240px;
+            max-width: 100%;
             min-height: 100px;
             padding: 15px;
         }
         
-        .value-point .value-text h3 {
-            font-size: 1.8rem;
+        .value-point .value-text p {
+            font-size: 2rem;
         }
         
-        .value-point .value-text p {
-            font-size: 1rem;
+        .value-point .value-text h3 {
+            font-size: 1.8rem;
         }
     }
     
@@ -672,12 +709,12 @@
             padding: 12px;
         }
         
-        .value-point .value-text h3 {
-            font-size: 1.6rem;
+        .value-point .value-text p {
+            font-size: 1.8rem;
         }
         
-        .value-point .value-text p {
-            font-size: 0.95rem;
+        .value-point .value-text h3 {
+            font-size: 1.6rem;
         }
     }
     
@@ -688,12 +725,12 @@
             padding: 10px;
         }
         
-        .value-point .value-text h3 {
-            font-size: 1.4rem;
+        .value-point .value-text p {
+            font-size: 1.6rem;
         }
         
-        .value-point .value-text p {
-            font-size: 0.9rem;
+        .value-point .value-text h3 {
+            font-size: 1.4rem;
         }
     }
     
@@ -704,12 +741,12 @@
             padding: 8px;
         }
         
-        .value-point .value-text h3 {
-            font-size: 1.2rem;
+        .value-point .value-text p {
+            font-size: 1.4rem;
         }
         
-        .value-point .value-text p {
-            font-size: 0.85rem;
+        .value-point .value-text h3 {
+            font-size: 1.2rem;
         }
     }
     

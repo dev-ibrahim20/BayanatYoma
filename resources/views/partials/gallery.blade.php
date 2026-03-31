@@ -8,10 +8,48 @@
         position: relative;
         overflow: hidden;
     }
+
+    .gallery::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(circle at 30% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+                    radial-gradient(circle at 70% 80%, rgba(255, 255, 255, 0.08) 0%, transparent 50%);
+        z-index: 1;
+        pointer-events: none;
+    }
+
+    .gallery-particles {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        z-index: 0;
+        pointer-events: none;
+    }
+
+    .gallery-particle {
+        position: absolute;
+        background: rgba(255, 255, 255, 0.3);
+        border-radius: 50%;
+        animation: float 20s infinite linear;
+    }
+
+    @keyframes float {
+        0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+        10% { opacity: 1; }
+        90% { opacity: 1; }
+        100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+    }
     
     .section-header {
         text-align: center;
         margin-bottom: 60px;
+        position: relative;
+        z-index: 2;
     }
     
     .section-header h2 {
@@ -36,6 +74,7 @@
         max-width: 1400px;
         margin: 0 auto;
         width: 100%;
+        z-index: 2;
     }
     
     .gallery-slider {
@@ -283,13 +322,13 @@
 @section('title', __('messages.gallery_title'))
 <!-- Gallery Section -->
 <section id="gallery" class="gallery" dir="{{ app()->getLocale() == 'ar' ? 'rtl' : 'ltr' }}">
-@@ -289,183 +291,209 @@
-        <div class="gallery-container">
-            <div class="gallery-slider">
-                <div class="gallery-wrapper" id="galleryWrapper">
-                    @if ($galleryImages->count() > 0)
-                        @foreach ($galleryImages as $image)
-                            <!-- Gallery Item {{ $loop->index + 1 }} -->
+    <div class="gallery-particles"></div>
+    <div class="gallery-container">
+        <div class="gallery-slider">
+            <div class="gallery-wrapper" id="galleryWrapper">
+                @if ($galleryImages->count() > 0)
+                    @foreach ($galleryImages as $image)
+                        <!-- Gallery Item {{ $loop->index + 1 }} -->
                             <div class="gallery-item">
                                 <img src="{{ $image->image }}" 
                                      alt="{{ $image->title }}"
@@ -491,4 +530,30 @@
         prevBtn.addEventListener('mouseup', stopAutoScroll);
         prevBtn.addEventListener('mouseleave', stopAutoScroll);
     });
+
+    // Create floating particles for gallery section
+    function createGalleryParticles() {
+        const particlesContainer = document.querySelector('.gallery-particles');
+        if (!particlesContainer) return;
+        
+        for (let i = 0; i < 35; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'gallery-particle';
+            particle.style.cssText = `
+                position: absolute;
+                width: ${Math.random() * 3 + 1}px;
+                height: ${Math.random() * 3 + 1}px;
+                background: rgba(255, 255, 255, ${Math.random() * 0.3 + 0.1});
+                border-radius: 50%;
+                left: ${Math.random() * 100}%;
+                top: ${Math.random() * 100}%;
+                animation: float ${Math.random() * 15 + 10}s infinite linear;
+                animation-delay: ${Math.random() * 5}s;
+            `;
+            particlesContainer.appendChild(particle);
+        }
+    }
+
+    // Initialize particles when DOM is loaded
+    createGalleryParticles();
 </script>

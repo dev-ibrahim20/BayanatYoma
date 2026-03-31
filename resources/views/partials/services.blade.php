@@ -5,12 +5,51 @@
     padding: 80px 20px;
     background-image: linear-gradient(135deg, rgb(26, 47, 74) 0%, rgb(26, 47, 74) 40%, rgb(15, 23, 20) 80%);
     border-top: 1px solid #484846;
+    position: relative;
+    overflow: hidden;
+}
+
+.services::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 30% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 70% 80%, rgba(255, 255, 255, 0.08) 0%, transparent 50%);
+    z-index: 1;
+    pointer-events: none;
+}
+
+.services-particles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.services-particle {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    animation: float 20s infinite linear;
+}
+
+@keyframes float {
+    0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
 }
     
 .section-header {
     text-align: center;
     margin-bottom: 60px;
-
+    position: relative;
+    z-index: 2;
 }
 
 .section-header h2 {
@@ -37,6 +76,8 @@
     max-width: 1400px;
     margin: 0 auto;
     padding: 0 15px;
+    position: relative;
+    z-index: 2;
 }
     
 .service-card {
@@ -355,6 +396,7 @@
 @endphp
 <!-- Services Section -->
 <section id="services" class="services">
+    <div class="services-particles"></div>
     <div class="container">
         <div class="section-header">
             <h2 style="color:white">{{ __('messages.services_title') }}</h2>
@@ -405,5 +447,33 @@
 
 <!-- Include Service Icons CSS -->
 <link rel="stylesheet" href="{{ asset('css/service-icons.css') }}">
+
+<script>
+// Create floating particles for services section
+function createServicesParticles() {
+    const particlesContainer = document.querySelector('.services-particles');
+    if (!particlesContainer) return;
+    
+    for (let i = 0; i < 30; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'services-particle';
+        particle.style.cssText = `
+            position: absolute;
+            width: ${Math.random() * 3 + 1}px;
+            height: ${Math.random() * 3 + 1}px;
+            background: rgba(255, 255, 255, ${Math.random() * 0.3 + 0.1});
+            border-radius: 50%;
+            left: ${Math.random() * 100}%;
+            top: ${Math.random() * 100}%;
+            animation: float ${Math.random() * 15 + 10}s infinite linear;
+            animation-delay: ${Math.random() * 5}s;
+        `;
+        particlesContainer.appendChild(particle);
+    }
+}
+
+// Initialize particles when DOM is loaded
+document.addEventListener('DOMContentLoaded', createServicesParticles);
+</script>
 
 

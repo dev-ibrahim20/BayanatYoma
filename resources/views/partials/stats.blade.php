@@ -14,12 +14,35 @@
     position: absolute;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
-    /* background: radial-gradient(circle at 25% 25%, rgba(80, 75, 51, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 75% 75%, rgba(80, 75, 51, 0.05) 0%, transparent 50%),
-                radial-gradient(circle at 50% 50%, rgba(80, 75, 51, 0.03) 0%, transparent 70%); */
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 30% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 70% 80%, rgba(255, 255, 255, 0.08) 0%, transparent 50%);
+    z-index: 1;
+    pointer-events: none;
+}
+
+.stats-particles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
     z-index: 0;
+    pointer-events: none;
+}
+
+.stats-particle {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    animation: float 20s infinite linear;
+}
+
+@keyframes float {
+    0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
 }
 
 .stats-grid {
@@ -29,6 +52,8 @@
     max-width: 1000px;
     margin: 0 auto;
     text-align: center;
+    position: relative;
+    z-index: 2;
 }
 
 .stat-item {
@@ -87,6 +112,7 @@
 @section('title', __('messages.stats_title'))
 <!-- Stats Section -->
 <section class="stats">
+    <div class="stats-particles"></div>
     <div class="container">
         <div class="stats-grid">
                 <div class="stat-item">
@@ -165,4 +191,30 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(counter);
     });
 });
+
+// Create floating particles for stats section
+function createStatsParticles() {
+    const particlesContainer = document.querySelector('.stats-particles');
+    if (!particlesContainer) return;
+    
+    for (let i = 0; i < 25; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'stats-particle';
+        particle.style.cssText = `
+            position: absolute;
+            width: ${Math.random() * 3 + 1}px;
+            height: ${Math.random() * 3 + 1}px;
+            background: rgba(255, 255, 255, ${Math.random() * 0.3 + 0.1});
+            border-radius: 50%;
+            left: ${Math.random() * 100}%;
+            top: ${Math.random() * 100}%;
+            animation: float ${Math.random() * 15 + 10}s infinite linear;
+            animation-delay: ${Math.random() * 5}s;
+        `;
+        particlesContainer.appendChild(particle);
+    }
+}
+
+// Initialize particles when DOM is loaded
+createStatsParticles();
 </script>
